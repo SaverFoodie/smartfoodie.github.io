@@ -49,7 +49,7 @@ const styles = {
     alignItems: 'center',
     padding: '40px 20px',
     fontFamily: '"Poppins", sans-serif',
-    backgroundColor: '#FFAA33',
+    backgroundColor: '#FFE0B2',
     gap: '50px',
     maxWidth: '1400px',
     margin: '0 auto',

@@ -89,7 +89,7 @@ const Highlights = () => {
           </Link>
         </div>
         
-        <div className="bg-[#FF8C000] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
+        <div className="bg-[#FF8C00] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
           <Link
             className="outline-none focus:outline-none"
             onMouseDown={(e) => {

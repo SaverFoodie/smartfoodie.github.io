@@ -29,7 +29,7 @@ const Highlights = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3500,
     prevArrow: <Arrow direction="left" />,
     nextArrow: <Arrow direction="right" />,
   };
@@ -89,7 +89,7 @@ const Highlights = () => {
           </Link>
         </div>
         
-        <div className="bg-[FF8C000] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
+        <div className="bg-[#FF8C000] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
           <Link
             className="outline-none focus:outline-none"
             onMouseDown={(e) => {

@@ -12,9 +12,9 @@ function OurFood() {
           <div style={styles.content}> 
             <h1 style={styles.heading}>Fresh, Convenient, and Affordable</h1>
             <ul style={styles.list}>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Fresh & Hot Meals - Meals are freshly heated using steam technology, preserving nutrients and flavor.</li>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Time-Saving & Hassle-Free - No need to travel to restaurants; hot meals are available on-site.</li>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Low-Cost & High-Quality - Affordable meal options with optimized pricing through automation.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Fresh & Hot Meals - Meals are heated using steam, preserving nutrients and flavor.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Time-Saving & Hassle-Free - Skip the restaurant trip; hot meals on site for maximum convenience.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Affordable Excellence - Savor quality, flavorful meals at a price that fits everyone's budget.</li>
             </ul>
           </div>
         </div>
@@ -25,7 +25,7 @@ function OurFood() {
             <ul style={styles.list}>
               <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Diverse & Customizable Menu - Over 50 dishes, including a variety of cuisines, with dietary-friendly options.</li>
               <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Warm & Tasty Cuisine - Delicious, nutrient-rich dishes served with flavor and enjoyment.</li>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Nutritional & Balanced Choices - Meals are prepared using healthy cooking methods to ensure well-balanced nutrition.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Nutritional & Balanced Choices - Meals are prepared and developed by nutrition experts to ensure well-balanced nutrition.</li>
             </ul>
           </div>
           <img src="./2.jpg" alt="Pasta Dish" style={styles.image} /> 
@@ -37,8 +37,8 @@ function OurFood() {
             <h1 style={styles.heading}>Sustainable, Eco-friendly, and Responsible</h1>
             <ul style={styles.list}>
               <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Locally Sourced Ingredients - Reducing the carbon footprint by prioritizing local suppliers.</li>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Eco-Friendly Packaging - Boxes made with paper and metal, reduce plastic pollution.</li>
-              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Smart Waste Reduction - Minimizes food waste and enhances resource efficiency with smart planning.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>Eco-Friendly Packaging - Boxes made from recycable materials.</li>
+              <li style={{ ...styles.listItem, fontSize: '1.2em' }}>AI-Powered Waste Reduction - Reduces food waste and optimizes meal choices for customers.</li>
             </ul>
           </div>
         </div>

@@ -7,7 +7,7 @@ const Introduct = () => {
           <div className="flex flex-col items-center justify-center h-full bg-gray-300 bg-opacity-10">
             <h1 className="text-7xl font-extrabold text-orange-500 drop-shadow-lg">SmartFoodie</h1>
             <br />
-            <p className="text-xl text-orange-400 mt-2">Fresh food, anytime, anywhere — smart meal vending solutions</p>
+            <p className="text-xl text-orange-400 mt-2">Next-Gen Meal Vending – Serving Warm Food Anytime, Anywhere.</p>
           </div>
         </div>
       );

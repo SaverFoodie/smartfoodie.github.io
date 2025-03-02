@@ -23,7 +23,7 @@ import Contact from "./page/unser-angebot/contact";
 import FoodiePlaces from "./page/unser-angebot/places";
 import { LanguageProvider } from "./language";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../language';
 
 const ScrollButton = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
 
   const handleClick = () => {
     navigate('/contact');
@@ -18,7 +20,7 @@ const ScrollButton = () => {
       flex items-center gap-1 group text-sm"
       style={{ zIndex: 1000 }}
     >
-      <span>Contact ☎</span>
+      <span>{language === "en" ? "Contact ☎" : "Kontakt ☎"}</span>
     </button>
   );
 };

@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useLanguage } from '../../language';
 
 const Arrow = ({ onClick, direction }) => {
   return (
@@ -22,6 +23,7 @@ const Arrow = ({ onClick, direction }) => {
 
 const Highlights = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const settings = {
     dots: false,
     infinite: true,
@@ -38,9 +40,9 @@ const Highlights = () => {
 
   return (
     <section className="py-16 text-center bg-white">
-      <h2 className="text-5xl font-bold text-orange-600 mb-10">The Distinctive Excellence of SmartFoodie</h2>
+      <h2 className="text-5xl font-bold text-orange-600 mb-10">{language === "en" ? "The Distinctive Excellence of SmartFoodie" : "Die Ausgezeichnete Qualität von SmartFoodie"}</h2>
       <p className="text-gray-700 font-sans mb-12 mx-auto max-w-5xl text-xl">
-      SmartFoodie GmbH provides innovative and sustainable catering solutions through fully automatic vending machines with steamers, delivering freshly steamed meals in just 2 minutes. We cater to companies, universities, and institutions without a canteen or looking to expand their food options. Our mission is to combine convenience, efficiency, and nutrition, ensuring high-quality, hot meals anytime for you and your employees.
+      {language === "en" ? "SmartFoodie GmbH provides innovative and sustainable catering solutions through fully automatic vending machines with steamers, delivering freshly steamed meals in just 2 minutes. We cater to companies, universities, and institutions without a canteen or looking to expand their food options. Our mission is to combine convenience, efficiency, and nutrition, ensuring high-quality, hot meals anytime for you and your employees." : "SmartFoodie GmbH stellt innovative und nachhaltige Catering-Lösungen bereit, indem sie vollautomatische Vending-Maschinen mit Dampfern verwenden, die frisch gedämpften Mahlzeiten in nur 2 Minuten liefern. Wir kümmern uns um Unternehmen, Universitäten und Institutionen, die keinen Essensraum oder eine Erweiterung ihrer Essensoptionen suchen. Unsere Mission ist es, Bequemlichkeit, Effizienz und Nährstoffe zu vereinen, um sicherzustellen, dass hochwertige, heiße Mahlzeiten jederzeit für Sie und Ihre Mitarbeiter verfügbar sind."}
       </p>
 
       <Slider {...settings} className="w-[60%] mx-auto h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[84vh]">
@@ -80,11 +82,11 @@ const Highlights = () => {
               alt="Our Food"
               className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">Our Food</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Food" : "Unser Essen"}</h3>
             <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
-              <li>Fresh Ingredients, Various Dishes</li>
-              <li>Customizable Menu Options, Including Vegan Options</li>
-              <li>Natural Flavor and Firmer Texture</li>
+              <li>{language === "en" ? "Fresh Ingredients, Various Dishes" : "Frische Zutaten, verschiedene Mahlzeiten"}</li>
+              <li>{language === "en" ? "Customizable Menu Options, Including Vegan Options" : "Anpassbare Menüoptionen, einschließlich Vegan-Optionen"}</li>
+              <li>{language === "en" ? "Natural Flavor and Firmer Texture" : "Natürlicher Geschmack und festerer Textur"}</li>
             </ul>
           </Link>
         </div>
@@ -125,11 +127,11 @@ const Highlights = () => {
               alt="Our Service"
               className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">Our Solutions</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Solutions" : "Unsere Lösungen"}</h3>
             <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
-              <li>Fully Automated Food Vending Machines, Non Special Catering Space Required</li>
-              <li>24/7 Operation and Technical Support, Always Available For You</li>
-              <li>Convenient and Efficient On-Site Catering Solutions</li>
+              <li>{language === "en" ? "Fully Automated Food Vending Machines, Non Special Catering Space Required" : "Voll automatische Mahlzeitenautomaten, kein spezialisiertes Catering-Raum erforderlich"}</li>
+              <li>{language === "en" ? "24/7 Operation and Technical Support, Always Available For You" : "24/7 Betrieb und technische Unterstützung, immer für Sie verfügbar"}</li>
+              <li>{language === "en" ? "Convenient and Efficient On-Site Catering Solutions" : "Bequem und effiziente On-Site Catering-Lösungen"}</li>
             </ul>
           </Link>
         </div>
@@ -173,11 +175,11 @@ const Highlights = () => {
               alt="Our Innovation"
               className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">Our Advantages</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Advantages" : "Unsere Vorteile"}</h3>
             <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
-              <li>Low Costs for Balanced, High-quality Meals</li>
-              <li>Suitable for a Wide Range of Locations</li>
-              <li>Sustainable Practices, Reducing Waste</li>
+              <li>{language === "en" ? "Low Costs for Balanced, High-quality Meals" : "Niedrige Kosten für ausgewogene, hochwertige Mahlzeiten"}</li>
+              <li>{language === "en" ? "Suitable for a Wide Range of Locations" : "Suitable for a Wide Range of Locations"}</li>
+              <li>{language === "en" ? "Sustainable Practices, Reducing Waste" : "Nachhaltige Praktiken, Müllreduktion"}</li>
             </ul>
           </Link>
         </div>

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from "../language";
+
 
 const InstagramButton = () => {
+  const { language } = useLanguage();
   const handleInstagramClick = () => {
     window.open('https://www.instagram.com/smartfoodie_gmbh?igsh=MmpkNjI4Y3E2anQ1&utm_source=qr', '_blank');
   };
@@ -29,7 +32,7 @@ const InstagramButton = () => {
           <img src="./ins.png" alt="Instagram" className="w-7 h-7" />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
-          Follow us on Instagram
+          {language === "en" ? "Follow us on Instagram" : "Folgen Sie uns auf Instagram"}
         </div>
       </div>
       
@@ -42,7 +45,7 @@ const InstagramButton = () => {
           <img src="./In.png" alt="LinkedIn" className="w-7 h-7" />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
-          Follow us on LinkedIn
+          {language === "en" ? "Follow us on LinkedIn" : "Folgen Sie uns auf LinkedIn"}
         </div>
       </div>
     </div>

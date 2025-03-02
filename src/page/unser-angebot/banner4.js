@@ -1,23 +1,25 @@
 import React from "react";
-
-const products = [
-  { name: "Eggplant in Sweet and Sour Sauce.", img: "./95.png", tag: ["vegan", "main"] },
-  { name: "Tender Beef with Peppers", img: "./81.png", tag: ["non-vegan","main"] },
-  {
-    name: "Tender Beef with Vegetables and Black Pepper",
-    img: "./90.png",
-    tag: ["non-vegan","main"],
-  },
-  { name: "Stuffed Buns with Pork", img: "./84.png", tag: ["non-vegan","dimSum"] },
-  { name: "Beef Rib Stew with Potatoes", img: "./91.png", tag: ["non-vegan","main"] },
-  { name: "Spaghetti Bolognese", img: "./86.png", tag: ["non-vegan","main"] },
-  { name: "Chili Con Carne", img: "./87.png", tag: ["non-vegan","main"] },
-  { name: "Pork Belly Fried with Peppers", img: "./88.png", tag: ["non-vegan","main"] },
-  { name: "Tender Lamb Fried with Cumin", img: "./89.png", tag: ["non-vegan","main"] },
-];
+import { useLanguage } from "../../language";
 
 const ProductList = () => {
   const [activeFilter, setActiveFilter] = React.useState([]);
+  const { language } = useLanguage();
+
+  const products = [
+    { name: language === "en" ? "Eggplant in Sweet and Sour Sauce" : "Auberginen in Süß-Sauer-Sauce", img: "./95.png", tag: ["vegan", "main"] },
+    { name: language === "en" ? "Tender Beef with Peppers" : "Gemüse- und Pfefferkörpersteak", img: "./81.png", tag: ["non-vegan","main"] },
+    {
+      name: language === "en" ? "Tender Beef with Vegetables and Black Pepper" : "Gemüse- und Pfefferkörpersteak",
+      img: "./90.png",
+      tag: ["non-vegan","main"],
+    },
+    { name: language === "en" ? "Stuffed Buns with Pork" : "Pork-gefüllte Buns", img: "./84.png", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindfleisch-Kartoffel-Stew", img: "./91.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./86.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./87.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Pork- und Pfefferkörpersteak", img: "./88.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Gemüse- und Pfefferkörpersteak", img: "./89.png", tag: ["non-vegan","main"] },
+  ];
 
   const toggleFilter = (filter) => {
     setActiveFilter((prev) => 
@@ -45,29 +47,28 @@ const ProductList = () => {
 };
 
   const filteredProducts = products.filter(filterProducts);
-
   return (
     <div className="bg-gradient-to-br from-orange-100 to-white">
       <div className="container mx-auto px-4 py-16 min-h-screen bg-transparent">
         {/* Title */}
         <h1 className="text-5xl font-bold text-center text-gray-800 mb-4">
-        Food is our passion.
+         {language === "en" ? "Food is our passion." : "Lebensmittel sind unsere Leidenschaft."}
         </h1>
         {/* Updated Headline */}
         <p className="text-xl text-center text-gray-600 mb-12">
-          Explore a curated selection of our diverse product offerings.
+          {language === "en" ? "Explore a curated selection of our diverse product offerings." : "Entdecken Sie eine ausgewählte Auswahl unserer vielfältigen Produktangebote."}
         </p>
         
         <div className="flex flex-col md:flex-row">
           {/* Filter Sidebar */}
           <aside className="w-full md:w-1/5 pr-6 mb-8 md:mb-0">
             <h2 className="text-xl font-bold text-orange-500 mb-4">
-              Filter by:
+              {language === "en" ? "Filter by:" : "Filtern nach:"}
             </h2>
 
             <div className="mb-6">
               <h3 className="text-sm font-bold text-gray-700 mb-3 uppercase tracking-wider">
-                Ingredients
+                {language === "en" ? "Ingredients" : "Zutaten"}
               </h3>
               <button 
                 className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
@@ -79,7 +80,7 @@ const ProductList = () => {
                 aria-pressed={activeFilter.includes('vegan')}
               >
                 <span className="flex items-center justify-center gap-2">
-                  🌱 <span className="font-medium">Vegan</span>
+                  🌱 <span className="font-medium">{language === "en" ? "Vegan" : "Vegan"}</span>
                 </span>
               </button>
               <div className="mb-4" />
@@ -93,13 +94,13 @@ const ProductList = () => {
                 aria-pressed={activeFilter.includes('non-vegan')}
               >
                 <span className="flex items-center justify-center gap-2">
-                  🍖 <span className="font-medium">Non-Vegan</span>
+                  🍖 <span className="font-medium">{language === "en" ? "Non-Vegan" : "Nicht-Vegan"}</span>
                 </span>
               </button>
             </div>
             <div className="mb-6">
               <h3 className="text-sm font-bold text-gray-700 mb-3 uppercase tracking-wider">
-                Dish Type
+                {language === "en" ? "Dish Type" : "Gerichtstyp"}
               </h3>
               <button 
                 className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
@@ -111,7 +112,7 @@ const ProductList = () => {
                 aria-pressed={activeFilter.includes('main')}
               >
                 <span className="flex items-center justify-center gap-2">
-                  🍽️ <span className="font-medium">Main Dish</span>
+                  🍽️ <span className="font-medium">{language === "en" ? "Main Dish" : "Hauptgericht"}</span>
                 </span>
               </button>
               <div className="mb-4" />
@@ -125,7 +126,7 @@ const ProductList = () => {
                 aria-pressed={activeFilter.includes('dimSum')}
               >
                 <span className="flex items-center justify-center gap-2">
-                  🥟 <span className="font-medium">Dim Sum</span>
+                  🥟 <span className="font-medium">{language === "en" ? "Dim Sum" : "Dim Sum"}</span>
                 </span>
               </button>
             </div>
@@ -147,7 +148,7 @@ const ProductList = () => {
                   {product.tag && (
                     <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
                       {product.tag.includes("vegan") ? "🌱 " : "🍖 "}
-                      {product.tag.includes("dimSum") ? "Dim Sum" : "Main Dish"}
+                      {product.tag.includes("dimSum") ? "Dim Sum" : language === "en" ? "Main Dish" : "Hauptgericht"}
                     </span>
                   )}
                 </div>
@@ -162,7 +163,7 @@ const ProductList = () => {
         </div>
         {/* New Headline */}
         <h2 className="text-2xl font-bold text-center text-gray-600 mt-16">
-          Stay tuned for more exciting options available...
+          {language === "en" ? "Stay tuned for more exciting options available..." : "Bleiben Sie dran für weitere spannende Optionen..."}
         </h2>
       </div>
     </div>

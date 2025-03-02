@@ -1,19 +1,22 @@
 import React from 'react';
 import './news.css';  
+import { useLanguage } from '../../language';
 
 const News = () => {
+  const { language } = useLanguage();
+
   const newsData = [
     {
       id: 1,
-      title: "Founding of SmartFoodie GmbH",
-      summary: "Today, we are established!",
+      title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
+      summary: language === "en" ? "Today, we are established!" : "Heute sind wir gegründet!",
       date: "22-02-2024",
       image: "./SF.jpg"
     },
     {
         id: 2,
-        title: "Spring Festival in Munich",
-        summary: "We served as a food supplier at the Chinese Spring Festival event in Munich!",
+        title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",
+        summary: language === "en" ? "We served as a food supplier at the Chinese Spring Festival event in Munich!" : "Wir haben als Food-Lieferant am chinesischen Frühlingsfest in München gearbeitet!",
         date: "26-01-2025",
         image: "./news2.jpg"
     },
@@ -30,8 +33,8 @@ const News = () => {
         SmartFoodie News
       </h1>
       <p style={{ textAlign: 'center', fontSize: '1.3em', marginBottom: '40px' }}>
-        Stay updated with the latest and greatest in the world of food!<br />
-        Dive into our exciting news articles and discover something new today!
+        {language === "en" ? "Stay updated with the latest and greatest in the world of food!" : "Bleiben Sie auf dem Laufenden mit den neuesten und größten Ereignissen in der Welt der Lebensmittel!"}<br />
+        {language === "en" ? "Dive into our exciting news articles and discover something new today!" : "Entdecken Sie etwas Neues heute in unseren spannenden Nachrichtenartikeln!"}
       </p>
       
       <div className="news-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

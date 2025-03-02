@@ -9,9 +9,12 @@ const Banner = () => {
 
           <ul className="mt-8 mb-10 space-y-6 text-[#2A1A1F] list-none text-lg">
             <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Convenience: On-site, freshly heated meals save time and effort.</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Affordability: Automated processes ensure high-quality meals at a low cost.</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Taste: Steam technology preserves flavors and nutrients for delicious meals.</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Sustainability: Eco-friendly packaging and locally sourced ingredients reduce environmental impact.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Affordability: Automation ensures high-quality meals at a low cost.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Taste: Steam technology for optimal flavor and preserving nutrients.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Fast: Freshly steamed, warm meals in under 2 minutes.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Sustainability: Eco-friendly packaging and locally sourced ingredients.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">No costs: No capital investment or additional effort required.</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">Risk-Free: Try it free for 3 months with no obligation.</li>
           </ul>
 
         {/*

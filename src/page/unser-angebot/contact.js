@@ -26,7 +26,7 @@ export default function Contact() {
           {/* Right half - content */}
           <div className="w-full md:w-3/5 p-8">
             <h2 className="text-4xl font-bold mb-8 text-gray-800">
-              Smart Foodie GmbH
+              SmartFoodie GmbH
             </h2>
             <div className="transform transition-transform duration-300">
               <div className="flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-orange-300 to-orange-500 p-6 rounded-xl shadow-lg">
@@ -37,7 +37,7 @@ export default function Contact() {
                 />
                 <div className="text-center md:text-left">
                   <h4 className="text-2xl font-semibold text-white mb-2">Theo Guo</h4>
-                  <p className="text-orange-100 mb-4">Managing Director</p>
+                  <p className="text-orange-100 mb-4">Sales Manager</p>
                   <div className="space-y-2">
                     <p className="text-white transition-colors">
                     📧 smartfoodie@smartfoodiegmbh.eu

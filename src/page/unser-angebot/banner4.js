@@ -1,7 +1,7 @@
 import React from "react";
 
 const products = [
-  { name: "Eggplant in Yuxiang Style", img: "./95.png", tag: ["vegan", "main"] },
+  { name: "Eggplant in Sweet and Sour Sauce.", img: "./95.png", tag: ["vegan", "main"] },
   { name: "Tender Beef with Peppers", img: "./81.png", tag: ["non-vegan","main"] },
   {
     name: "Tender Beef with Vegetables and Black Pepper",

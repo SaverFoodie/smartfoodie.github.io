@@ -12,20 +12,84 @@ const Arrow = ({ onClick, direction }) => {
   return (
     <button
       onClick={onClick}
-      className={`hidden sm:block absolute md:top-[85%] transform -translate-y-1/2 z-10 p-2 bg-transparent text-orange-500 rounded-full shadow-md hover:bg-gray-300 transition duration-300 ${
-        direction === "left" ? "left-1" : "right-1"
+      className={`hidden sm:block absolute md:top-[85%] lg:top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white bg-opacity-30 text-orange-500 rounded-full shadow-md hover:bg-gray-300 hover:bg-opacity-50 transition duration-300 ${
+        direction === "left" ? "left-1 md:left-2 lg:left-4" : "right-1 md:right-2 lg:right-4"
       }`}
     >
-      {direction === "left" ? <FaChevronLeft size={20} /> : <FaChevronRight size={20} />}
+      {direction === "left" ? <FaChevronLeft size={30} /> : <FaChevronRight size={30} />}
     </button>
   );
 };
 
-const Highlights = () => {
+// Reusable TouchableLink component to avoid code duplication
+const TouchableLink = ({ to, onClick, children }) => {
   const navigate = useNavigate();
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleClick = (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      return;
+    }
+    
+    if (to) {
+      navigate(to);
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } else if (onClick) {
+      onClick(e);
+    }
+  };
+
+  return (
+    <Link
+      className="outline-none focus:outline-none h-full flex flex-col"
+      onMouseDown={(e) => {
+        e.preventDefault();
+        setStartPos({ x: e.clientX, y: e.clientY });
+        setIsDragging(false);
+      }}
+      onTouchStart={(e) => {
+        setStartPos({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setIsDragging(false);
+      }}
+      onMouseMove={(e) => {
+        const deltaX = Math.abs(e.clientX - startPos.x);
+        const deltaY = Math.abs(e.clientY - startPos.y);
+        if (deltaX > 30 || deltaY > 30) {
+          setIsDragging(true); 
+        }
+      }}
+      onTouchMove={(e) => {
+        const deltaX = Math.abs(e.touches[0].clientX - startPos.x);
+        const deltaY = Math.abs(e.touches[0].clientY - startPos.y);
+        if (deltaX > 30 || deltaY > 30) {
+          setIsDragging(true);
+        }
+      }}
+      onMouseUp={(e) => {
+        if (isDragging) {
+          e.preventDefault();
+          return;
+        }
+      }}
+      onTouchEnd={(e) => {
+        if (isDragging) {
+          e.preventDefault();
+          return;
+        }
+      }}
+      onClick={handleClick}
+    >
+      {children}
+    </Link>
+  );
+};
+
+const Highlights = () => {
   const { language } = useLanguage();
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -34,154 +98,88 @@ const Highlights = () => {
     autoplaySpeed: 3500,
     prevArrow: <Arrow direction="left" />,
     nextArrow: <Arrow direction="right" />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 3000
+        }
+      }
+    ]
   };
-  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
+
+  const handleSliderBottomScroll = () => {
+    const sliderElement = document.querySelector(".slick-slider");
+    if (sliderElement) {
+      const sliderBottom = sliderElement.getBoundingClientRect().bottom + window.scrollY;
+      window.scrollTo({ top: sliderBottom, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="py-16 text-center bg-white">
-      <h2 className="text-5xl font-bold text-orange-600 mb-10">{language === "en" ? "The Distinctive Excellence of SmartFoodie" : "Die Ausgezeichnete Qualität von SmartFoodie"}</h2>
-      <p className="text-gray-700 font-sans mb-12 mx-auto max-w-5xl text-xl">
+    <section className="py-8 md:py-12 lg:py-16 text-center bg-white px-4 md:px-6 lg:px-8">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-4 sm:mb-6 md:mb-8 lg:mb-10">{language === "en" ? "The Distinctive Excellence of SmartFoodie" : "Die Ausgezeichnete Qualität von SmartFoodie"}</h2>
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-sans mb-6 sm:mb-8 md:mb-10 lg:mb-12 mx-auto max-w-5xl px-2 sm:px-4">
       {language === "en" ? "SmartFoodie GmbH provides innovative and sustainable catering solutions through fully automatic vending machines with steamers, delivering freshly steamed meals in just 2 minutes. We cater to companies, universities, and institutions without a canteen or looking to expand their food options. Our mission is to combine convenience, efficiency, and nutrition, ensuring high-quality, hot meals anytime for you and your employees." : "SmartFoodie GmbH stellt innovative und nachhaltige Catering-Lösungen bereit, indem sie vollautomatische Vending-Maschinen mit Dampfern verwenden, die frisch gedämpften Mahlzeiten in nur 2 Minuten liefern. Wir kümmern uns um Unternehmen, Universitäten und Institutionen, die keinen Essensraum oder eine Erweiterung ihrer Essensoptionen suchen. Unsere Mission ist es, Bequemlichkeit, Effizienz und Nährstoffe zu vereinen, um sicherzustellen, dass hochwertige, heiße Mahlzeiten jederzeit für Sie und Ihre Mitarbeiter verfügbar sind."}
       </p>
 
-      <Slider {...settings} className="w-[60%] mx-auto h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[84vh]">
-        <div className="bg-[#F7E14D] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
-        <Link
-          className="outline-none focus:outline-none"
-          onMouseDown={(e) => {
-            e.preventDefault();
-            setStartPos({ x: e.clientX, y: e.clientY });
-            setIsDragging(false);
-          }}
-          onMouseMove={(e) => {
-            const deltaX = Math.abs(e.clientX - startPos.x);
-            const deltaY = Math.abs(e.clientY - startPos.y);
-            if (deltaX > 30 || deltaY > 30) {
-              setIsDragging(true); 
-            }
-          }}
-          onMouseUp={(e) => {
-            if (isDragging) {
-              e.preventDefault();
-              return;
-            }
-          }}
-          onClick={(e) => {
-            if (isDragging) {
-              e.preventDefault(); 
-              return;
-            } else {
-              navigate("/our-food");
-              window.scrollTo({ top: 0, behavior: "instant" });
-            }
-          }}
-        >
+      <Slider {...settings} className="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto h-auto">
+        <div className="bg-[#F7E14D] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
+          <TouchableLink to="/our-food">
             <img
               src="./food.png"
               alt="Our Food"
-              className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-cover mb-2 md:mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Food" : "Unser Essen"}</h3>
-            <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Food" : "Unser Essen"}</h3>
+            <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
               <li>{language === "en" ? "Fresh Ingredients, Various Dishes" : "Frische Zutaten, verschiedene Mahlzeiten"}</li>
               <li>{language === "en" ? "Customizable Menu Options, Including Vegan Options" : "Anpassbare Menüoptionen, einschließlich Vegan-Optionen"}</li>
               <li>{language === "en" ? "Natural Flavor and Firmer Texture" : "Natürlicher Geschmack und festerer Textur"}</li>
             </ul>
-          </Link>
+          </TouchableLink>
         </div>
         
-        <div className="bg-[#ffb700] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
-          <Link
-            className="outline-none focus:outline-none"
-            onMouseDown={(e) => {
-              e.preventDefault();
-              setStartPos({ x: e.clientX, y: e.clientY });
-              setIsDragging(false);
-            }}
-            onMouseMove={(e) => {
-              const deltaX = Math.abs(e.clientX - startPos.x);
-              const deltaY = Math.abs(e.clientY - startPos.y);
-              if (deltaX > 30 || deltaY > 30) {
-                setIsDragging(true); 
-              }
-            }}
-            onMouseUp={(e) => {
-              if (isDragging) {
-                e.preventDefault();
-                return;
-              }
-            }}
-            onClick={(e) => {
-              if (isDragging) {
-                e.preventDefault(); 
-                return;
-              } else {
-                navigate("/products&solutions");
-                window.scrollTo({ top: 0, behavior: "instant" });
-              }
-            }}
-          >
+        <div className="bg-[#ffb700] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
+          <TouchableLink to="/products&solutions">
             <img
               src="./highlight2.jpg"
               alt="Our Service"
-              className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-cover mb-2 md:mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Solutions" : "Unsere Lösungen"}</h3>
-            <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Solutions" : "Unsere Lösungen"}</h3>
+            <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
               <li>{language === "en" ? "Fully Automated Food Vending Machines, Non Special Catering Space Required" : "Voll automatische Mahlzeitenautomaten, kein spezialisiertes Catering-Raum erforderlich"}</li>
               <li>{language === "en" ? "24/7 Operation and Technical Support, Always Available For You" : "24/7 Betrieb und technische Unterstützung, immer für Sie verfügbar"}</li>
               <li>{language === "en" ? "Convenient and Efficient On-Site Catering Solutions" : "Bequem und effiziente On-Site Catering-Lösungen"}</li>
             </ul>
-          </Link>
+          </TouchableLink>
         </div>
 
-        <div className="bg-[#81D8D0] flex flex-col rounded-3xl transition-transform transform" style={{ height: '70vh' }}>
-          <Link
-            className="outline-none focus:outline-none"
-            onMouseDown={(e) => {
-              e.preventDefault();
-              setStartPos({ x: e.clientX, y: e.clientY });
-              setIsDragging(false);
-            }}
-            onMouseMove={(e) => {
-              const deltaX = Math.abs(e.clientX - startPos.x);
-              const deltaY = Math.abs(e.clientY - startPos.y);
-              if (deltaX > 30 || deltaY > 30) {
-                setIsDragging(true); 
-              }
-            }}
-            onMouseUp={(e) => {
-              if (isDragging) {
-                e.preventDefault();
-                return;
-              }
-            }}
-            onClick={(e) => {
-              if (isDragging) {
-                e.preventDefault(); 
-                return;
-              } else {
-                const sliderElement = document.querySelector(".slick-slider");
-                if (sliderElement) {
-                  const sliderBottom = sliderElement.getBoundingClientRect().bottom + window.scrollY;
-                  window.scrollTo({ top: sliderBottom, behavior: "smooth" });
-                }
-              }
-            }}
-          >
+        <div className="bg-[#81D8D0] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
+          <TouchableLink onClick={handleSliderBottomScroll}>
             <img
               src="./office.png"
               alt="Our Innovation"
-              className="rounded-t-3xl w-full h-[21vh] sm:h-[31vh] md:h-[42vh] lg:h-[64vh] object-fill mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-cover mb-2 md:mb-4"
             />
-            <h3 className="text-3xl font-bold text-gray-800 mb-6 mt-6">{language === "en" ? "Our Advantages" : "Unsere Vorteile"}</h3>
-            <ul className="text-gray-700 text-xl space-y-2 text-center flex-grow min-h-[15vh] overflow-auto">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Advantages" : "Unsere Vorteile"}</h3>
+            <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
               <li>{language === "en" ? "Low Costs for Balanced, High-quality Meals" : "Niedrige Kosten für ausgewogene, hochwertige Mahlzeiten"}</li>
               <li>{language === "en" ? "Suitable for a Wide Range of Locations" : "Suitable for a Wide Range of Locations"}</li>
               <li>{language === "en" ? "Sustainable Practices, Reducing Waste" : "Nachhaltige Praktiken, Müllreduktion"}</li>
             </ul>
-          </Link>
+          </TouchableLink>
         </div>
       </Slider>
     </section>

@@ -27,25 +27,40 @@ const News = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh' }}>
-      <div style={{ height: '60px' }}></div>
-      <h1 className="headline" style={{ fontWeight: 'bold', fontSize: '3em', textAlign: 'center', marginTop: '0px', marginBottom: '40px', fontFamily: 'Arial, sans-serif' }}>
-        SmartFoodie News
+    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '0 15px' }}>
+      <h1 
+        className="headline" 
+        style={{ 
+          fontWeight: 'bold', 
+          fontSize: 'clamp(2em, 5vw, 3em)', 
+          textAlign: 'center', 
+          marginTop: '50px', 
+          marginBottom: '30px', 
+          fontFamily: 'Arial, sans-serif' 
+        }}
+      >
+        {language === "en" ? "Savoring Moments Together." : "Gemeinsam Augenblicke Genießen."}
       </h1>
-      <p style={{ textAlign: 'center', fontSize: '1.3em', marginBottom: '40px' }}>
-        {language === "en" ? "Stay updated with the latest and greatest in the world of food!" : "Bleiben Sie auf dem Laufenden mit den neuesten und größten Ereignissen in der Welt der Lebensmittel!"}<br />
-        {language === "en" ? "Dive into our exciting news articles and discover something new today!" : "Entdecken Sie etwas Neues heute in unseren spannenden Nachrichtenartikeln!"}
+      <p 
+        style={{ 
+          textAlign: 'center', 
+          fontSize: 'clamp(1em, 3vw, 1.3em)', 
+          marginBottom: '30px',
+          padding: '0 10px'
+        }}
+      >
+        {language === "en" ? "Journey with us through the ever-evolving tapestry of culinary delights," : "Reisen Sie mit uns durch die immer wachsende Tapete der kulinarischen Genießerlebnisse,"}<br />
+        {language === "en" ? "immerse yourself in our stories of flavor and innovation, where every bite tells a tale!" : "tauchen Sie ein in unsere Geschichten von Geschmack und Innovation, wo jeder Bissen eine Geschichte erzählt!"}
       </p>
       
-      <div className="news-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="news-container">
         {[...newsData].reverse().map(news => (
           <div 
             className="news-item" 
             key={news.id}
-            /////
-            // onClick={() => handleClick()}
-            /////
-            style={{ margin: '15px 15px' }}
+            onClick={() => handleClick()}
+            role="button"
+            tabIndex={0}
           >
             {news.image && (
               <div className="news-image-container">

@@ -1,4 +1,3 @@
-
 import Header from "./header";
 //import Footer from "./footer";
 //import Footer1 from "./footer1";
@@ -14,7 +13,9 @@ function  Layout() {
   return (
     <div>
         <Header></Header>
-        <Outlet></Outlet>
+        <div className="main-content" style={{ paddingTop: '64px' }}>
+          <Outlet></Outlet>
+        </div>
         {showScrollButton && <ScrollButton></ScrollButton>}
         {showInstagramButton && <InstagramButton></InstagramButton>} 
         {/*<Footer></Footer>*/}

@@ -89,3 +89,8 @@
   align-items: center; /* Center vertically */
   height: 100vh; /* Full height of the viewport */
 }
+
+.main-content {
+  padding-top: 64px; /* This matches the height of the header (h-16 = 64px in Tailwind) */
+  min-height: calc(100vh - 64px);
+}

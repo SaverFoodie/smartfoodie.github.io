@@ -27,9 +27,15 @@ const InstagramButton = () => {
         <button
           onClick={handleInstagramClick}
           className="bg-white text-white py-2 px-2 rounded-full shadow-lg hover:scale-110 transition mb-2"
-          style={{ zIndex: 1000 }}
+          style={{ 
+            zIndex: 1000,
+          }}
         >
-          <img src="./ins.png" alt="Instagram" className="w-7 h-7" />
+          <img 
+            src="./ins.png" 
+            alt="Instagram" 
+            className="w-7 h-7 sm:w-7 sm:h-7 w-5 h-5" 
+          />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
           {language === "en" ? "Follow us on Instagram" : "Folgen Sie uns auf Instagram"}
@@ -40,9 +46,15 @@ const InstagramButton = () => {
         <button
           onClick={handleLinkedInClick}
           className="bg-white text-white py-2 px-2 rounded-full shadow-lg hover:scale-110 transition"
-          style={{ zIndex: 1000 }}
+          style={{ 
+            zIndex: 1000,
+          }}
         >
-          <img src="./In.png" alt="LinkedIn" className="w-7 h-7" />
+          <img 
+            src="./In.png" 
+            alt="LinkedIn" 
+            className="w-7 h-7 sm:w-7 sm:h-7 w-5 h-5" 
+          />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
           {language === "en" ? "Follow us on LinkedIn" : "Folgen Sie uns auf LinkedIn"}

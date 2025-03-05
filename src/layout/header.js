@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Logo from "../logo";
 import { useLanguage } from "../language";
 
@@ -9,6 +9,25 @@ function Header() {
   const location = useLocation();
   const pathname = location.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && 
+          menuRef.current && 
+          !menuRef.current.contains(event.target) &&
+          menuButtonRef.current && 
+          !menuButtonRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
@@ -35,7 +54,7 @@ function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <ul className="flex items-center space-x-8">
+            <ul className="flex items-center space-x-8 font-semibold">
               <li 
                 className={`${pathname === "/home" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
                 onClick={() => handleNavigation("/home")}
@@ -84,6 +103,7 @@ function Header() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
+              ref={menuButtonRef}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={toggleMenu}
             >
@@ -103,27 +123,27 @@ function Header() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-          <ul className="space-y-2">
-            <li className="cursor-pointer px-3 py-2 rounded-md hover:bg-gray-100" onClick={() => handleNavigation("home")}>
+      <div ref={menuRef} className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="px-1 pt-1 pb-1 space-y-0.5 sm:px-2 bg-white shadow-lg">
+          <ul className="space-y-1">
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("home")}>
               {language === "en" ? "Home" : "Startseite"}
             </li>
-            <li className="cursor-pointer px-3 py-2 rounded-md hover:bg-gray-100" onClick={() => handleNavigation("products&solutions")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("products&solutions")}>
               {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
             </li>
-            <li className="cursor-pointer px-3 py-2 rounded-md hover:bg-gray-100" onClick={() => handleNavigation("our-food")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("our-food")}>
               {language === "en" ? "Our Food" : "Unser Essen"}
             </li>
-            <li className="cursor-pointer px-3 py-2 rounded-md hover:bg-gray-100" onClick={() => handleNavigation("news")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("news")}>
               {language === "en" ? "Company News" : "Firma News"}
             </li>
-            <li className="cursor-pointer px-3 py-2 rounded-md hover:bg-gray-100" onClick={() => handleNavigation("contact")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("contact")}>
               {language === "en" ? "Contact us" : "Kontakt"}
             </li>
-            <li className="px-3 py-2">
+            <li className="px-2 py-1">
               <select
-                className="language-button w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="language-button w-full px-2 py-1 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={language}
                 onChange={(e) => handleLanguageChange(e.target.value)}
               >

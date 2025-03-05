@@ -7,10 +7,28 @@ function HomeFooter() {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [showBackground, setShowBackground] = React.useState(window.innerWidth > 768);
+  const [fontSize, setFontSize] = React.useState(getFontSize(window.innerWidth));
+  const [containerHeight, setContainerHeight] = React.useState(getContainerHeight(window.innerWidth));
+
+  function getFontSize(width) {
+    if (width <= 480) return '1.1em';      // Mobile
+    if (width <= 768) return '1.4em';      // Tablet
+    if (width <= 1024) return '1.7em';     // Small desktop
+    return '2em';                          // Large desktop
+  }
+
+  function getContainerHeight(width) {
+    if (width <= 480) return '60vh';       // Mobile
+    if (width <= 768) return '70vh';       // Tablet
+    if (width <= 1024) return '80vh';      // Small desktop
+    return '85vh';                         // Large desktop
+  }
 
   React.useEffect(() => {
     const handleResize = () => {
       setShowBackground(window.innerWidth > 768);
+      setFontSize(getFontSize(window.innerWidth));
+      setContainerHeight(getContainerHeight(window.innerWidth));
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -19,14 +37,20 @@ function HomeFooter() {
   const containerStyle = {
     ...styles.warmthButtonContainer,
     backgroundImage: showBackground ? 'url("./back2.jpg")' : 'none',
+    height: containerHeight,
+  };
+
+  const textStyle = {
+    ...styles.warmthText,
+    fontSize: fontSize,
   };
 
   return (
     <div style={containerStyle}>
-      <p style={styles.warmthText}>{language === "en" ? "Infusing every dish with warmth and flavor." : "Mit Wärme und Geschmack in jede Mahlzeit einfließen."}</p>
-      <p style={styles.warmthText}>{language === "en" ? "Experience the future with our smart meal vendering solutions." : "Erleben Sie die Zukunft mit unseren intelligenten Mahlzeitenautomaten."}</p>
-      <p style={styles.warmthText}>{language === "en" ? "Join us for a taste of something unique!" : "Treten Sie uns bei, um etwas Einzigartiges zu erleben!"}</p>
-      <p style={styles.warmthText}>{language === "en" ? "Made with Love in Munich." : "Gemacht mit Liebe in München."}</p>
+      <p style={textStyle}>{language === "en" ? "Infusing every dish with warmth and flavor." : "Mit Wärme und Geschmack in jede Mahlzeit einfließen."}</p>
+      <p style={textStyle}>{language === "en" ? "Experience the future with our smart meal vendering solutions." : "Erleben Sie die Zukunft mit unseren intelligenten Mahlzeitenautomaten."}</p>
+      <p style={textStyle}>{language === "en" ? "Join us for a taste of something unique!" : "Treten Sie uns bei, um etwas Einzigartiges zu erleben!"}</p>
+      <p style={textStyle}>{language === "en" ? "Made with Love in Munich." : "Gemacht mit Liebe in München."}</p>
       <button className="px-6 py-3 bg-[#F16E21] text-white rounded-full text-lg font-bold mt-7 hover:bg-orange-600 transition"
           onClick={() => {
             navigate('/contact');
@@ -57,7 +81,6 @@ const styles = {
     paddingTop: '15vh',
   },
   warmthText: {
-    fontSize: '1.7em', 
     marginBottom: '15px', 
     color: 'black',
   },

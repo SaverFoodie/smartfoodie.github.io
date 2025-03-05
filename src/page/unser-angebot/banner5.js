@@ -27,14 +27,14 @@ const News = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '0 15px' }}>
+    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
       <h1 
         className="headline" 
         style={{ 
           fontWeight: 'bold', 
           fontSize: 'clamp(2em, 5vw, 3em)', 
           textAlign: 'center', 
-          marginTop: '50px', 
+          marginTop: '0px',
           marginBottom: '30px', 
           fontFamily: 'Arial, sans-serif' 
         }}

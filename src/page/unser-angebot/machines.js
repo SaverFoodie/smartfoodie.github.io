@@ -12,7 +12,7 @@ const FoodieMachine = () => {
       ></div>
       
       {/* Content container */}
-      <div className="flex flex-col items-center md:items-start md:justify-center md:h-full md:bg-gray-300 md:bg-opacity-10 md:relative md:z-10">
+      <div className="flex flex-col items-center md:items-start md:justify-center md:h-full bg-orange-100 md:bg-gray-300 md:bg-opacity-10 md:relative md:z-10">
         {/* Text content - centered on small screens, positioned on the right on large screens */}
         <div className="w-full px-6 py-8 md:py-0 md:ml-[45%] md:max-w-[55%] md:pr-8">
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 drop-shadow-lg text-center md:text-left md:ml-6">

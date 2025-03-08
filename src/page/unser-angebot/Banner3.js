@@ -12,7 +12,7 @@ function OurFood() {
       opacity: 1, 
       y: 0,
       transition: { 
-        duration: 0.8,
+        duration: 1.2,
         ease: "easeOut"
       }
     },
@@ -38,7 +38,7 @@ function OurFood() {
           initial="hidden"
           whileInView="visible"
           exit="exit"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInVariants}
         >
           <img src="./1.jpg" alt="Pasta Dish" className="w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto aspect-square object-cover rounded-2xl shadow-xl" /> 
@@ -65,7 +65,7 @@ function OurFood() {
           initial="hidden"
           whileInView="visible"
           exit="exit"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInVariants}
         >
           <div className="flex flex-col justify-center items-center text-center max-w-full lg:max-w-[600px] p-4 order-2 lg:order-1"> 
@@ -92,7 +92,7 @@ function OurFood() {
           initial="hidden"
           whileInView="visible"
           exit="exit"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInVariants}
         >
           <img src="./box.jpg" alt="Pasta Dish" className="w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto aspect-square object-cover rounded-2xl shadow-xl" /> 

@@ -33,22 +33,29 @@ const FoodieSteps = () => {
         },
         {
           number: "03",
-          image: "85.png",
+          image: "step3.png",
           description: language === "en" ? "Enjoy your delicious meal" : "Genießen Sie Ihre köstliche Mahlzeit"
         }].map((step, index) => (
-          <div key={index} className="flex items-start space-x-3 sm:space-x-4 transition-transform transform hover:scale-105">
-            {/* Step Number */}
-            <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#ff7043] text-white rounded-full font-semibold text-base sm:text-lg shadow-md">
+          <div key={index} className="flex sm:items-start sm:space-x-4 transition-transform transform hover:scale-105">
+            {/* Step Number - Hidden on small screens */}
+            <div className="hidden sm:flex flex-shrink-0 items-center justify-center w-10 h-10 bg-[#ff7043] text-white rounded-full font-semibold text-lg shadow-md">
               {step.number}
             </div>
 
             {/* Step Content */}
-            <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-lg p-3 sm:p-4 space-y-2 sm:space-y-0 sm:space-x-4 w-full h-auto sm:h-40 hover:shadow-xl transition-shadow duration-300">
-              <img
-                src={step.image}
-                alt={`Step ${step.number}`}
-                className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg shadow-sm mx-auto sm:mx-0"
-              />
+            <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-lg p-3 sm:p-4 space-y-2 sm:space-y-0 sm:space-x-4 w-full h-auto sm:h-40 hover:shadow-xl transition-shadow duration-300 relative">
+              {/* Step Number - Visible only on small screens, positioned at top left */}
+              <div className="absolute top-2 left-2 flex sm:hidden items-center justify-center w-8 h-8 bg-[#ff7043] text-white rounded-full font-semibold text-base shadow-md z-10">
+                {step.number}
+              </div>
+              
+              <div className="w-32 h-32 sm:w-32 sm:h-32 flex-shrink-0 flex items-center justify-center mx-auto sm:mx-0">
+                <img
+                  src={step.image}
+                  alt={`Step ${step.number}`}
+                  className="w-full h-full object-fill rounded-lg shadow-sm"
+                />
+              </div>
               <p className="text-gray-800 font-medium text-lg sm:text-xl lg:text-2xl text-center sm:text-left flex items-center justify-center h-full break-words leading-relaxed">
                 {step.description}
               </p>

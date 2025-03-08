@@ -1,8 +1,31 @@
 import React from 'react';
 import { useLanguage } from '../../language';
+import { motion } from 'framer-motion';
 
 function OurFood() {
   const { language } = useLanguage();
+  
+  // 定义动画变体
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      y: -50,
+      transition: { 
+        duration: 0.5,
+        ease: "easeIn"
+      }
+    }
+  };
+  
   return (
     <>
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 tracking-wider mx-auto leading-relaxed italic mb-6 md:mb-10 mt-4 md:mt-5 px-4">
@@ -10,7 +33,14 @@ function OurFood() {
       </div>
       <div className="flex flex-col items-center p-4 md:p-8 lg:p-10 font-['Poppins',sans-serif] bg-[#FFFBE6] gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto rounded-3xl md:rounded-[50px]">
         
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4">
+        <motion.div 
+          className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4"
+          initial="hidden"
+          whileInView="visible"
+          exit="exit"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInVariants}
+        >
           <img src="./1.jpg" alt="Pasta Dish" className="w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto aspect-square object-cover rounded-2xl shadow-xl" /> 
           <div className="flex flex-col justify-center items-center text-center max-w-full lg:max-w-[600px] p-4"> 
             <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide">
@@ -28,8 +58,16 @@ function OurFood() {
               </li>
             </ul>
           </div>
-        </div>       
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4">
+        </motion.div>       
+        
+        <motion.div 
+          className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4"
+          initial="hidden"
+          whileInView="visible"
+          exit="exit"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInVariants}
+        >
           <div className="flex flex-col justify-center items-center text-center max-w-full lg:max-w-[600px] p-4 order-2 lg:order-1"> 
             <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide">
               {language === "en" ? "Diverse, Delicious and Nutritious" : "Vielseitig, Geschmackvoll und Nährstoffreich"}
@@ -47,8 +85,16 @@ function OurFood() {
             </ul>
           </div>
           <img src="./2.jpg" alt="Pasta Dish" className="w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto aspect-square object-cover rounded-2xl shadow-xl order-1 lg:order-2" /> 
-        </div>       
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4">
+        </motion.div>       
+        
+        <motion.div 
+          className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4"
+          initial="hidden"
+          whileInView="visible"
+          exit="exit"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInVariants}
+        >
           <img src="./box.jpg" alt="Pasta Dish" className="w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto aspect-square object-cover rounded-2xl shadow-xl" /> 
           <div className="flex flex-col justify-center items-center text-center max-w-full lg:max-w-[600px] p-4"> 
             <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide">
@@ -66,7 +112,7 @@ function OurFood() {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import './news.css';  
 import { useLanguage } from '../../language';
+import { useNavigate } from 'react-router-dom';
 
 const News = () => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
 
   const newsData = [
     {
@@ -11,19 +13,23 @@ const News = () => {
       title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
       summary: language === "en" ? "Today, we are established!" : "Heute sind wir gegründet!",
       date: "22-02-2024",
-      image: "./SF.jpg"
+      image: "./SF.jpg",
+      docFile: "Founding of SmartFoodie GmbH.docx"
     },
     {
         id: 2,
         title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",
         summary: language === "en" ? "We served as a food supplier at the Chinese Spring Festival event in Munich!" : "Wir haben als Food-Lieferant am chinesischen Frühlingsfest in München gearbeitet!",
         date: "26-01-2025",
-        image: "./news2.jpg"
+        image: "./news2.jpg",
+        docFile: "spring festival.docx"
     },
   ];
 
-  const handleClick = (url) => {
-    window.open(url || 'about:blank', '_blank');
+  const handleClick = (newsId) => {
+    // Navigate to the news detail page with the news ID
+    navigate(`/news/${newsId}`);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   return (
@@ -58,7 +64,7 @@ const News = () => {
           <div 
             className="news-item" 
             key={news.id}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(news.id)}
             role="button"
             tabIndex={0}
           >

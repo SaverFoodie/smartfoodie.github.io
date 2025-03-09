@@ -22,6 +22,7 @@ import News from "./page/unser-angebot/banner5";
 import Contact from "./page/unser-angebot/contact";
 import FoodiePlaces from "./page/unser-angebot/places";
 import { LanguageProvider } from "./language";
+import NewsDetail from "./page/unser-angebot/NewsDetails";
 
 const router = createHashRouter([
   {
@@ -57,6 +58,10 @@ const router = createHashRouter([
       {
         path: "contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "news/:newsId",
+        element: <NewsDetail />
       },
     ],
   },

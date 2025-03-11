@@ -52,13 +52,31 @@ const NewsDetails = () => {
         setNewsItem(item);
         const filePath = `${process.env.PUBLIC_URL}/news/${item.docFile}`;
         
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', filePath, true);
-        xhr.responseType = 'arraybuffer';
+        const loadDocument = () => {
+          return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.responseType = 'arraybuffer';
+            
+            xhr.onload = function() {
+              if (xhr.status === 200) {
+                resolve(xhr.response);
+              } else {
+                reject(new Error(language === "en" ? "Failed to load document" : "Dokument konnte nicht geladen werden"));
+              }
+            };
+            
+            xhr.onerror = function() {
+              reject(new Error(language === "en" ? "Failed to load document" : "Dokument konnte nicht geladen werden"));
+            };
+            
+            xhr.send();
+          });
+        };
         
-        xhr.onload = async function() {
-          if (xhr.status === 200) {
-            const arrayBuffer = xhr.response;
+        const retryLoad = async (retries = 0, maxRetries = 10) => {
+          try {
+            const arrayBuffer = await loadDocument();
             
             await renderAsync(arrayBuffer, containerRef.current, null, {
               className: 'docx-container',
@@ -110,19 +128,18 @@ const NewsDetails = () => {
                 docxWrapper.style.backgroundColor = 'transparent';
               }
             }
-            
             setLoading(false);
-          } else {
-            throw new Error(language === "en" ? "Failed to load document" : "Dokument konnte nicht geladen werden");
+          } catch (err) {
+            if (retries < maxRetries) {
+              setTimeout(() => retryLoad(retries + 1, maxRetries), 3000);
+            } else {
+              setError(language === "en" ? "Failed to load document after multiple attempts, please try refresh the page again later" : "Dokument konnte nach mehreren Versuchen nicht geladen werden, bitte versuchen Sie, die Seite später noch einmal zu aktualisieren.");
+              setLoading(false);
+            }
           }
         };
         
-        xhr.onerror = function() {
-          setError(language === "en" ? "Failed to load document" : "Dokument konnte nicht geladen werden");
-          setLoading(false);
-        };
-        
-        xhr.send();
+        retryLoad();
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -198,7 +215,26 @@ const NewsDetails = () => {
         
         {loading && (
           <div className="loading-container" style={{ textAlign: 'center', padding: '50px' }}>
-            <p>{language === "en" ? "Loading document..." : "Dokument wird geladen..."}</p>
+            <div className="loading-spinner" style={{
+              width: '40px',
+              height: '40px',
+              margin: '0 auto',
+              border: '4px solid rgba(249, 115, 22, 0.2)',
+              borderTop: '4px solid #f97316',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite'
+            }}></div>
+            <p style={{ marginTop: '15px' }}>
+              {language === "en" ? "Loading document..." : "Dokument wird geladen..."}
+            </p>
+            <style>
+              {`
+                @keyframes spin {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
+                }
+              `}
+            </style>
           </div>
         )}
         

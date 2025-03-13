@@ -17,7 +17,7 @@ const Introduct = () => {
                   </>
                 : <>
                     <span className="md:hidden">Nächste Generation Mahlzeitenautomaten</span>
-                    <span className="hidden sm:hidden md:hidden lg:inline">Nächste Generation Mahlzeitenautomaten – Warmes Essen irgendwann, irgendwo.</span>
+                    <span className="hidden sm:hidden md:hidden lg:inline">Next-Gen Lebensmittelautomaten – Warme Speisen jederzeit und überall.</span>
                   </>
               }
             </p>

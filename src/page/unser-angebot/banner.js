@@ -11,13 +11,13 @@ const Banner = () => {
           </h1>
 
           <ul className="mt-4 sm:mt-6 lg:mt-8 mb-6 sm:mb-8 lg:mb-10 space-y-4 md:space-y-6 text-[#2A1A1F] list-none text-base sm:text-lg">
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Convenience: On-site, freshly heated meals save time and effort." : "Bequem: Mahlzeiten auf dem Standort, frisch erhitzt, sparen Zeit und Mühe."}</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Affordability: Automation ensures high-quality meals at a low cost." : "Günstig: Automatisierung sorgt für hochwertige Mahlzeiten zu niedrigen Kosten."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Convenience: On-site, freshly heated meals save time and effort." : "Komfort: Vor Ort frisch erwärmte Mahlzeiten - spart Zeit und Aufwand."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Affordability: Automation ensures high-quality meals at a low cost." : "Erschwinglichkeit: Automatisierung gewährleistet hochwertige Mahlzeiten zu niedrigen Kosten."}</li>
             <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Taste: Steam technology for optimal flavor and preserving nutrients." : "Geschmack: Dampftechnologie für optimalen Geschmack und Erhaltung von Nährstoffen."}</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Fast: Freshly steamed, warm meals in under 2 minutes." : "Schnell: Frisch gedämpft, warm in unter 2 Minuten."}</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Sustainability: Eco-friendly packaging and locally sourced ingredients." : "Nachhaltigkeit: Umweltfreundliche Verpackung und lokal eingesetzte Zutaten."}</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "No costs: No capital investment or additional effort required." : "Keine Kosten: Keine Kapitalinvestition oder zusätzliche Anstrengungen erforderlich."}</li>
-            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Risk-Free: Try it free for 3 months with no obligation." : "Keine Risiken: Versuchen Sie es kostenlos für 3 Monate mit keinerlei Verpflichtung."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Fast: Freshly steamed, warm meals in under 2 minutes." : "Schnell: Genießen Sie frisch gedämpfte, warme Mahlzeiten in weniger als 2 Minuten."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Sustainability: Eco-friendly packaging and locally sourced ingredients." : "Nachhaltigkeit: Umweltfreundliche Verpackungen und Zutaten aus der Region."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "No costs: No capital investment or additional effort required." : "Kostenlos: Keine Investition oder zusätzlicher Aufwand erforderlich."}</li>
+            <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Risk-Free: Try it free for 3 months with no obligation." : "Keine Risiken: Testen Sie unser Angebot 3 Monate lang kostenlos und unverbindlich."}</li>
           </ul>
 
         </div>

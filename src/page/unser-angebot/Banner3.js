@@ -48,13 +48,13 @@ function OurFood() {
             </h1>
             <ul className="mt-4 md:mt-6 list-none px-4 md:px-6 mb-4 md:mb-5 text-[#222222]">
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Fresh & Hot Meals - Meals are heated using steam, preserving nutrients and flavor." : "Frisch & Warm Mahlzeiten - Mahlzeiten werden mit Dampf erhitzt, um Nährstoffe und Geschmack zu erhalten."}
+                {language === "en" ? "Fresh & Hot Meals - Meals are heated using steam, preserving nutrients and flavor." : "Frisch & Warm Mahlzeiten - Mahlzeiten werden dampfgegart, wodurch Nährstoffe und Geschmack erhalten bleiben."}
               </li>
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Time-Saving & Hassle-Free - Skip the restaurant trip, hot meals on site for maximum convenience." : "Zeitsparend & Stressfrei - kein Restaurantbesuch, warm Mahlzeiten auf dem Standort für maximale Bequemlichkeit."}
+                {language === "en" ? "Time-Saving & Hassle-Free - Skip the restaurant trip, hot meals on site for maximum convenience." : "Zeitsparend & Stressfrei - Sparen Sie sich den Weg ins Restaurant und genießen Sie warme Mahlzeiten direkt vor Ort für maximalen Komfort."}
               </li>
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Affordable Excellence - Savor quality, flavorful meals at a price that fits everyone's budget." : "Günstige Auszeichnung - Genießen Sie Qualität, kulinarische Geschmacksknospen bei einem Preis, der jedem passt."}
+                {language === "en" ? "Affordable Excellence - Savor quality, flavorful meals at a price that fits everyone's budget." : "Preiswerte Spitzenqualität: Genießen Sie hochwertige, schmackhafte Gerichte zu einem budgetfreundlichen Preis.​"}
               </li>
             </ul>
           </div>
@@ -74,10 +74,10 @@ function OurFood() {
             </h1>
             <ul className="mt-4 md:mt-6 list-none px-4 md:px-6 mb-4 md:mb-5 text-[#222222]">
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Diverse & Customizable Menu - Over 50 dishes, including a variety of cuisines, with dietary-friendly options." : "Vielseitig & Anpassbar - Über 50 Mahlzeiten, einschließlich einer Vielzahl von Küchen, mit diätetisch freundlichen Optionen."}
+                {language === "en" ? "Diverse & Customizable Menu - Over 50 dishes, including a variety of cuisines, with dietary-friendly options." : "Umfangreiches & anpassbares Menü: Mehr als 50 Gerichte aus verschiedenen Küchenrichtungen, inklusive diätetischer Optionen."}
               </li>
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Warm & Tasty Cuisine - Delicious, nutrient-rich dishes served with flavor and enjoyment." : "Warm & Geschmackvoll - Geschmackvolle, nährstoffreiche Mahlzeiten mit Geschmack und Genuss."}
+                {language === "en" ? "Warm & Tasty Cuisine - Delicious, nutrient-rich dishes served with flavor and enjoyment." : "Warm & Geschmackvoll - Leckere, nährstoffreiche Speisen, die mit Genuss serviert werden."}
               </li>
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
                 {language === "en" ? "Nutritional & Balanced Choices - Meals are prepared and developed by nutrition experts to ensure well-balanced nutrition." : "Nährstoffreich & Ausgewogen - Mahlzeiten werden von Nahrungsmittelexperten vorbereitet und entwickelt, um eine ausgewogene Ernährung zu gewährleisten."}
@@ -108,7 +108,7 @@ function OurFood() {
                 {language === "en" ? "Eco-Friendly Packaging - Boxes made from recycable materials." : "Umweltschonende Verpackung - Boxen aus recycelbaren Materialien."}
               </li>
               <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "AI-Powered Waste Reduction - Reduces food waste and optimizes meal choices for customers." : "Künstliche Intelligenz-gesteuerte Müllreduktion - Reduziert Lebensmittelverschwendung und optimiert Mahlzeitenauswahl für Kunden."}
+                {language === "en" ? "AI-Powered Waste Reduction - Reduces food waste and optimizes meal choices for customers." : "KI-gestützte Abfallreduktion: Durch den Einsatz von Künstlicher Intelligenz reduzieren wir Lebensmittelverschwendung und optimieren die Mahlzeitenwahl für unsere Kunden."}
               </li>
             </ul>
           </div>

@@ -130,7 +130,7 @@ const Highlights = () => {
     <section className="py-8 md:py-12 lg:py-16 text-center bg-white px-4 md:px-6 lg:px-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-4 sm:mb-6 md:mb-8 lg:mb-10">{language === "en" ? "The Distinctive Excellence of SmartFoodie" : "Die Ausgezeichnete Qualität von SmartFoodie"}</h2>
       <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-sans mb-6 sm:mb-8 md:mb-10 lg:mb-12 mx-auto max-w-5xl px-2 sm:px-4">
-      {language === "en" ? "SmartFoodie GmbH provides innovative and sustainable catering solutions through fully automatic vending machines with steamers, delivering freshly steamed meals in just 2 minutes. We cater to companies, universities, and institutions without a canteen or looking to expand their food options. Our mission is to combine convenience, efficiency, and nutrition, ensuring high-quality, hot meals anytime for you and your employees." : "SmartFoodie GmbH stellt innovative und nachhaltige Catering-Lösungen bereit, indem sie vollautomatische Vending-Maschinen mit Dampfern verwenden, die frisch gedämpften Mahlzeiten in nur 2 Minuten liefern. Wir kümmern uns um Unternehmen, Universitäten und Institutionen, die keinen Essensraum oder eine Erweiterung ihrer Essensoptionen suchen. Unsere Mission ist es, Bequemlichkeit, Effizienz und Nährstoffe zu vereinen, um sicherzustellen, dass hochwertige, heiße Mahlzeiten jederzeit für Sie und Ihre Mitarbeiter verfügbar sind."}
+      {language === "en" ? "SmartFoodie GmbH provides innovative and sustainable catering solutions through fully automatic vending machines with steamers, delivering freshly steamed meals in just 2 minutes. We cater to companies, universities, and institutions without a canteen or looking to expand their food options. Our mission is to combine convenience, efficiency, and nutrition, ensuring high-quality, hot meals anytime for you and your employees." : "Die SmartFoodie GmbH bietet innovative und nachhaltige Catering-Lösungen durch den Einsatz vollautomatischer Lebensmittelautomaten, die frisch gedämpfte Mahlzeiten in nur 2 Minuten bereitstellen. Wir beliefern Unternehmen, Universitäten, Supermärkte, Fitnessstudios und weitere Einrichtungen, die kein warmes Essen anbieten oder ihr Angebot erweitern möchten. Unsere Mission ist es, Effizienz, Geschmack und erschwingliche, vollwertige Mahlzeiten zu kombinieren, um sicherzustellen, dass eine gute Ernährung für Sie und Ihre Mitarbeiter zum Alltag wird."}
       </p>
 
       <Slider {...settings} className="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto h-auto">
@@ -143,9 +143,9 @@ const Highlights = () => {
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Food" : "Unser Essen"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
-              <li>{language === "en" ? "Fresh Ingredients, Various Dishes" : "Frische Zutaten, verschiedene Mahlzeiten"}</li>
-              <li>{language === "en" ? "Customizable Menu Options, Including Vegan Options" : "Anpassbare Menüoptionen, einschließlich Vegan-Optionen"}</li>
-              <li>{language === "en" ? "Natural Flavor and Firmer Texture" : "Natürlicher Geschmack und festerer Textur"}</li>
+              <li>{language === "en" ? "Fresh and High Quality Ingredients, " : "Frische und hochwertige Zutaten"}</li>
+              <li>{language === "en" ? "Extensive selection: from appetizers and main courses to desserts" : "Umfangreiches Angebot: Von Vorspeisen über vollständige Mittag- und Abendessen bis hin zu Desserts"}</li>
+              <li>{language === "en" ? "Rice-Bowls, Gyozas, Noodle-Bowls, Ramen, Curry, Salads etc. " : "Wok-Gerichte, Gyozas, Gulasch, Suppen, Ramen, Salate usw."}</li>
             </ul>
           </TouchableLink>
         </div>
@@ -159,9 +159,9 @@ const Highlights = () => {
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Solutions" : "Unsere Lösungen"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
-              <li>{language === "en" ? "Fully Automated Food Vending Machines, Non Special Catering Space Required" : "Voll automatische Mahlzeitenautomaten, kein spezialisiertes Catering-Raum erforderlich"}</li>
-              <li>{language === "en" ? "24/7 Operation and Technical Support, Always Available For You" : "24/7 Betrieb und technische Unterstützung, immer für Sie verfügbar"}</li>
-              <li>{language === "en" ? "Convenient and Efficient On-Site Catering Solutions" : "Bequem und effiziente On-Site Catering-Lösungen"}</li>
+              <li>{language === "en" ? "Fully Automated Food Vending Machines, Non Special Catering Space Required" : "Vollautomatische Lebensmittelautomaten, kein Personal erforderlich"}</li>
+              <li>{language === "en" ? "Full-Service: Refilling, Maintenance, Cleaning, and Support" : "Full-Service: Befüllung, Wartung, Reinigung und Support"}</li>
+              <li>{language === "en" ? "Convenient and affordable On-Site Catering Solution" : "Bequeme und kostengünstige On-Site Catering-Lösungen"}</li>
             </ul>
           </TouchableLink>
         </div>
@@ -175,9 +175,9 @@ const Highlights = () => {
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Advantages" : "Unsere Vorteile"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
-              <li>{language === "en" ? "Low Costs for Balanced, High-quality Meals" : "Niedrige Kosten für ausgewogene, hochwertige Mahlzeiten"}</li>
-              <li>{language === "en" ? "Suitable for a Wide Range of Locations" : "Suitable for a Wide Range of Locations"}</li>
-              <li>{language === "en" ? "Sustainable Practices, Reducing Waste" : "Nachhaltige Praktiken, Müllreduktion"}</li>
+              <li>{language === "en" ? "Cost-effective, balanced, and high-quality meals" : "Kosteneffiziente, ausgewogene und hochwertige Mahlzeiten: "}</li>
+              <li>{language === "en" ? "24/7 Catering On-Site" : "24/7 Verpflegung vor Ort"}</li>
+              <li>{language === "en" ? "Delicious – try it yourself!" : "Köstlich – probieren Sie selbst!"}</li>
             </ul>
           </TouchableLink>
         </div>

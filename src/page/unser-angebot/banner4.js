@@ -13,12 +13,12 @@ const ProductList = () => {
       img: "./90.png",
       tag: ["non-vegan","main"],
     },
-    { name: language === "en" ? "Stuffed Buns with Pork" : "Pork-gefüllte Buns", img: "./84.png", tag: ["non-vegan","dimSum"] },
-    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindfleisch-Kartoffel-Stew", img: "./91.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Stuffed Buns with Pork" : "Gyozas mit verschiedenen Füllungen", img: "./84.png", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindereintopf mit Kartoffeln", img: "./91.png", tag: ["non-vegan","main"] },
     { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./86.png", tag: ["non-vegan","main"] },
     { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./87.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Pork- und Pfefferkörpersteak", img: "./88.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Gemüse- und Pfefferkörpersteak", img: "./89.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Schweinebauch mit Pepperoni", img: "./88.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Lamm mit Gemüse und Kreuzkümmel", img: "./89.png", tag: ["non-vegan","main"] },
   ];
 
   const toggleFilter = (filter) => {
@@ -163,7 +163,7 @@ const ProductList = () => {
         </div>
         {/* New Headline */}
         <h2 className="text-2xl font-bold text-center text-gray-600 mt-16">
-          {language === "en" ? "Stay tuned for more exciting options available..." : "Bleiben Sie dran für weitere spannende Optionen..."}
+          {language === "en" ? "Stay tuned for more exciting dishes ..." : "Bleiben Sie dran für weitere leckere Gerichte..."}
         </h2>
       </div>
     </div>

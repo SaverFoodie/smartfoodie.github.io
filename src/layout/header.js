@@ -77,7 +77,7 @@ function Header() {
                 className={`${pathname === "/news" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
                 onClick={() => handleNavigation("news")}
               >
-                {language === "en" ? "Company News" : "Firma News"}
+                {language === "en" ? "News" : "News"}
               </li>
               <li
                 className={`${pathname === "/contact" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
@@ -136,7 +136,7 @@ function Header() {
               {language === "en" ? "Our Food" : "Unser Essen"}
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("news")}>
-              {language === "en" ? "Company News" : "Firma News"}
+              {language === "en" ? "News" : "News"}
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("contact")}>
               {language === "en" ? "Contact us" : "Kontakt"}

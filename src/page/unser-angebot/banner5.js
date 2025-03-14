@@ -11,7 +11,7 @@ const News = () => {
     {
       id: 1,
       title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
-      summary: language === "en" ? "Today, we are established!" : "Heute sind wir gegründet!",
+      summary: language === "en" ? "Hello World!" : "Hello World!",
       date: "22-02-2024",
       image: "./SF.jpg",
       docFile: "Founding of SmartFoodie GmbH.docx"

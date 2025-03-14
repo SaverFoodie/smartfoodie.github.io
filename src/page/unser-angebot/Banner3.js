@@ -29,7 +29,7 @@ function OurFood() {
   return (
     <>
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 tracking-wider mx-auto leading-relaxed italic mb-6 md:mb-10 mt-4 md:mt-5 px-4">
-        {language === "en" ? "when Convenience meets culinary excellence" : "wann Bequemlichkeit trifft kulinarische Exzellenz"}
+        {language === "en" ? "When Convenience meets Culinary Excellence" : "Komfort trifft kulinarische Exzellenz"}
       </div>
       <div className="flex flex-col items-center p-4 md:p-8 lg:p-10 font-['Poppins',sans-serif] bg-[#FFFBE6] gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto rounded-3xl md:rounded-[50px]">
         

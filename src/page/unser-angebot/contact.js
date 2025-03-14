@@ -8,7 +8,7 @@ export default function Contact() {
       {/* Title section */}
       <div className="w-full text-center py-10 sm:py-16 md:py-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 transition-colors duration-300 px-4">
-          {language === "en" ? "How can we help you?" : "Wie können wir Ihnen helfen?"}
+          {language === "en" ? "Try out for free" : "Probieren Sie kostenlos"}
         </h1>
       </div>
       {/* Content section */}
@@ -22,7 +22,7 @@ export default function Contact() {
               {language === "en" ? "If you are interested in our services or have any questions, please feel free to contact us." : "Wenn Sie an unseren Leistungen interessiert sind oder Fragen haben, kontaktieren Sie uns bitte."}
             </p>
             <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm sm:text-base">
-              {language === "en" ? "Our team will be happy to provide you with more information and personalized solutions." : "Unser Team wird sich freuen, Ihnen mehr Informationen und persönliche Lösungen zu geben."}
+              {language === "en" ? "Our team will be happy to provide you with more information and personalized solutions." : "Unser Team wird sich freuen, Ihnen mehr Informationen zu geben und personalisierte Lösungen zu erstellen. "}
             </p>
           </div>
           {/* Right half - content */}

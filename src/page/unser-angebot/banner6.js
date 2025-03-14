@@ -47,9 +47,9 @@ function HomeFooter() {
 
   return (
     <div style={containerStyle}>
-      <p style={textStyle}>{language === "en" ? "Infusing every dish with warmth and flavor." : "Mit Wärme und Geschmack in jede Mahlzeit einfließen."}</p>
-      <p style={textStyle}>{language === "en" ? "Experience the future with our smart meal vendering solutions." : "Erleben Sie die Zukunft mit unseren intelligenten Mahlzeitenautomaten."}</p>
-      <p style={textStyle}>{language === "en" ? "Join us for a taste of something unique!" : "Treten Sie uns bei, um etwas Einzigartiges zu erleben!"}</p>
+      <p style={textStyle}>{language === "en" ? "Infusing every dish with warmth and flavor." : "Wir verleihen jedem Gericht Wärme und Aroma."}</p>
+      <p style={textStyle}>{language === "en" ? "Experience the future of dining with our smart meal vendering solutions." : "Erleben Sie die Zukunft mit unseren Dampf-Essensautomaten."}</p>
+      <p style={textStyle}>{language === "en" ? "Join us and be at the forefront of innovation!" : "Innovation fängt mit einer innovativen Ernährung an."}</p>
       <p style={textStyle}>{language === "en" ? "Made with Love in Munich." : "Gemacht mit Liebe in München."}</p>
       <button className="px-6 py-3 bg-[#F16E21] text-white rounded-full text-lg font-bold mt-7 hover:bg-orange-600 transition"
           onClick={() => {
@@ -57,7 +57,7 @@ function HomeFooter() {
             window.scrollTo({ top: 0, behavior: 'instant' });
           }} 
           >
-            {language === "en" ? "Meeting us!" : "Treffen Sie uns!"}
+            {language === "en" ? "Try out for free!" : "Probieren Sie kostenlos!"}
       </button>
     </div>
   );

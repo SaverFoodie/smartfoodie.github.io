@@ -33,6 +33,55 @@
     <meta property="og:image" content="https://smartfoodiegmbh.eu/SF.jpg">
     <meta property="og:url" content="https://smartfoodiegmbh.eu/#/home">
     <meta property="og:type" content="website">
+    
+    <!-- add structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Smart Foodie",
+      "url": "https://smartfoodiegmbh.eu",
+      "sameAs": ["https://smartfoodiegmbh.eu"],
+      "logo": "https://smartfoodiegmbh.eu/SF.jpg",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://smartfoodiegmbh.eu/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://smartfoodiegmbh.eu",
+      "name": "Smart Foodie",
+      "description": "Smart Foodie offers innovative meal vending solutions. Enjoy fresh, healthy meal 24/7 with our smart vending machines.",
+      "potentialAction": [{
+        "@type": "ReadAction",
+        "target": [
+          {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://smartfoodiegmbh.eu/products&solutions",
+            "name": "Products & Solutions"
+          },
+          {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://smartfoodiegmbh.eu/our-food",
+            "name": "Our Food"
+          },
+          {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://smartfoodiegmbh.eu/news",
+            "name": "News"
+          }
+        ]
+      }]
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

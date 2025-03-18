@@ -62,8 +62,8 @@ function Header() {
                 {language === "en" ? "Home" : "Startseite"}
               </li>
               <li
-                className={`${pathname === "/products&solutions" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/products&solutions")}
+                className={`${pathname === "/products-and-solutions" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
+                onClick={() => handleNavigation("/products-and-solutions")}
               >
                 {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
               </li>
@@ -129,7 +129,7 @@ function Header() {
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("home")}>
               {language === "en" ? "Home" : "Startseite"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("products&solutions")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("products-and-solutions")}>
               {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("our-food")}>

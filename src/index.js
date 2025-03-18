@@ -38,7 +38,7 @@ const router = createHashRouter([
         element: <Angebot></Angebot>,
       },
       {
-        path: "products&solutions",
+        path: "products-and-solutions",
         element: (
           <>
             <FoodieMachine></FoodieMachine>

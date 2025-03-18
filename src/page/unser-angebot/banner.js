@@ -24,7 +24,7 @@ const Banner = () => {
 
         <div className="flex-1 w-full max-w-full sm:max-w-[600px] lg:max-w-[900px] mt-6 sm:mt-8 lg:mt-0 lg:ml-10 transform translate-x-0 md:translate-x-3 lg:translate-x-6">
           <img
-            src="./3.jpg"
+            src="./1.png"
             alt="Smart fridge with food"
             className="w-full h-auto sm:h-[400px] md:h-[450px] lg:h-[600px] object-cover rounded-lg sm:rounded-2xl shadow-md sm:shadow-lg"
           />

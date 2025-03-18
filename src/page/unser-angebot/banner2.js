@@ -151,7 +151,7 @@ const Highlights = () => {
         </div>
         
         <div className="bg-[#ffb700] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
-          <TouchableLink to="/products&solutions">
+          <TouchableLink to="/products-and-solutions">
             <img
               src="./highlight2.jpg"
               alt="Our Service"
@@ -166,7 +166,7 @@ const Highlights = () => {
           </TouchableLink>
         </div>
 
-        <div className="bg-[#81D8D0] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
+        <div className="bg-[#99F0E8] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
           <TouchableLink onClick={handleSliderBottomScroll}>
             <img
               src="./office.png"
@@ -177,7 +177,7 @@ const Highlights = () => {
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
               <li>{language === "en" ? "Cost-effective, balanced, and high-quality meals" : "Kosteneffiziente, ausgewogene und hochwertige Mahlzeiten: "}</li>
               <li>{language === "en" ? "24/7 Catering On-Site" : "24/7 Verpflegung vor Ort"}</li>
-              <li>{language === "en" ? "Delicious – try it yourself!" : "Köstlich – probieren Sie selbst!"}</li>
+              <li>{language === "en" ? "Delicious - try it yourself!" : "Köstlich - probieren Sie selbst!"}</li>
             </ul>
           </TouchableLink>
         </div>

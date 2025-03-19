@@ -26,7 +26,7 @@ const Banner = () => {
           <img
             src="./1.png"
             alt="Smart fridge with food"
-            className="w-full h-auto sm:h-[400px] md:h-[450px] lg:h-[600px] object-cover rounded-lg sm:rounded-2xl shadow-md sm:shadow-lg"
+            className="w-full h-auto lg:h-[570px] object-fill rounded-lg sm:rounded-2xl shadow-md sm:shadow-lg"
           />
         </div>
       </div>

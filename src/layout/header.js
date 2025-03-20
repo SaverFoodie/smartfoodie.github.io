@@ -135,8 +135,8 @@ function Header() {
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("our-food")}>
               {language === "en" ? "Our Food" : "Unser Essen"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("news")}>
-              {language === "en" ? "News" : "News"}
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("blogs")}>
+              {language === "en" ? "Blogs" : "Blogs"}
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("contact")}>
               {language === "en" ? "Contact us" : "Kontakt"}

@@ -150,7 +150,7 @@ const NewsDetails = () => {
   }, [newsId, language]);
 
   const handleBack = () => {
-    navigate('/news');
+    navigate('/blogs');
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 

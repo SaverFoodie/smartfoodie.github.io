@@ -52,7 +52,7 @@ const router = createHashRouter([
         element: <Products></Products>
       },
       {
-        path: "news",
+        path: "blogs",
         element: <News></News>
       },
       {

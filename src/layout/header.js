@@ -74,10 +74,10 @@ function Header() {
                 {language === "en" ? "Our Food" : "Unser Essen"}
               </li>
               <li
-                className={`${pathname === "/news" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("news")}
+                className={`${pathname === "/blogs" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
+                onClick={() => handleNavigation("blogs")}
               >
-                {language === "en" ? "News" : "News"}
+                {language === "en" ? "Blogs" : "Blogs"}
               </li>
               <li
                 className={`${pathname === "/contact" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}

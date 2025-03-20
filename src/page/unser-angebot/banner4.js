@@ -6,19 +6,24 @@ const ProductList = () => {
   const { language } = useLanguage();
 
   const products = [
-    { name: language === "en" ? "Eggplant in Sweet and Sour Sauce" : "Auberginen in Süß-Sauer-Sauce", img: "./95.png", tag: ["vegan", "main"] },
-    { name: language === "en" ? "Tender Beef with Peppers" : "Gemüse- und Pfefferkörpersteak", img: "./81.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Eggplant in Sweet and Sour Sauce" : "Auberginen in Süß-Sauer-Sauce", img: "./meals/95.png", tag: ["vegan", "main"] },
+    { name: language === "en" ? "Tender Beef with Peppers" : "Gemüse- und Pfefferkörpersteak", img: "./meals/81.png", tag: ["non-vegan","main"] },
     {
       name: language === "en" ? "Tender Beef with Vegetables and Black Pepper" : "Gemüse- und Pfefferkörpersteak",
-      img: "./90.png",
+      img: "./meals/90.png",
       tag: ["non-vegan","main"],
     },
-    { name: language === "en" ? "Stuffed Buns with Pork" : "Gyozas mit verschiedenen Füllungen", img: "./84.png", tag: ["non-vegan","dimSum"] },
-    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindereintopf mit Kartoffeln", img: "./91.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./86.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./87.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Schweinebauch mit Pepperoni", img: "./88.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Lamm mit Gemüse und Kreuzkümmel", img: "./89.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Stuffed Buns with Pork" : "Gyozas mit verschiedenen Füllungen", img: "./meals/84.png", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindereintopf mit Kartoffeln", img: "./meals/91.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./meals/86.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./meals/87.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Schweinebauch mit Pepperoni", img: "./meals/88.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Lamm mit Gemüse und Kreuzkümmel", img: "./meals/89.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Kung Pao Chicken" : "Kungpao Hähnchen", img: "./meals/92.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Ramen" : "Ramen", img: "./meals/96.jpg", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Dim-Sums with Shrimp" : "Dim Sums mit Garnelen", img: "./meals/97.jpg", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Dumplings" : "Teigtaschen", img: "./meals/98.jpg", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Beef Goulash with Spaetzle" : "Rindergulasch mit Spätzle", img: "./meals/99.jpg", tag: ["non-vegan","main"] },
   ];
 
   const toggleFilter = (filter) => {

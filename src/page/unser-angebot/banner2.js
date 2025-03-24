@@ -139,7 +139,7 @@ const Highlights = () => {
             <img
               src="./food.png"
               alt="Our Food"
-              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-cover mb-2 md:mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[500px] object-cover mb-2 md:mb-4"
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Food" : "Unser Essen"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
@@ -153,9 +153,9 @@ const Highlights = () => {
         <div className="bg-[#ffb700] flex flex-col rounded-3xl transition-transform transform h-full min-h-[320px] sm:min-h-[320px] md:min-h-[530px] lg:min-h-[650px]">
           <TouchableLink to="/products-and-solutions">
             <img
-              src="./highlight3.jpg"
+              src="./highlight2.jpg"
               alt="Our Service"
-              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-fill mb-2 md:mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[500px] object-cover mb-2 md:mb-4"
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Solutions" : "Unsere Lösungen"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">
@@ -171,7 +171,7 @@ const Highlights = () => {
             <img
               src="./office.png"
               alt="Our Innovation"
-              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[400px] object-cover mb-2 md:mb-4"
+              className="rounded-t-3xl w-full h-[180px] sm:h-[220px] md:h-[300px] lg:h-[500px] object-cover mb-2 md:mb-4"
             />
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-4 lg:mb-6 mt-1 sm:mt-2 md:mt-4 lg:mt-6">{language === "en" ? "Our Advantages" : "Unsere Vorteile"}</h3>
             <ul className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-xl space-y-1 md:space-y-2 text-center flex-grow px-2 md:px-4 pb-3 sm:pb-4 md:pb-6">

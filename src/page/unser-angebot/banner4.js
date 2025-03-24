@@ -6,24 +6,27 @@ const ProductList = () => {
   const { language } = useLanguage();
 
   const products = [
-    { name: language === "en" ? "Eggplant in Sweet and Sour Sauce" : "Auberginen in Süß-Sauer-Sauce", img: "./meals/95.png", tag: ["vegan", "main"] },
-    { name: language === "en" ? "Tender Beef with Peppers" : "Gemüse- und Pfefferkörpersteak", img: "./meals/81.png", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Ramen" : "Ramen", img: "./meals/96.jpg", tag: ["non-vegan","noodle"] },
     {
       name: language === "en" ? "Tender Beef with Vegetables and Black Pepper" : "Gemüse- und Pfefferkörpersteak",
       img: "./meals/90.png",
-      tag: ["non-vegan","main"],
+      tag: ["non-vegan","rice"],
     },
-    { name: language === "en" ? "Stuffed Buns with Pork" : "Gyozas mit verschiedenen Füllungen", img: "./meals/84.png", tag: ["non-vegan","dimSum"] },
-    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindereintopf mit Kartoffeln", img: "./meals/91.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./meals/86.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./meals/87.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Schweinebauch mit Pepperoni", img: "./meals/88.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Lamm mit Gemüse und Kreuzkümmel", img: "./meals/89.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Kung Pao Chicken" : "Kungpao Hähnchen", img: "./meals/92.png", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Ramen" : "Ramen", img: "./meals/96.jpg", tag: ["non-vegan","main"] },
-    { name: language === "en" ? "Dim-Sums with Shrimp" : "Dim Sums mit Garnelen", img: "./meals/97.jpg", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Beef Goulash with Spaetzle" : "Rindergulasch mit Spätzle", img: "./meals/99.jpg", tag: ["non-vegan","noodle"] },
+    { name: language === "en" ? "Spaghetti Bolognese" : "Spaghetti Bolognese", img: "./meals/86.png", tag: ["non-vegan","noodle"] },
     { name: language === "en" ? "Dumplings" : "Teigtaschen", img: "./meals/98.jpg", tag: ["non-vegan","dimSum"] },
-    { name: language === "en" ? "Beef Goulash with Spaetzle" : "Rindergulasch mit Spätzle", img: "./meals/99.jpg", tag: ["non-vegan","main"] },
+    { name: language === "en" ? "Dim-Sums with Shrimp" : "Dim Sums mit Garnelen", img: "./meals/97.jpg", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Stuffed Buns with Pork" : "Gyozas mit verschiedenen Füllungen", img: "./meals/84.png", tag: ["non-vegan","dimSum"] },
+    { name: language === "en" ? "Chili Con Carne" : "Chili Con Carne", img: "./meals/87.png", tag: ["non-vegan","rice"] },
+    { name: language === "en" ? "Beef Rib Stew with Potatoes" : "Rindereintopf mit Kartoffeln", img: "./meals/91.png", tag: ["non-vegan","rice"] },
+    { name: language === "en" ? "Eggplant in Sweet and Sour Sauce" : "Auberginen in Süß-Sauer-Sauce", img: "./meals/95.png", tag: ["vegan", "rice"] },
+    { name: language === "en" ? "Tender Beef with Peppers" : "Gemüse- und Pfefferkörpersteak", img: "./meals/81.png", tag: ["non-vegan","rice"] },   
+    { name: language === "en" ? "Pork Belly Fried with Peppers" : "Schweinebauch mit Pepperoni", img: "./meals/88.png", tag: ["non-vegan","rice"] },
+    { name: language === "en" ? "Tender Lamb Fried with Cumin" : "Lamm mit Gemüse und Kreuzkümmel", img: "./meals/89.png", tag: ["non-vegan","rice"] },
+    { name: language === "en" ? "Kung Pao Chicken" : "Kungpao Hähnchen", img: "./meals/92.png", tag: ["non-vegan","rice"] },
+    
+   
+    
   ];
 
   const toggleFilter = (filter) => {
@@ -37,16 +40,22 @@ const ProductList = () => {
 
     const isVegan = product.tag.includes('vegan');
     const isNonVegan = product.tag.includes('non-vegan');
-    const isMainDish = product.tag.includes('main');
+    const isRiceDish = product.tag.includes('rice');
+    const isNoodleDish = product.tag.includes('noodle');
     const isDimSum = product.tag.includes('dimSum');
 
     const filterVegan = activeFilter.includes('vegan');
     const filterNonVegan = activeFilter.includes('non-vegan');
-    const filterMain = activeFilter.includes('main');
+    const filterRice = activeFilter.includes('rice');
+    const filterNoodle = activeFilter.includes('noodle');
     const filterDimSum = activeFilter.includes('dimSum');
 
     const matchesDiet = (!filterVegan && !filterNonVegan) || (filterVegan && isVegan) || (filterNonVegan && isNonVegan);
-    const matchesCategory = (!filterMain && !filterDimSum) || (filterMain && isMainDish) || (filterDimSum && isDimSum);
+    
+    const matchesCategory = (!filterRice && !filterNoodle && !filterDimSum) || 
+                          (filterRice && isRiceDish) || 
+                          (filterNoodle && isNoodleDish) || 
+                          (filterDimSum && isDimSum);
 
     return matchesDiet && matchesCategory;
 };
@@ -109,15 +118,29 @@ const ProductList = () => {
               </h3>
               <button 
                 className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('main') 
+                  activeFilter.includes('rice') 
                     ? 'bg-orange-500 text-white border-none' 
                     : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
                 }`}
-                onClick={() => toggleFilter('main')}
-                aria-pressed={activeFilter.includes('main')}
+                onClick={() => toggleFilter('rice')}
+                aria-pressed={activeFilter.includes('rice')}
               >
                 <span className="flex items-center justify-center gap-2">
-                  🍽️ <span className="font-medium">{language === "en" ? "Main Dish" : "Hauptgericht"}</span>
+                 🍚 <span className="font-medium">{language === "en" ? "Rice-Bowl" : "Reis-Bowl"}</span>
+                </span>
+              </button>
+              <div className="mb-4" />
+              <button 
+                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
+                  activeFilter.includes('noodle') 
+                    ? 'bg-orange-500 text-white border-none' 
+                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
+                }`}
+                onClick={() => toggleFilter('noodle')}
+                aria-pressed={activeFilter.includes('noodle')}
+              >
+                <span className="flex items-center justify-center gap-2">
+                 🍜 <span className="font-medium">{language === "en" ? "Noodle-Bowl" : "Nudel-Bowl"}</span>
                 </span>
               </button>
               <div className="mb-4" />
@@ -153,7 +176,11 @@ const ProductList = () => {
                   {product.tag && (
                     <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
                       {product.tag.includes("vegan") ? "🌱 " : "🍖 "}
-                      {product.tag.includes("dimSum") ? "Dim Sum" : language === "en" ? "Main Dish" : "Hauptgericht"}
+                      {product.tag.includes("dimSum") 
+                        ? "Dim Sum" 
+                        : product.tag.includes("noodle")
+                          ? (language === "en" ? "Noodle-Bowl" : "Nudel-Bowl")
+                          : (language === "en" ? "Rice-Bowl" : "Reis-Bowl")}
                     </span>
                   )}
                 </div>

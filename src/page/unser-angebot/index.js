@@ -4,6 +4,7 @@ import OurFood from "./Banner3";
 import Highlights from "./banner2";
 import Introduct from "./banner1";
 import HomeFooter from "./banner6";
+import Partner from "./partner";
 
 function Index() {
 
@@ -15,6 +16,7 @@ const [refresh,setRefresh]=useState(false)
       <Banner></Banner>
       <Highlights></Highlights>
       <OurFood></OurFood>
+      <Partner></Partner>
       <HomeFooter></HomeFooter>
      {/*
   <div className="flex items-center justify-center mx-3 h-[500px] rounded-3xl">

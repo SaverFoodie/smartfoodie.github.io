@@ -21,7 +21,7 @@ const ScrollButton = () => {
       flex items-center gap-1 group"
       style={{ zIndex: 1000 }}
     >
-      <span>{language === "en" ? "Contact ☎" : "Kontakt ☎"}</span>
+      <span>{language === "en" ? "Contact" : "Kontakt"}</span>
     </button>
   );
 };

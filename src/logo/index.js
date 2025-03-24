@@ -1,6 +1,6 @@
 function Logo(props) {
 
-    return <img className={ "w-7 lg:w-[70px]"} src="./SmartFoodie.jpg" />;
+    return <img className={"w-20 lg:w-[200px]"} src="./header.png" />;
 }
 
 export default Logo;

@@ -3,7 +3,7 @@ import { useLanguage } from '../../language';
 const Banner = () => {
   const { language } = useLanguage();
   return (
-    <section className="flex justify-center items-center bg-[#FFF6E5] py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans px-4 sm:px-6 md:px-8">
+    <section className="flex justify-center items-center bg-orange-100 py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans px-4 sm:px-6 md:px-8">
       <div className="flex flex-col lg:flex-row items-center max-w-[1200px] w-full gap-8 md:gap-12 lg:gap-16">
         <div className="flex-1 w-full lg:pr-5">
           <h1 className="mt-6 sm:mt-8 lg:mt-12 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2A1A1F] mb-6 sm:mb-8 lg:mb-10 leading-tight">

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 function OurFood() {
   const { language } = useLanguage();
   
-  // 定义动画变体
   const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -31,7 +30,7 @@ function OurFood() {
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 tracking-wider mx-auto leading-relaxed italic mb-6 md:mb-10 mt-4 md:mt-5 px-4">
         {language === "en" ? "When Convenience meets Culinary Excellence" : "Komfort trifft kulinarische Exzellenz"}
       </div>
-      <div className="flex flex-col items-center p-4 md:p-8 lg:p-10 font-['Poppins',sans-serif] bg-[#FFFBE6] gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto rounded-3xl md:rounded-[50px]">
+      <div className="flex flex-col items-center p-4 md:p-8 lg:p-10 font-['Poppins',sans-serif] bg-orange-100 gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto rounded-3xl md:rounded-[50px]">
         
         <motion.div 
           className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 xl:gap-20 w-full py-4"

@@ -34,8 +34,7 @@ function HomeFooter() {
       return {
         fontSize: '0.9rem',
         padding: '0.2rem 0.4rem',
-        alignSelf: 'center',
-        width: '100%', 
+        alignSelf: 'center', 
       };
     }
     if (windowWidth <= 768) {

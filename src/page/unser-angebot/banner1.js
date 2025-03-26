@@ -4,13 +4,13 @@ import { useLanguage } from '../../language';
 const Introduct = () => {
   const { language } = useLanguage();
     return (
-        <div className="relative bg-cover bg-center h-[60vh] md:h-[80vh]" style={{ backgroundImage: "url('./title.jpg')" }}>
+        <div className="relative bg-cover bg-center h-[70vh] min-h-[450px] md:min-h-[550px] lg:min-h-[650px]" style={{ backgroundImage: "url('./title.jpg')" }}>
           <div className="flex flex-col items-center justify-center h-full bg-gray-300 bg-opacity-10 px-4">
-            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[25%] md:left-[10%] md:right-[35%] lg:left-[10%] lg:right-[45%] bg-black bg-opacity-50 p-8 sm:p-8 md:p-10 lg:p-10 rounded-t-3xl top-[10%] lg:top-[15%] bottom-0"> 
-              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-extrabold text-white drop-shadow-lg text-center">
+            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[25%] md:left-[10%] md:right-[35%] lg:left-[10%] lg:right-[45%] xl:left-[10%] xl:right-[50%] bg-black bg-opacity-50 p-8 sm:p-8 md:p-10 lg:p-10 rounded-t-3xl top-[15%] xl:top-[20%] bottom-0"> 
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold text-white drop-shadow-lg text-center">
                 Innovative meal vending solutions
               </h1>
-              <p className="text-xl sm:text-xl md:text-2xl lg:text-2xl text-white mt-5 sm:mt-5 md:mt-7 lg:mt-10 text-left max-w-4xl mx-auto">
+              <p className="text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl text-white mt-5 sm:mt-5 md:mt-7 lg:mt-10 xl:mt-16 text-left max-w-4xl mx-auto">
                 {language === "en" 
                   ? <>
                       <span>Hungry? Busy? We've got you covered! Our on-site meal vending solutions offer fresh, delicious, and nutritious food whenever you need it. Whether you're at work, on campus, or on the go, enjoy high-quality meals anytime, anywhere — quick, convenient, and hassle-free.</span>

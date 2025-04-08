@@ -48,7 +48,7 @@ function Header() {
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => { router("home"); window.scrollTo(0, 0); }}>
+          <div className="flex-shrink-0 cursor-pointer" onClick={() => { router("/"); window.scrollTo(0, 0); }}>
             <Logo />
           </div>
 
@@ -56,8 +56,8 @@ function Header() {
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex items-center space-x-8 font-semibold">
               <li 
-                className={`${pathname === "/home" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/home")}
+                className={`${pathname === "/" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
+                onClick={() => handleNavigation("/")}
               >
                 {language === "en" ? "Home" : "Startseite"}
               </li>
@@ -75,7 +75,7 @@ function Header() {
               </li>
               <li
                 className={`${pathname === "/blogs" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("blogs")}
+                onClick={() => handleNavigation("/blogs")}
               >
                 {language === "en" ? "Blogs" : "Blogs"}
               </li>
@@ -126,19 +126,19 @@ function Header() {
       <div ref={menuRef} className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-1 pt-1 pb-1 space-y-0.5 sm:px-2 bg-white shadow-lg">
           <ul className="space-y-1">
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("home")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/")}>
               {language === "en" ? "Home" : "Startseite"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("products-and-solutions")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/products-and-solutions")}>
               {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("our-food")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/our-food")}>
               {language === "en" ? "Our Food" : "Unser Essen"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("blogs")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/blogs")}>
               {language === "en" ? "Blogs" : "Blogs"}
             </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("contact")}>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/contact")}>
               {language === "en" ? "Contact us" : "Kontakt"}
             </li>
             <li className="px-2 py-1">

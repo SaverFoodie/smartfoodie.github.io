@@ -8,8 +8,8 @@ import InstagramButton from "./insButton";
 
 function  Layout() {
   const location = useLocation();
-  const showScrollButton = location.pathname === "/home" || location.pathname === "/products&solutions" || location.pathname === "/" || location.pathname === "/our-food" || location.pathname === "/blogs";
-  const showInstagramButton = location.pathname === "/home" || location.pathname === "/products&solutions"  || location.pathname === "/contact" || location.pathname === "/" || location.pathname === "/our-food" || location.pathname === "/blogs"; 
+  const showScrollButton = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/products-and-solutions" || location.pathname === "/our-food" || location.pathname === "/blogs";
+  const showInstagramButton = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/products-and-solutions"  || location.pathname === "/contact" || location.pathname === "/our-food" || location.pathname === "/blogs"; 
   return (
     <div>
         <Header></Header>

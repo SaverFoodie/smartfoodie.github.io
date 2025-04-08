@@ -5,17 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {
   createBrowserRouter,
-  createHashRouter,
-  redirect,
   RouterProvider,
-  useNavigate,
 } from "react-router-dom";
 import Layout from "./layout/layout";
 import Angebot from "./page/unser-angebot/index";
-import Highlight from "./page/unser-angebot/banner2";
 import Products from "./page/unser-angebot/banner4";
-import Banner from "./page/unser-angebot/banner";
-import OurFood from "./page/unser-angebot/Banner3";
 import FoodieSteps from "./page/unser-angebot/order";
 import FoodieMachine from "./page/unser-angebot/machines";
 import News from "./page/unser-angebot/banner5";
@@ -24,19 +18,16 @@ import FoodiePlaces from "./page/unser-angebot/places";
 import { LanguageProvider } from "./language";
 import NewsDetail from "./page/unser-angebot/NewsDetails";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
         index: true,
-        loader: () => redirect("/home"),
-      },
-      {
-        path: "home",
         element: <Angebot></Angebot>,
       },
+
       {
         path: "products-and-solutions",
         element: (

@@ -7,7 +7,8 @@ const Partner = () => {
   const partnerImages = [
     './partner/eren.png',
     './partner/zd.png',
-    './partner/sunlit.png'
+    './partner/sunlit.png',
+    './partner/Klinikum.jpg'
   ];
 
   return (

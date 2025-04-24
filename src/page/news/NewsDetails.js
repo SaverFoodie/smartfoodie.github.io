@@ -27,6 +27,29 @@ const NewsDetails = () => {
       docFile: "spring festival.docx",
       date: "2025-01-26"
     },
+    {
+      id: 3,
+      title: language === "en" 
+        ? "SmartFoodie @ EDEKA Eren" 
+        : "SmartFoodie @ EDEKA Eren Edition",
+      summary: language === "en"
+        ? "From dumplings to udon — Munich's taste buds lit up at our 2-day pop-up with EDEKA." 
+        : "Von Dumplings bis Udon - Münchens Geschmacksknospen wurden bei unserem zweitägigen Pop-up mit EDEKA begeistert.",
+      docFile: "smartfoodie-edeka-news.docx",
+      date: "2025-04-06"
+    },
+
+    {
+      id: 4,
+      title: language === "en" 
+        ? "Featured in StartupValley Magazine" 
+        : "Erschienen im StartupValley Magazin",
+      summary: language === "en"
+        ? "How SmartFoodie is shaping the future of healthy, hot meals through Steam Cuisine."
+        : "Wie SmartFoodie mit Steam Cuisine die Zukunft gesunder, warmer Mahlzeiten gestaltet.",
+      docFile: "smartfoodie-startupvalley-feature.docx",
+      date: "2025-04-20"
+    }
   ];
 
   useEffect(() => {

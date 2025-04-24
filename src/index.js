@@ -12,11 +12,11 @@ import Angebot from "./page/unser-angebot/index";
 import Products from "./page/unser-angebot/banner4";
 import FoodieSteps from "./page/unser-angebot/order";
 import FoodieMachine from "./page/unser-angebot/machines";
-import News from "./page/unser-angebot/banner5";
+import News from "./page/news/NewsCard";
 import Contact from "./page/unser-angebot/contact";
 import FoodiePlaces from "./page/unser-angebot/places";
 import { LanguageProvider } from "./language";
-import NewsDetail from "./page/unser-angebot/NewsDetails";
+import NewsDetail from "./page/news/NewsDetails";
 
 const router = createBrowserRouter([
   {

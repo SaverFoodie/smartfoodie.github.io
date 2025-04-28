@@ -60,7 +60,7 @@ const Introduct = () => {
               </style>
             </div>
           </div>
-        // </div>
+        </div>
       );
   };
 

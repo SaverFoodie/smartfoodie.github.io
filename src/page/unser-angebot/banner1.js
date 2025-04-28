@@ -32,7 +32,7 @@ const Introduct = () => {
           </div> */}
 
           <div className="flex flex-col items-center justify-center h-full bg-gray-300 bg-opacity-5 px-4">
-            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[35%] lg:left-[10%] lg:right-[45%] xl:left-[10%] xl:right-[50%] 2xl:right-[50%] bg-black bg-opacity-30 p-8 sm:p-8 md:p-10 lg:p-10 xl:p-10 2xl:p-12 rounded-t-3xl top-[50%] sm:top-[65%] md:top-[50%] lg:top-[50%] xl:top-[35%] 2xl:top-[50%] bottom-0 max-h-[90%] overflow-y-auto"> 
+            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[35%] lg:left-[10%] lg:right-[45%] xl:left-[10%] xl:right-[50%] 2xl:right-[50%] bg-black bg-opacity-40 p-8 sm:p-8 md:p-10 lg:p-10 xl:p-10 2xl:p-12 rounded-3xl top-[50%] sm:top-[65%] md:top-[50%] lg:top-[50%] xl:top-[35%] 2xl:top-[50%] bottom-0 max-h-[90%] overflow-y-auto"> 
               <h1 className="text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-extrabold text-white drop-shadow-lg text-center">
                 Innovative Meal Vending Solutions
               </h1>

@@ -14,7 +14,7 @@ const Partner = () => {
   return (
     <div className="partners-container">
       <h2 className="partners-title">
-        {language === 'de' ? 'Unsere Partner' : 'Our Partners'}
+        {language === 'de' ? 'Unsere Partner' : 'Some of Our Partners'}
       </h2>
       <div className="partners-grid">
         {partnerImages.map((image, index) => (

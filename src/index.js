@@ -17,6 +17,8 @@ import Contact from "./page/unser-angebot/contact";
 import FoodiePlaces from "./page/unser-angebot/places";
 import { LanguageProvider } from "./language";
 import NewsDetail from "./page/news/NewsDetails";
+import EventPage from "./page/event/EventPage";
+import EventDetails from "./page/event/EventDetails";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: "news/:newsId",
         element: <NewsDetail />
+      },
+      {
+        path: "events",
+        element: <EventPage />
+      },
+      {
+        path: "events/:eventId",
+        element: <EventDetails />
       },
     ],
   },

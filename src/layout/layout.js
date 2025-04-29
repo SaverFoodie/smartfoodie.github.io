@@ -6,10 +6,20 @@ import ScrollButton from "./scrollButton";
 import { Outlet, useLocation } from "react-router-dom";
 import InstagramButton from "./insButton";
 
-function  Layout() {
+function Layout() {
   const location = useLocation();
-  const showScrollButton = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/products-and-solutions" || location.pathname === "/our-food" || location.pathname === "/blogs";
-  const showInstagramButton = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/products-and-solutions"  || location.pathname === "/contact" || location.pathname === "/our-food" || location.pathname === "/blogs"; 
+  
+  // 使用黑名单方式：列出不显示按钮的页面路径
+  const excludedPaths = {
+    // 这里添加不需要显示按钮的页面路径
+    // 如果某个新页面不需要这些按钮，只需要在这里添加路径
+    scrollButton: [],
+    instagramButton: []
+  };
+  
+  const showScrollButton = !excludedPaths.scrollButton.includes(location.pathname);
+  const showInstagramButton = !excludedPaths.instagramButton.includes(location.pathname);
+  
   return (
     <div>
         <Header></Header>

@@ -80,6 +80,12 @@ function Header() {
                 {language === "en" ? "Blogs" : "Blogs"}
               </li>
               <li
+                className={`${pathname.startsWith("/events") ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
+                onClick={() => handleNavigation("/events")}
+              >
+                {language === "en" ? "Events" : "Veranstaltungen"}
+              </li>
+              <li
                 className={`${pathname === "/contact" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
                 onClick={() => handleNavigation("/contact")}
               >
@@ -137,6 +143,9 @@ function Header() {
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/blogs")}>
               {language === "en" ? "Blogs" : "Blogs"}
+            </li>
+            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/events")}>
+              {language === "en" ? "Events" : "Veranstaltungen"}
             </li>
             <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/contact")}>
               {language === "en" ? "Contact us" : "Kontakt"}

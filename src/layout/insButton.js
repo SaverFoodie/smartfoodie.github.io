@@ -32,7 +32,7 @@ const InstagramButton = () => {
           }}
         >
           <img 
-            src="./ins.png" 
+            src="/ins.png" 
             alt="Instagram" 
             className="w-7 h-7 sm:w-7 sm:h-7 w-5 h-5" 
           />
@@ -51,7 +51,7 @@ const InstagramButton = () => {
           }}
         >
           <img 
-            src="./In.png" 
+            src="/In.png" 
             alt="LinkedIn" 
             className="w-7 h-7 sm:w-7 sm:h-7 w-5 h-5" 
           />

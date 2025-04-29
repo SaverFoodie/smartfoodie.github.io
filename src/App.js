@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo_default from './logo_default.svg';
 import './App.css';
 import Layout from './layout/layout';
 

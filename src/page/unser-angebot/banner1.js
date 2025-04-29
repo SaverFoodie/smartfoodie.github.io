@@ -17,7 +17,7 @@ const Introduct = () => {
     }, []);
 
     return (
-         <div className="relative bg-cover bg-center h-[80vh] min-h-[450px] md:min-h-[550px] lg:min-h-[650px]" style={{ backgroundImage: "url('./title_test1.jpg')" }}>
+         <div className="relative bg-cover bg-center h-[80vh] min-h-[450px] md:min-h-[550px] lg:min-h-[650px]" style={{ backgroundImage: "url('./title.jpg')" }}>
           {/* <div className="fixed bottom-60 right-2 bg-black text-white text-xs p-2 rounded-lg opacity-70 z-50">
             <div className="block sm:hidden">当前屏幕：小于 640px(默认)</div>
             <div className="hidden sm:block md:hidden">当前屏幕：≥ 640p(sm)</div>

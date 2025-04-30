@@ -17,7 +17,7 @@ const Introduct = () => {
     }, []);
 
     return (
-         <div className="relative bg-cover bg-center h-[80vh] min-h-[450px] md:min-h-[550px] lg:min-h-[650px]" style={{ backgroundImage: "url('./title.jpg')" }}>
+         <div className="relative bg-cover bg-center h-[60vh] md:h-[80vh] min-h-[350px] md:min-h-[550px] lg:min-h-[650px]" style={{ backgroundImage: "url('./title.jpg')" }}>
           {/* <div className="fixed bottom-60 right-2 bg-black text-white text-xs p-2 rounded-lg opacity-70 z-50">
             <div className="block sm:hidden">当前屏幕：小于 640px(默认)</div>
             <div className="hidden sm:block md:hidden">当前屏幕：≥ 640p(sm)</div>
@@ -32,7 +32,7 @@ const Introduct = () => {
           </div> */}
 
           <div className="flex flex-col items-center justify-center h-full bg-gray-300 bg-opacity-5 px-4">
-            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[35%] lg:left-[10%] lg:right-[45%] xl:left-[10%] xl:right-[50%] 2xl:right-[50%] bg-black bg-opacity-40 p-8 sm:p-8 md:p-10 lg:p-10 xl:p-10 2xl:p-12 rounded-3xl top-[50%] sm:top-[65%] md:top-[50%] lg:top-[50%] xl:top-[35%] 2xl:top-[50%] bottom-0 max-h-[90%] overflow-y-auto"> 
+            <div className="absolute left-[5%] right-[5%] md:left-[10%] md:right-[25%] lg:left-[10%] lg:right-[45%] xl:left-[10%] xl:right-[50%] 2xl:right-[50%] bg-black bg-opacity-60 p-8 sm:p-8 md:p-10 lg:p-10 xl:p-10 2xl:p-12 rounded-t-3xl top-[10%] md:top-[30%] xl:top-[35%] bottom-0 max-h-[90%] flex flex-col justify-center"> 
               <h1 className="text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-extrabold text-white drop-shadow-lg text-center">
                 Innovative Meal Vending Solutions
               </h1>

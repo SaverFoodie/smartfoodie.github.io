@@ -61,24 +61,49 @@ const EventDetails = () => {
         })
         .then(buffer => {
           if (containerRef.current) {
+            // Clear any previous content
+            while (containerRef.current.firstChild) {
+              containerRef.current.removeChild(containerRef.current.firstChild);
+            }
+            
             // Render the document using docx-preview
             return renderAsync(buffer, containerRef.current, null, {
               className: 'docx-viewer',
               inWrapper: false,
-              ignoreWidth: true,
+              ignoreWidth: false,
               ignoreHeight: false,
               defaultFont: {
                 family: 'Arial',
                 color: '#333333',
               },
-              // Adjust container width based on screen size
-              containerWidth: windowWidth < 768 ? windowWidth - 40 : undefined,
+              // On mobile, use full screen width minus minimal padding
+              containerWidth: windowWidth < 768 ? windowWidth - 10 : undefined,
               backgroundColor: 'transparent'
             });
           }
         })
         .then(() => {
           setLoading(false);
+          
+          // Apply additional styles to make document fit on small screens
+          if (windowWidth < 768 && containerRef.current) {
+            const docContainer = containerRef.current.querySelector('.document-container');
+            if (docContainer) {
+              docContainer.style.width = '100%';
+              docContainer.style.maxWidth = '100%';
+              docContainer.style.margin = '0';
+              docContainer.style.padding = '0';
+            }
+            
+            // Find all page elements and make them fit the screen
+            const pages = containerRef.current.querySelectorAll('.page');
+            pages.forEach(page => {
+              page.style.width = '100%';
+              page.style.maxWidth = '100%';
+              page.style.margin = '0 0 10px 0';
+              page.style.transform = 'none';
+            });
+          }
         })
         .catch(err => {
           console.error("Error loading document:", err);
@@ -97,7 +122,11 @@ const EventDetails = () => {
 
   return (
     <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '30px 0 30px 0' }}>
-      <div className="event-details-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+      <div className="event-details-container" style={{ 
+        maxWidth: '1200px', 
+        margin: '0 auto', 
+        padding: windowWidth < 768 ? '0 5px' : '0 20px' 
+      }}>
         <button 
           onClick={handleGoBack}
           style={{ 
@@ -118,11 +147,11 @@ const EventDetails = () => {
         </button>
 
         {eventItem && (
-          <div className="event-header" style={{ marginBottom: '15px' }}>
+          <div className="event-header" style={{ marginBottom: '15px', textAlign: 'center' }}>
             <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#1A237E', marginBottom: '10px' }}>
               {eventItem.title}
             </h1>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', fontSize: '18px', color: '#555' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', fontSize: '18px', color: '#555', justifyContent: 'center' }}>
               <span>
                 <strong>{language === "en" ? "Date:" : "Datum:"}</strong> {eventItem.date}
               </span>
@@ -136,9 +165,12 @@ const EventDetails = () => {
         <div className="document-container" style={{ 
           backgroundColor: 'transparent', 
           borderRadius: '10px', 
-          padding: '0px',
+          padding: 0,
           margin: '0 auto',
-          maxWidth: '1000px'
+          width: windowWidth < 768 ? '100%' : undefined,
+          maxWidth: windowWidth < 768 ? '100%' : '1000px',
+          display: 'flex',
+          justifyContent: 'center'
         }}>
           {loading && (
             <div className="loading-container" style={{ textAlign: 'center', padding: '50px' }}>
@@ -171,26 +203,57 @@ const EventDetails = () => {
             </div>
           )}
           
-          {/* <style>
+          <style>
             {`
-              .docx-viewer, .docx-viewer * {
-                background-color: transparent !important;
+              @media (max-width: 768px) {
+                .docx-viewer {
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                }
+                .docx-viewer .document-container {
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                }
+                .docx-viewer .page {
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  margin: 0 0 10px 0 !important;
+                  transform: none !important;
+                  box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+                }
+                .docx-viewer .page > div {
+                  width: 100% !important;
+                  max-width: 100% !important;
+                }
               }
+              
               .docx-viewer .document-container {
-                background-color: transparent !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+              }
+              
+              .docx-viewer .page {
+                margin: 0 auto 10px auto !important;
               }
             `}
-          </style> */}
+          </style>
           
           <div 
             ref={containerRef} 
             className="docx-viewer"
             style={{
               backgroundColor: 'transparent',
-              padding: '0px',
+              padding: 0,
               minHeight: '500px',
               width: '100%',
-              overflowX: 'auto'
+              overflow: 'hidden',
+              display: 'flex',
+              justifyContent: 'center'
             }}
           ></div>
         </div>

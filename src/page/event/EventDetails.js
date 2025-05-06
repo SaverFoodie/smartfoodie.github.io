@@ -19,16 +19,18 @@ const EventDetails = () => {
     {
       id: 'SmartFoodie Tasting Event at Klinikum Großhadern',
       title: language === "en" ? "SmartFoodie Tasting Event at Klinikum Großhadern" : "SmartFoodie Verkostungsevent im Klinikum Großhadern",
-      docFile: "SmartFoodie Tasting Event at Klinikum Großhadern.docx",
-      date: "April 30, 2025",
-      location: "Munich"
+      docFile_en: "SmartFoodie Tasting Event at Klinikum Großhadern_EN.docx",
+      docFile_de: "SmartFoodie Tasting Event at Klinikum Großhadern_DE.docx",
+      date: language === "en" ? "May 9, 2025" : "9. Mai 2025",
+      location: language === "en" ? "Munich" : "München"
     },
     {
       id: 'Steam Cuisine Coming to EDEKA Eren',
       title: language === "en" ? "Steam Cuisine Coming to EDEKA Eren" : "Steam Cuisine kommt zu EDEKA Eren",
-      docFile: "Steam Cuisine Coming to EDEKA Eren.docx",
-      date: "April 5, 2025",
-      location: "Munich"
+      docFile_en: "Steam Cuisine Coming to EDEKA Eren_EN.docx",
+      docFile_de: "Steam Cuisine Coming to EDEKA Eren_DE.docx",
+      date: language === "en" ? "April 5, 2025" : "5. April 2025",
+      location: language === "en" ? "Munich" : "München"
     },
     
   ];
@@ -49,8 +51,11 @@ const EventDetails = () => {
       setEventItem(foundEvent);
       setLoading(true);
       
+      // Get the appropriate docFile based on current language
+      const docFile = language === "en" ? foundEvent.docFile_en : foundEvent.docFile_de;
+      
       // Attempt to fetch and render the Word document
-      fetch(`/events/${foundEvent.docFile}`)
+      fetch(`/events/${docFile}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(language === "en" 

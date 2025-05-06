@@ -13,22 +13,26 @@ const EventPage = () => {
     // UPCOMING EVENTS - These will be checked for featuring
     {
       id: 'SmartFoodie Tasting Event at Klinikum Großhadern',
-      title: 'SmartFoodie Tasting Event at Klinikum Großhadern',
-      date: 'April 30, 2025',
-      location: 'Munich',
+      title: language === "en" ? "SmartFoodie Tasting Event at Klinikum Großhadern" : "SmartFoodie Verkostungsevent im Klinikum Großhadern",
+      date: language === "en" ? "May 9, 2025" : "9. Mai 2025",
+      location: language === "en" ? "Munich" : "München",
       featured: true,
       description: language === "en" 
         ? "Taste It Today — Fresh, Steamed Meals in Minutes!"
         : "Heute probieren — Heiße Mahlzeiten frisch aus dem Automaten!",
       image: '/event-images/featured.jpg', // Using actual featured image
+      docFile_en: "SmartFoodie Tasting Event at Klinikum Großhadern_EN.docx",
+      docFile_de: "SmartFoodie Tasting Event at Klinikum Großhadern_DE.docx"
     },
     {
       id: 'Steam Cuisine Coming to EDEKA Eren',
-      title: 'Steam Cuisine Coming to EDEKA Eren',
-      date: 'April 5, 2025',
-      location: 'Munich',
+      title: language === "en" ? "Steam Cuisine Coming to EDEKA Eren" : "Steam Cuisine kommt zu EDEKA Eren",
+      date: language === "en" ? "April 5, 2025" : "5. April 2025",
+      location: language === "en" ? "Munich" : "München",
       featured: false,
       image: '/event-images/EdekaEvent.png', // 使用featured.jpg替换placeholder
+      docFile_en: "Steam Cuisine Coming to EDEKA Eren_EN.docx",
+      docFile_de: "Steam Cuisine Coming to EDEKA Eren_DE.docx"
     }
   ];
 
@@ -54,7 +58,27 @@ const EventPage = () => {
 
   // Format date to check if event is upcoming or past
   const isUpcomingEvent = (dateString) => {
-    const eventDate = new Date(dateString);
+    // Extract just the year, month, and day regardless of format
+    const parts = dateString.match(/\d+/g);
+    let eventDate;
+    
+    if (language === "de" && parts?.length >= 3) {
+      // For German date format (day.month.year)
+      eventDate = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+    } else {
+      // For English date format (month day, year)
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+      
+      // Convert month name to month number if needed
+      let month = parts?.[0];
+      if (isNaN(month)) {
+        month = monthNames.findIndex(m => dateString.includes(m)) + 1;
+      }
+      
+      eventDate = new Date(parseInt(parts?.[parts.length - 1]), month - 1, parseInt(parts?.[1]));
+    }
+    
     const today = new Date();
     return eventDate > today;
   };
@@ -115,18 +139,6 @@ const EventPage = () => {
                 <h3 className="event-title">{event.title}</h3>
                 <p className="event-date">
                   {event.date}
-                  {isUpcomingEvent(event.date) && (
-                    <span style={{ 
-                      backgroundColor: '#4CAF50', 
-                      color: 'white', 
-                      padding: '2px 6px', 
-                      borderRadius: '4px', 
-                      fontSize: '0.7rem', 
-                      marginLeft: '8px' 
-                    }}>
-                      {language === "en" ? "UPCOMING" : "BEVORSTEHEND"}
-                    </span>
-                  )}
                 </p>
                 <p className="event-location">{event.location}</p>
               </div>

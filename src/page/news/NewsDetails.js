@@ -18,14 +18,16 @@ const NewsDetails = () => {
     {
       id: 1,
       title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
-      docFile: "Founding of SmartFoodie GmbH.docx",
-      date: "2024-02-22"
+      docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
+      docFile_de: "Founding of SmartFoodie GmbH_DE.docx",
+      date: language === "en" ? "2024-02-22" : "22.02.2024"
     },
     {
       id: 2,
       title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",
-      docFile: "spring festival.docx",
-      date: "2025-01-26"
+      docFile_en: "spring festival_EN.docx",
+      docFile_de: "spring festival_DE.docx",
+      date: language === "en" ? "2025-01-26" : "26.01.2025"
     },
     {
       id: 3,
@@ -35,8 +37,9 @@ const NewsDetails = () => {
       summary: language === "en"
         ? "From dumplings to udon — Munich's taste buds lit up at our 2-day pop-up with EDEKA." 
         : "Von Dumplings bis Udon - Münchens Geschmacksknospen wurden bei unserem zweitägigen Pop-up mit EDEKA begeistert.",
-      docFile: "smartfoodie-edeka-news.docx",
-      date: "2025-04-06"
+      docFile_en: "smartfoodie-edeka-news_EN.docx",
+      docFile_de: "smartfoodie-edeka-news_DE.docx",
+      date: language === "en" ? "2025-04-06" : "06.04.2025"
     },
 
     {
@@ -47,8 +50,9 @@ const NewsDetails = () => {
       summary: language === "en"
         ? "How SmartFoodie is shaping the future of healthy, hot meals through Steam Cuisine."
         : "Wie SmartFoodie mit Steam Cuisine die Zukunft gesunder, warmer Mahlzeiten gestaltet.",
-      docFile: "smartfoodie-startupvalley-feature.docx",
-      date: "2025-04-20"
+      docFile_en: "smartfoodie-startupvalley-feature_EN.docx",
+      docFile_de: "smartfoodie-startupvalley-feature_DE.docx",
+      date: language === "en" ? "2025-04-20" : "20.04.2025"
     }
   ];
 
@@ -73,7 +77,9 @@ const NewsDetails = () => {
         }
         
         setNewsItem(item);
-        const filePath = `${process.env.PUBLIC_URL}/news/${item.docFile}`;
+        // Get the appropriate docFile based on current language
+        const docFile = language === "en" ? item.docFile_en : item.docFile_de;
+        const filePath = `${process.env.PUBLIC_URL}/news/${docFile}`;
         
         const loadDocument = () => {
           return new Promise((resolve, reject) => {
@@ -177,6 +183,23 @@ const NewsDetails = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  // 帮助函数：根据语言格式化日期
+  const formatDate = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      
+      if (language === "en") {
+        // 英文日期格式：Month Day, Year
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      } else {
+        // 德文日期格式：Day.Month.Year
+        return date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+    } catch (e) {
+      return dateString;
+    }
+  };
+
   return (
     <div className="bg-gradient-to-br from-orange-100 to-white" style={{ 
       margin: 0, 
@@ -228,10 +251,7 @@ const NewsDetails = () => {
               color: '#666',
               fontStyle: 'italic'
             }}>
-              {new Date(newsItem.date).toLocaleDateString(
-                language === 'en' ? 'en-US' : 'de-DE', 
-                { year: 'numeric', month: 'long', day: 'numeric' }
-              )}
+              {formatDate(newsItem.date)}
             </p>
           </div>
         )}

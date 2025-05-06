@@ -11,18 +11,20 @@ const News = () => {
     {
       id: 1,
       title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
-      summary: language === "en" ? "Hello World!" : "Hello World!",
-      date: "22-02-2024",
+      summary: language === "en" ? "Hello World!" : "Hallo Welt!",
+      date: language === "en" ? "22-02-2024" : "22.02.2024",
       image: "./SF.jpg",
-      docFile: "Founding of SmartFoodie GmbH.docx"
+      docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
+      docFile_de: "Founding of SmartFoodie GmbH_DE.docx"
     },
     {
         id: 2,
         title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",
-        summary: language === "en" ? "We served as a food supplier at the Chinese Spring Festival event in Munich!" : "Wir haben als Food-Lieferant am chinesischen Frühlingsfest in München gearbeitet!",
-        date: "26-01-2025",
+        summary: language === "en" ? "We served as a food supplier at the Chinese Spring Festival event in Munich!" : "Wir waren als Lebensmittellieferant beim chinesischen Frühlingsfest in München tätig!",
+        date: language === "en" ? "26-01-2025" : "26.01.2025",
         image: "./news2.jpg",
-        docFile: "spring festival.docx"
+        docFile_en: "spring festival_EN.docx",
+        docFile_de: "spring festival_DE.docx"
     },
     {
       id: 3,
@@ -32,9 +34,10 @@ const News = () => {
       summary: language === "en"
         ? "From dumplings to udon — Munich's taste buds lit up at our 2-day pop-up with EDEKA." 
         : "Von Dumplings bis Udon - Münchens Geschmacksknospen wurden bei unserem zweitägigen Pop-up mit EDEKA begeistert.",
-      date: "06-04-2025",
+      date: language === "en" ? "06-04-2025" : "06.04.2025",
       image: "./news_edeka.jpg",  
-      docFile: "smartfoodie-edeka-news.docx"
+      docFile_en: "smartfoodie-edeka-news_EN.docx",
+      docFile_de: "smartfoodie-edeka-news_DE.docx"
     },
     
     {
@@ -45,9 +48,10 @@ const News = () => {
       summary: language === "en"
         ? "How SmartFoodie is shaping the future of healthy, hot meals through Steam Cuisine."
         : "Wie SmartFoodie mit Steam Cuisine die Zukunft gesunder, warmer Mahlzeiten gestaltet.",
-      date: "20-04-2025",  
+      date: language === "en" ? "20-04-2025" : "20.04.2025",  
       image: "./news_startupvalley.jpg",  
-      docFile: "smartfoodie-startupvalley-feature.docx"
+      docFile_en: "smartfoodie-startupvalley-feature_EN.docx",
+      docFile_de: "smartfoodie-startupvalley-feature_DE.docx"
     }
     
       

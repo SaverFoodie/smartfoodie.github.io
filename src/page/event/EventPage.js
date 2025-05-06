@@ -12,8 +12,8 @@ const EventPage = () => {
   const events = [
     // UPCOMING EVENTS - These will be checked for featuring
     {
-      id: 'SmartFoodie Tasting Event at Klinikum Großhadern',
-      title: language === "en" ? "SmartFoodie Tasting Event at Klinikum Großhadern" : "SmartFoodie Verkostungsevent im Klinikum Großhadern",
+      id: 'SmartFoodie Free-Tasting-Event im Klinikum Großhadern',
+      title: language === "en" ? "SmartFoodie Free-Tasting-Event at Klinikum Großhadern" : "SmartFoodie Free-Tasting-Event im Klinikum Großhadern",
       date: language === "en" ? "May 9, 2025" : "9. Mai 2025",
       location: language === "en" ? "Munich" : "München",
       featured: true,

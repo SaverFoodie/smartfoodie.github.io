@@ -186,15 +186,18 @@ const NewsDetails = () => {
   // 帮助函数：根据语言格式化日期
   const formatDate = (dateString) => {
     try {
-      const date = new Date(dateString);
-      
-      if (language === "en") {
-        // 英文日期格式：Month Day, Year
-        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      } else {
-        // 德文日期格式：Day.Month.Year
-        return date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+      // If in German, use the already formatted date string
+      if (language === "de") {
+        return dateString;
       }
+      
+      // For English, parse the date and format it
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        return dateString;
+      }
+      
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     } catch (e) {
       return dateString;
     }
@@ -207,52 +210,56 @@ const NewsDetails = () => {
       padding: '30px 0 30px 0'
     }}>
       <div className="news-detail-container" style={{ 
-        maxWidth: '100%',  
+        maxWidth: '1200px',  
         margin: '0 auto',
-        padding: '0',
+        padding: windowWidth < 768 ? '0 5px' : '0 20px',
       }}>
-        {windowWidth <= 768 && (
-          <button 
-            onClick={handleBack}
-            className="back-button"
-            style={{
-              padding: '4px 8px',
-              backgroundColor: '#f97316',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              marginBottom: '15px',
-              marginLeft: '10px',
-              fontWeight: 'bold'
-            }}
-          >
-            {language === "en" ? "←Back" : "←Zurück"}
-          </button>
-        )}
+        <button 
+          onClick={handleBack}
+          style={{ 
+            backgroundColor: '#FF9800', 
+            color: 'white', 
+            border: 'none', 
+            padding: '10px 20px', 
+            borderRadius: '30px', 
+            cursor: 'pointer',
+            marginBottom: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '16px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+          }}
+        >
+          ← {language === "en" ? "Back to Blogs" : "Zurück zu Blogs"}
+        </button>
         
         {newsItem && !loading && !error && (
           <div className="news-header" style={{ 
             textAlign: 'center', 
-            marginBottom: '30px',
-            marginTop: '30px',
+            marginBottom: '15px',
+            marginTop: '0',
             padding: '0 20px'
           }}>
             <h1 style={{ 
-              fontSize: windowWidth <= 768 ? '28px' : windowWidth <= 1024 ? '36px' : '50px', 
+              fontSize: '32px', 
               fontWeight: 'bold',
-              color: '#222',
+              color: '#1A237E',
               marginBottom: '10px'
             }}>
               {newsItem.title}
             </h1>
-            <p style={{ 
-              fontSize: windowWidth <= 768 ? '14px' : windowWidth <= 1024 ? '36px' : '18px', 
-              color: '#666',
-              fontStyle: 'italic'
+            <div style={{ 
+              display: 'flex', 
+              flexWrap: 'wrap', 
+              gap: '15px', 
+              fontSize: '18px', 
+              color: '#555', 
+              justifyContent: 'center' 
             }}>
-              {formatDate(newsItem.date)}
-            </p>
+              <span>
+                <strong>{language === "en" ? "Date:" : "Datum:"}</strong> {formatDate(newsItem.date)}
+              </span>
+            </div>
           </div>
         )}
         

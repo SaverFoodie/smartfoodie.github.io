@@ -17,8 +17,8 @@ const EventDetails = () => {
   // Sample event data - in a production environment, this could be fetched from an API
   const eventData = [
     {
-      id: 'SmartFoodie Tasting Event at Klinikum Großhadern',
-      title: language === "en" ? "SmartFoodie Tasting Event at Klinikum Großhadern" : "SmartFoodie Verkostungsevent im Klinikum Großhadern",
+      id: 'SmartFoodie Free-Tasting-Event im Klinikum Großhadern',
+      title: language === "en" ? "SmartFoodie Free-Tasting-Event at Klinikum Großhadern" : "SmartFoodie Free-Tasting-Event im Klinikum Großhadern",
       docFile_en: "SmartFoodie Tasting Event at Klinikum Großhadern_EN.docx",
       docFile_de: "SmartFoodie Tasting Event at Klinikum Großhadern_DE.docx",
       date: language === "en" ? "May 9, 2025" : "9. Mai 2025",

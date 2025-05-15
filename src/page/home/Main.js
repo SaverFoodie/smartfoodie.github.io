@@ -27,7 +27,7 @@ const Main = () => {
     <div
       className="relative w-full h-screen min-h-[500px] bg-cover bg-center flex items-center justify-center"
       style={{
-        backgroundImage: "url('./title.jpg')",
+        backgroundImage: "url('./main.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',

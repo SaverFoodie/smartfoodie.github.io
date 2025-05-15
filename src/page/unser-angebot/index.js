@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Banner from "./banner";
-import OurFood from "./Banner3";
-import Highlights from "./banner2";
-import Introduct from "./banner1";
-import HomeFooter from "./banner6";
-import Partner from "./partner";
+import Banner from "../home/banner";
+import OurFood from "../home/Banner3";
+import Highlights from "../home/banner2";
+import Introduct from "../home/banner1";
+import HomeFooter from "../home/banner6";
+import Partner from "../home/partner";
 
 function Index() {
 

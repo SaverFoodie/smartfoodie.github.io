@@ -1,7 +1,7 @@
 import Header from "./header";
-//import Footer from "./footer";
+import Footer from "./footer";
 //import Footer1 from "./footer1";
-import Footer2 from "./footer2";
+//import Footer2 from "./footer2";
 import ScrollButton from "./scrollButton"; 
 import { Outlet, useLocation } from "react-router-dom";
 import InstagramButton from "./insButton";
@@ -21,15 +21,14 @@ function Layout() {
   const showInstagramButton = !excludedPaths.instagramButton.includes(location.pathname);
   
   return (
-    <div>
-        <Header></Header>
-        <div className="main-content" style={{ paddingTop: '64px' }}>
-          <Outlet></Outlet>
-        </div>
-        {showScrollButton && <ScrollButton></ScrollButton>}
-        {showInstagramButton && <InstagramButton></InstagramButton>} 
-        {/*<Footer></Footer>*/}
-        <Footer2></Footer2>
+    <div className="flex flex-col min-h-screen">
+      <Header></Header>
+      <div className="main-content" style={{ paddingTop: '64px' }}>
+        <Outlet></Outlet>
+      </div>
+      {showScrollButton && <ScrollButton></ScrollButton>}
+      {showInstagramButton && <InstagramButton></InstagramButton>}
+      <Footer></Footer>
     </div>
   );
 }

@@ -41,7 +41,6 @@ const NewsDetails = () => {
       docFile_de: "smartfoodie-edeka-news_DE.docx",
       date: language === "en" ? "2025-04-06" : "06.04.2025"
     },
-
     {
       id: 4,
       title: language === "en" 
@@ -53,6 +52,18 @@ const NewsDetails = () => {
       docFile_en: "smartfoodie-startupvalley-feature_EN.docx",
       docFile_de: "smartfoodie-startupvalley-feature_DE.docx",
       date: language === "en" ? "2025-04-20" : "20.04.2025"
+    },
+    {
+      id: 5,
+      title: language === "en" 
+        ? "SmartFoodie Opens at Klinikum Großhadern" 
+        : "SmartFoodie Eröffnet im Klinikum Großhadern",
+      summary: language === "en"
+        ? "SmartFoodie opens its e-Bistro24H at Klinikum Großhadern, bringing fresh and tasty meals right into the hospital."
+        : "SmartFoodie eröffnet sein e-Bistro24H im Klinikum Großhadern und bringt frische, leckere Mahlzeiten direkt ins Haus.",
+      docFile_en: "SmartFoodie Opens at Klinikum Großhadern.docx",
+      docFile_de: "SmartFoodie eröffnet im Klinikum Großhadern.docx",
+      date: language === "en" ? "2025-05-14" : "14.05.2025"
     }
   ];
 

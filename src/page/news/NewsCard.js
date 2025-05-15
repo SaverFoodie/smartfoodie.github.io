@@ -52,6 +52,19 @@ const News = () => {
       image: "./news_startupvalley.jpg",  
       docFile_en: "smartfoodie-startupvalley-feature_EN.docx",
       docFile_de: "smartfoodie-startupvalley-feature_DE.docx"
+    },
+    {
+      id: 5,
+      title: language === "en" 
+        ? "SmartFoodie Opens at Klinikum Großhadern" 
+        : "SmartFoodie Eröffnet im Klinikum Großhadern",
+      summary: language === "en"
+        ? "SmartFoodie opens its e-Bistro24H at Klinikum Großhadern, bringing fresh and tasty meals right into the hospital."
+        : "SmartFoodie eröffnet sein e-Bistro24H im Klinikum Großhadern und bringt frische, leckere Mahlzeiten direkt ins Haus.",
+      date: language === "en" ? "14-05-2025" : "14.05.2025",
+      image: "./klinikum_blog.jpg",
+      docFile_en: "SmartFoodie Opens at Klinikum Großhadern.docx",
+      docFile_de: "SmartFoodie eröffnet im Klinikum Großhadern.docx"
     }
     
       

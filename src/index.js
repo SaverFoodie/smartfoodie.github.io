@@ -9,16 +9,18 @@ import {
 } from "react-router-dom";
 import Layout from "./layout/layout";
 import Angebot from "./page/unser-angebot/index";
-import Products from "./page/unser-angebot/banner4";
-import FoodieSteps from "./page/unser-angebot/order";
-import FoodieMachine from "./page/unser-angebot/machines";
+import Products from "./page/food/foodPage";
+import FoodieSteps from "./page/product_and_solutions/order";
+import FoodieMachine from "./page/product_and_solutions/machines";
+import FoodiePlaces from "./page/product_and_solutions/places";
 import News from "./page/news/NewsCard";
-import Contact from "./page/unser-angebot/contact";
-import FoodiePlaces from "./page/unser-angebot/places";
+import Contact from "./page/contact/contact";
 import { LanguageProvider } from "./language";
 import NewsDetail from "./page/news/NewsDetails";
 import EventPage from "./page/event/EventPage";
 import EventDetails from "./page/event/EventDetails";
+import PrivacyPolicy from "./layout/privacy";
+import Impressum from "./layout/impressum";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
       {
         path: "events/:eventId",
         element: <EventDetails />
+      },
+      {
+        path: "privacy",
+        element: <PrivacyPolicy />
+      },
+      {
+        path: "impressum",
+        element: <Impressum />
       },
     ],
   },

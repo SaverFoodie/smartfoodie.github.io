@@ -4,31 +4,73 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Arrow = ({ onClick, direction }) => {
   return (
     <button
       onClick={onClick}
-      className={`hidden sm:block absolute md:top-[85%] lg:top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white bg-opacity-30 text-orange-500 rounded-full shadow-md hover:bg-gray-300 hover:bg-opacity-50 transition duration-300 ${
-        direction === "left" ? "left-1 md:left-2 lg:left-4" : "right-1 md:right-2 lg:right-4"
+      className={`hidden sm:block absolute top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/90 backdrop-blur-sm text-orange-500 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 ${
+        direction === "left" ? "left-4" : "right-4"
       }`}
     >
-      {direction === "left" ? <FaChevronLeft size={30} /> : <FaChevronRight size={30} />}
+      {direction === "left" ? <FaChevronLeft size={24} /> : <FaChevronRight size={24} />}
     </button>
   );
 };
 
-const FoodiePlaces = () => {
+const PlaceCard = ({ image, title, description, bgColor, language }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative group overflow-hidden rounded-2xl bg-white shadow-xl mx-4 my-8 max-w-[900px] mx-auto"
+    >
+      <div className="relative h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+      </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 p-10 sm:p-14 text-white transform translate-y-0 group-hover:translate-y-[-10px] transition-transform duration-300">
+        <div className={`inline-block px-6 py-3 rounded-full ${bgColor} mb-6 text-base font-semibold shadow-xl`}>
+          {language === "en" ? "SmartFoodie Location" : "SmartFoodie Standort"}
+        </div>
+        <h3 className="text-4xl sm:text-5xl font-bold mb-6 drop-shadow-xl">
+          {title}
+        </h3>
+        <p className="text-white text-xl sm:text-2xl leading-relaxed max-w-[95%] drop-shadow-lg">
+          {description}
+        </p>
+        <div className="mt-10 flex items-center text-lg text-white drop-shadow-lg">
+          <span className="flex items-center">
+            <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+              <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+            </svg>
+            {language === "en" ? "24/7 Available" : "24/7 Verfügbar"}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const FoodieSteps = () => {
   const { language } = useLanguage();
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 5000,
     prevArrow: <Arrow direction="left" />,
     nextArrow: <Arrow direction="right" />,
     responsive: [
@@ -38,132 +80,89 @@ const FoodiePlaces = () => {
           arrows: false,
           dots: true
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          dots: true,
-          autoplay: true,
-          autoplaySpeed: 3000
-        }
       }
     ]
   };
 
+  const places = [
+    {
+      image: "/gym.jpg",
+      title: language === "en" ? "Fitness Centers" : "Fitnessstudios",
+      description: language === "en" 
+        ? "Elevate your fitness journey with nutritious, protein-rich meals available 24/7. Perfect for pre and post-workout nutrition."
+        : "Steigern Sie Ihre Fitnessreise mit nahrhaften, proteinreichen Mahlzeiten rund um die Uhr. Ideal für die Ernährung vor und nach dem Training.",
+      bgColor: "bg-blue-500"
+    },
+    {
+      image: "/airport.jpg",
+      title: language === "en" ? "Airports" : "Flughäfen",
+      description: language === "en"
+        ? "Fresh, healthy meals for travelers on the go. Skip the fast food and enjoy quality dining during your layovers."
+        : "Frische, gesunde Mahlzeiten für Reisende unterwegs. Überspringen Sie das Fast Food und genießen Sie qualitativ hochwertiges Essen während Ihrer Zwischenstopps.",
+      bgColor: "bg-indigo-500"
+    },
+    {
+      image: "/mall.jpg",
+      title: language === "en" ? "Shopping Malls" : "Einkaufszentren",
+      description: language === "en"
+        ? "Enjoy delicious, healthy meals while shopping. Smart vending solutions for convenient dining throughout your shopping experience."
+        : "Genießen Sie köstliche, gesunde Mahlzeiten beim Einkaufen. Intelligente Verkaufsautomaten für bequemes Essen während Ihres Einkaufsbummels.",
+      bgColor: "bg-green-500"
+    },
+    {
+      image: "/university.jpg",
+      title: language === "en" ? "Universities" : "Universitäten",
+      description: language === "en"
+        ? "Fuel your academic success with affordable, nutritious meals. Perfect for busy students with demanding schedules."
+        : "Unterstützen Sie Ihren akademischen Erfolg mit erschwinglichen, nahrhaften Mahlzeiten. Ideal für beschäftigte Studenten mit anspruchsvollen Stundenplänen.",
+      bgColor: "bg-purple-500"
+    },
+    {
+      image: "/office.jpg",
+      title: language === "en" ? "Office Buildings" : "Bürogebäude",
+      description: language === "en"
+        ? "Enhance workplace productivity with convenient, healthy meal options. No more long lunch breaks or unhealthy fast food."
+        : "Steigern Sie die Produktivität am Arbeitsplatz mit bequemen, gesunden Essensoptionen. Keine langen Mittagspausen oder ungesundes Fast Food mehr.",
+      bgColor: "bg-cyan-500"
+    },
+    {
+      image: "/hospital.jpg",
+      title: language === "en" ? "Hospitals" : "Krankenhäuser",
+      description: language === "en"
+        ? "Support healthcare professionals and visitors with 24/7 access to fresh, nutritious meals. Always available when needed most."
+        : "Unterstützen Sie medizinisches Personal und Besucher mit rund um die Uhr Zugang zu frischen, nahrhaften Mahlzeiten. Immer verfügbar, wenn sie am meisten benötigt werden.",
+      bgColor: "bg-amber-500"
+    }
+  ];
+
   return (
-    <div className="flex flex-col">
-      {/* Integrated Slider section with title */}
-      <section className="py-8 md:py-12 lg:py-16 text-center bg-white px-4 md:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8 md:mb-12">
-          {language === "en" ? "Where SmartFoodie Makes a Difference" : "Wo SmartFoodie einen Unterschied macht"}
-        </h1>
-        <Slider {...settings} className="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto h-auto">
-          {/* Gym Card */}
-          <div className="bg-[#4A90E2] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/gym.jpg"
-              alt="Gym"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Fitness Centers" : "Fitnessstudios"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "Healthy meals for athletes, available 24/7" : "Gesunde Mahlzeiten für Sportler, rund um die Uhr verfügbar"}
-              </p>
-            </div>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 md:py-24 px-4 md:px-8 max-w-[1200px] mx-auto">
+        <div className="text-center mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+            {language === "en" ? "Where SmartFoodie Makes a Difference" : "Wo SmartFoodie einen Unterschied macht"}
+          </h1>
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {language === "en" 
+              ? "Experience the future of smart dining across various locations, bringing fresh, convenient meals exactly where you need them."
+              : "Erleben Sie die Zukunft des intelligenten Essens an verschiedenen Standorten und genießen Sie frische, bequeme Mahlzeiten genau dort, wo Sie sie benötigen."}
+          </p>
+        </div>
 
-          {/* Airport Card */}
-          <div className="bg-[#5D9CEC] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/airport.jpg"
-              alt="Airport"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Airports" : "Flughäfen"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "Quick meals for travelers, perfect for layovers" : "Schnelle Mahlzeiten für Reisende, ideal für Zwischenstopps"}
-              </p>
-            </div>
-          </div>
-
-          {/* Mall Card */}
-          <div className="bg-[#48CFAD] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/mall.jpg"
-              alt="Shopping Mall"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Shopping Malls" : "Einkaufszentren"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "Convenient dining for shoppers, healthy alternatives" : "Bequemes Essen für Einkäufer, gesunde Alternativen"}
-              </p>
-            </div>
-          </div>
-
-          {/* University Card */}
-          <div className="bg-[#37BC9B] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/university.jpg"
-              alt="University"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Universities" : "Universitäten"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "Affordable meals for students, perfect for busy schedules" : "Erschwingliche Mahlzeiten für Studenten, ideal für volle Stundenpläne"}
-              </p>
-            </div>
-          </div>
-
-          {/* Office Card */}
-          <div className="bg-[#3BAFDA] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/office.jpg"
-              alt="Office"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Office Buildings" : "Bürogebäude"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "Quick lunch for employees, no cafeteria needed" : "Schnelles Mittagessen für Mitarbeiter, keine Kantine erforderlich"}
-              </p>
-            </div>
-          </div>
-
-          {/* Hospital Card */}
-          <div className="bg-[#ffb700] flex flex-col rounded-3xl transition-transform transform h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
-            <img
-              src="/hospital.jpg"
-              alt="Hospital"
-              className="rounded-t-3xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                {language === "en" ? "Hospitals" : "Krankenhäuser"}
-              </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
-                {language === "en" ? "24/7 food service for staff and visitors" : "24/7 Essensservice für Personal und Besucher"}
-              </p>
-            </div>
-          </div>
-        </Slider>
+        <div className="relative max-w-[950px] mx-auto">
+          <Slider {...settings} className="places-slider">
+            {places.map((place, index) => (
+              <PlaceCard
+                key={index}
+                {...place}
+                language={language}
+              />
+            ))}
+          </Slider>
+        </div>
       </section>
-    </div>    
+    </div>
   );
 };
 
-export default FoodiePlaces;
+export default FoodieSteps;

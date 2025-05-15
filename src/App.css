@@ -60,14 +60,12 @@
 
 .nav-link {
   font-size: 1em;
-  color: #070209; /* Dark purple color */
   cursor: pointer;
 }
 
 .active-link {
   font-size: 1em;
-  color:#070209;
-  border-bottom: 2px solid #070209;
+  border-bottom: 2px solid currentColor;
   padding-bottom: 4px;
 }
 

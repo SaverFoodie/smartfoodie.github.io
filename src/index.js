@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from "./layout/layout";
-import Angebot from "./page/unser-angebot/index";
+import Angebot from "./page/home/index";
 import Products from "./page/food/foodPage";
 import FoodieSteps from "./page/product_and_solutions/order";
 import FoodieMachine from "./page/product_and_solutions/machines";
@@ -37,8 +37,8 @@ const router = createBrowserRouter([
         element: (
           <>
             <FoodieMachine></FoodieMachine>
-            <FoodieSteps></FoodieSteps> 
             <FoodiePlaces></FoodiePlaces>
+            <FoodieSteps></FoodieSteps> 
           </>
         ),
       },

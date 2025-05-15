@@ -1,16 +1,40 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import Logo from "../logo";
 import { useLanguage } from "../language";
+
+function Logo({ isScrolled }) {
+    const location = useLocation();
+    // 在首页或机器页面时，只有在滚动后才显示 logo
+    if ((location.pathname === "/" || location.pathname === "/products-and-solutions") && !isScrolled) {
+        return null;
+    }
+    return <img className={"w-20 lg:w-[200px]"} src="/header.png" />;
+}
 
 function Header() {
   const { language, setLanguage } = useLanguage();
   const router = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
+  const isHomePage = pathname === "/";
+  const isMachinesPage = pathname === "/products-and-solutions";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // 当滚动超过 100px 时改变样式
+      setIsScrolled(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -43,65 +67,59 @@ function Header() {
     setIsMenuOpen(prevState => !prevState);
   };
 
+  const shouldUseTransparentBg = (isHomePage || isMachinesPage) && !isScrolled;
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <header className={`fixed top-0 left-0 right-0 ${shouldUseTransparentBg ? 'bg-transparent' : 'bg-white shadow-md'} z-50 transition-colors duration-300`}>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer" onClick={() => { router("/"); window.scrollTo(0, 0); }}>
-            <Logo />
+            <Logo isScrolled={isScrolled} />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex items-center space-x-8 font-semibold">
-              <li 
-                className={`${pathname === "/" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/")}
-              >
-                {language === "en" ? "Home" : "Startseite"}
-              </li>
-              <li
-                className={`${pathname === "/products-and-solutions" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/products-and-solutions")}
-              >
-                {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
-              </li>
-              <li
-                className={`${pathname === "/our-food" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/our-food")}
-              >
-                {language === "en" ? "Our Food" : "Unser Essen"}
-              </li>
-              <li
-                className={`${pathname === "/blogs" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/blogs")}
-              >
-                {language === "en" ? "Blogs" : "Blogs"}
-              </li>
-              <li
-                className={`${pathname.startsWith("/events") ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/events")}
-              >
-                {language === "en" ? "Events" : "Veranstaltungen"}
-              </li>
-              <li
-                className={`${pathname === "/contact" ? "active-link" : "nav-link"} hover:scale-110 transition-transform duration-200`}
-                onClick={() => handleNavigation("/contact")}
-              >
-                {language === "en" ? "Contact us" : "Kontakt"}
-              </li>
+              {[
+                { path: "/", text: { en: "Home", de: "Startseite" } },
+                { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
+                { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
+                { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
+                { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+                { path: "/contact", text: { en: "Contact us", de: "Kontakt" } }
+              ].map((item) => (
+                <li 
+                  key={item.path}
+                  className={`${
+                    pathname === item.path || (item.path === "/events" && pathname.startsWith("/events")) 
+                      ? "active-link" 
+                      : "nav-link"
+                  } hover:scale-110 transition-transform duration-200 ${
+                    shouldUseTransparentBg 
+                      ? "!text-white hover:!text-[#ffb700]" 
+                      : "!text-gray-800 hover:!text-[#ffb700]"
+                  }`}
+                  onClick={() => handleNavigation(item.path)}
+                >
+                  {language === "en" ? item.text.en : item.text.de}
+                </li>
+              ))}
             </ul>
 
             {/* Language Selector */}
             <div className="ml-4">
               <select
-                className="language-button px-3 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={`language-button px-3 py-1 rounded-md border ${
+                  shouldUseTransparentBg 
+                    ? "border-white text-white bg-transparent hover:bg-white/10" 
+                    : "border-gray-300 text-gray-800 bg-white hover:bg-gray-50"
+                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300`}
                 value={language}
                 onChange={(e) => handleLanguageChange(e.target.value)}
               >
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
+                <option value="en" className={shouldUseTransparentBg ? "bg-gray-800" : "bg-white"}>English</option>
+                <option value="de" className={shouldUseTransparentBg ? "bg-gray-800" : "bg-white"}>Deutsch</option>
               </select>
             </div>
           </div>
@@ -110,7 +128,11 @@ function Header() {
           <div className="md:hidden flex items-center">
             <button
               ref={menuButtonRef}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className={`inline-flex items-center justify-center p-2 rounded-md ${
+                shouldUseTransparentBg 
+                  ? "text-white hover:text-[#ffb700] hover:bg-white/10" 
+                  : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+              } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-300`}
               onClick={toggleMenu}
             >
               <span className="sr-only">Open main menu</span>
@@ -130,34 +152,44 @@ function Header() {
 
       {/* Mobile menu */}
       <div ref={menuRef} className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="px-1 pt-1 pb-1 space-y-0.5 sm:px-2 bg-white shadow-lg">
+        <div className={`px-1 pt-1 pb-1 space-y-0.5 sm:px-2 ${
+          shouldUseTransparentBg 
+            ? "bg-black/80 backdrop-blur-sm" 
+            : "bg-white"
+        } shadow-lg`}>
           <ul className="space-y-1">
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/")}>
-              {language === "en" ? "Home" : "Startseite"}
-            </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/products-and-solutions")}>
-              {language === "en" ? "Products&Solutions" : "Produkte&Lösungen"}
-            </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/our-food")}>
-              {language === "en" ? "Our Food" : "Unser Essen"}
-            </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/blogs")}>
-              {language === "en" ? "Blogs" : "Blogs"}
-            </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/events")}>
-              {language === "en" ? "Events" : "Veranstaltungen"}
-            </li>
-            <li className="cursor-pointer px-2 py-1 text-sm rounded-md hover:bg-gray-100" onClick={() => handleNavigation("/contact")}>
-              {language === "en" ? "Contact us" : "Kontakt"}
-            </li>
+            {[
+              { path: "/", text: { en: "Home", de: "Startseite" } },
+              { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
+              { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
+              { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
+              { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+              { path: "/contact", text: { en: "Contact us", de: "Kontakt" } }
+            ].map((item) => (
+              <li 
+                key={item.path}
+                className={`cursor-pointer px-2 py-1 text-sm rounded-md ${
+                  shouldUseTransparentBg 
+                    ? "text-white hover:bg-white/10" 
+                    : "text-gray-800 hover:bg-gray-100"
+                } transition-colors duration-300`}
+                onClick={() => handleNavigation(item.path)}
+              >
+                {language === "en" ? item.text.en : item.text.de}
+              </li>
+            ))}
             <li className="px-2 py-1">
               <select
-                className="language-button w-full px-2 py-1 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className={`language-button w-full px-2 py-1 text-sm rounded-md border ${
+                  shouldUseTransparentBg 
+                    ? "border-white text-white bg-transparent hover:bg-white/10" 
+                    : "border-gray-300 text-gray-800 bg-white hover:bg-gray-50"
+                } focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors duration-300`}
                 value={language}
                 onChange={(e) => handleLanguageChange(e.target.value)}
               >
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
+                <option value="en" className={shouldUseTransparentBg ? "bg-gray-800" : "bg-white"}>English</option>
+                <option value="de" className={shouldUseTransparentBg ? "bg-gray-800" : "bg-white"}>Deutsch</option>
               </select>
             </li>
           </ul>

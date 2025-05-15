@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full">
-      <div className="bg-orange-400 w-full py-4 px-4 md:px-8">
+      <div className="bg-orange-400 w-full py-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left w-full md:w-1/4">

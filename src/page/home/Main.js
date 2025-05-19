@@ -8,9 +8,10 @@ const Main = () => {
     if (language === 'de') {
       return (
         <>
-          <span className="font-['Cormorant_Garamond']">Hol dir dein </span>
-          <span className="font-['Playfair_Display'] font-bold text-[#ffb700] relative inline-block transform hover:scale-105 transition-transform duration-300">warmes Essen</span>
-          <span className="font-['Cormorant_Garamond']"> sofort</span>
+          <span className="font-['Cormorant_Garamond']">SmartFoodie – Essen der 
+</span>
+          <span className="font-['Playfair_Display'] font-bold text-[#ffb700] relative inline-block transform hover:scale-105 transition-transform duration-300">nächsten Generation</span>
+          <span className="font-['Cormorant_Garamond']"> Kocht für dich. Rund um die Uhr.</span>
         </>
       );
     }

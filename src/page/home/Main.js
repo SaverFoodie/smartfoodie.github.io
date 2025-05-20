@@ -8,10 +8,11 @@ const Main = () => {
     if (language === 'de') {
       return (
         <>
-          <span className="font-['Cormorant_Garamond']">SmartFoodie – Essen der 
-</span>
+          <span className="font-['Cormorant_Garamond']">Essen der </span>
           <span className="font-['Playfair_Display'] font-bold text-[#ffb700] relative inline-block transform hover:scale-105 transition-transform duration-300">nächsten Generation</span>
-          <span className="font-['Cormorant_Garamond']"> Kocht für dich. Rund um die Uhr.</span>
+          <span className="font-['Cormorant_Garamond']"> Kocht für dich.</span>
+          <br />
+          <span className="font-['Cormorant_Garamond']">Rund um die Uhr.</span>
         </>
       );
     }
@@ -19,7 +20,9 @@ const Main = () => {
       <>
         <span className="font-['Cormorant_Garamond']">Get your </span>
         <span className="font-['Playfair_Display'] font-bold text-[#ffb700] relative inline-block transform hover:scale-105 transition-transform duration-300">hot meal</span>
-        <span className="font-['Cormorant_Garamond']"> right away</span>
+        <span className="font-['Cormorant_Garamond']"> right away.</span>
+        <br />
+        <span className="font-['Cormorant_Garamond']">Available 24/7.</span>
       </>
     );
   };

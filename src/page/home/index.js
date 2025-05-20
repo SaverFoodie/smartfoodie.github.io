@@ -2,7 +2,7 @@ import { useState } from "react";
 import OurFood from "./OurFood";
 import Highlights from "./Highlights";
 import Introduct from "./Introduct";
-import Partner from "./Partner";
+import Partner from "./partner";
 import HomeFooter from "./HomeFooter";
 import Main from "./Main";
 

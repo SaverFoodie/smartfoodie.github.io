@@ -11,7 +11,7 @@ const Main = () => {
           <span className="font-['Cormorant_Garamond']">Essen der </span>
           <span className="font-['Playfair_Display'] font-bold text-[#ffb700] relative inline-block transform hover:scale-105 transition-transform duration-300">nächsten Generation.</span>
           <br />
-          <span className="font-['Cormorant_Garamond']">Kocht für dich. 7/24</span>
+          <span className="font-['Cormorant_Garamond']">Kocht für dich. 24/7</span>
         </>
       );
     }

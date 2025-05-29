@@ -41,13 +41,13 @@ export default function Contact() {
                   <p className="text-orange-100 mb-3 sm:mb-4">{language === "en" ? "Sales Manager" : "Verkaufsmanager"}</p>
                   <div className="space-y-2 flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-6 md:flex-col md:gap-x-0">
                     <p className="text-white transition-colors text-sm sm:text-base">
-                    📧 smartfoodie@smartfoodiegmbh.eu
+                    📧 info@smartfoodiegmbh.eu
                     </p>
                     <p className="text-white transition-colors text-sm sm:text-base">
                       📞 +49 15122019721
                     </p>
                     <p className="text-white transition-colors text-sm sm:text-base">
-                      📍 Schellingstr. 109a, 80798 Munich
+                      📍 Schellingstr. 109a, 80798 München
                     </p>
                   </div>
                 </div>

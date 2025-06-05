@@ -3,6 +3,20 @@ import { useLanguage } from '../../language';
 
 const RecommendationBanner = () => {
   const { language } = useLanguage();
+  const bannerText = {
+    de: {
+      title: "bis zu 2000€",
+      body: "zwischen 800 - 2000€",
+      subtext: "für Ihre Restaurantempfehlungen",
+      button: "Jetzt Empfehlen"
+    },
+    en: {
+      title: "up to €2000",
+      body: "between €800 - €2000",
+      subtext: "for your restaurant recommendations",
+      button: "Recommend Now"
+    }
+  };
   return (
     <section className="flex flex-col md:flex-row items-center justify-between p-4 md:p-8 lg:p-10 font-['Poppins',sans-serif] bg-orange-100 gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto rounded-3xl md:rounded-[50px] my-8 overflow-hidden">
       {/* 左侧文案 */}
@@ -11,12 +25,12 @@ const RecommendationBanner = () => {
           {language === 'en' ? (
             <>
               Recommend SmartFoodie &{' '}
-              <span className="text-[#ffb700] text-4xl md:text-5xl font-semibold font-['Cormorant_Garamond',serif]">2,000 €</span> reward!
+              <span className="text-[#ffb700] text-4xl md:text-5xl font-semibold font-['Cormorant_Garamond',serif]">{bannerText.en.title}</span> reward!
             </>
           ) : (
             <>
               SmartFoodie empfehlen &{' '}
-              <span className="text-[#ffb700] text-4xl md:text-5xl font-semibold font-['Cormorant_Garamond',serif]">2.000 €</span> kassieren!
+              <span className="text-[#ffb700] text-4xl md:text-5xl font-semibold font-['Cormorant_Garamond',serif]">{bannerText.de.title}</span> kassieren!
             </>
           )}
         </h2>
@@ -27,8 +41,8 @@ const RecommendationBanner = () => {
         </p>
         <div className="mb-6 text-[#2A1A1F] text-base md:text-lg font-semibold">
           {language === 'en'
-            ? 'As soon as our machine is successfully installed, you will receive 2,000 € reward!'
-            : 'Sobald unser Lebensmittelautomat erfolgreich installiert ist, erhältst du 2.000 € Prämie!'}
+            ? `As soon as our machine is successfully installed, you will receive ${bannerText.en.body} reward!`
+            : `Sobald unser Lebensmittelautomat erfolgreich installiert ist, erhältst du ${bannerText.de.body} Prämie!`}
         </div>
         <div className="text-base md:text-lg text-[#2A1A1F] font-medium">
           {language === 'en'

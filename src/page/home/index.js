@@ -5,6 +5,7 @@ import Introduct from "./Introduct";
 import Partner from "./partner";
 import HomeFooter from "./HomeFooter";
 import Main from "./Main";
+import RecommendationBanner from "./recommendation";
 
 function Index() {
   const [refresh,setRefresh]=useState(false)
@@ -12,11 +13,12 @@ function Index() {
   return (
     <>
       <Main />
-      <Introduct></Introduct>
-      <Highlights></Highlights>
-      <OurFood></OurFood>
-      <Partner></Partner>
-      <HomeFooter></HomeFooter>
+      <Introduct />
+      <Highlights />
+      <OurFood />
+      <Partner />
+      <RecommendationBanner />
+      <HomeFooter />
     </>
   );
 }

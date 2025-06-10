@@ -19,6 +19,11 @@ const Partner = () => {
       <h2 className="partners-title">
         {language === 'de' ? 'Unsere Partner' : 'Some of Our Partners'}
       </h2>
+      <p className="partners-subtitle">
+        {language === 'de' 
+          ? 'Diese Orte haben bereits mit uns zusammengearbeitet und genießen jetzt leckere, warme Mahlzeiten aus unseren Automaten!'
+          : 'These places have partnered with us and are now enjoying convenient, delicious hot meals from our vending machines!'}
+      </p>
       <div className="partners-wrapper">
         <div className="partners-track">
           {duplicatedImages.map((image, index) => (
@@ -44,9 +49,20 @@ const Partner = () => {
         .partners-title {
           text-align: center;
           font-size: 2.5rem;
-          margin-bottom: 3rem;
+          margin-bottom: 1rem;
           color: #1a237e;
           font-weight: 700;
+        }
+
+        .partners-subtitle {
+          text-align: center;
+          font-size: 1.2rem;
+          margin-bottom: 3rem;
+          color: #666;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.5;
         }
 
         .partners-wrapper {
@@ -96,7 +112,13 @@ const Partner = () => {
           
           .partners-title {
             font-size: 2rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .partners-subtitle {
+            font-size: 1rem;
             margin-bottom: 2rem;
+            padding: 0 1rem;
           }
 
           .partner-card {

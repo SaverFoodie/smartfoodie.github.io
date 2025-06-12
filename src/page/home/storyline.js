@@ -119,7 +119,7 @@ const Storyline = () => {
   ];
 
   return (
-    <div ref={ref} className="relative w-full min-h-screen bg-gradient-to-b from-orange-50 to-white py-20 px-4 flex items-center justify-center">
+    <div ref={ref} className="relative w-full min-h-screen bg-gradient-to-b from-orange-50 to-white py-6 sm:py-16 md:py-20 px-2 sm:px-4 flex items-center justify-center">
       <motion.div 
         className="w-full max-w-[1000px] mx-auto"
         variants={containerVariants}
@@ -129,17 +129,17 @@ const Storyline = () => {
         {/* Title Section */}
         <motion.div
           variants={titleVariants}
-          className="text-center mb-14"
+          className="text-center mb-6 sm:mb-10 md:mb-14"
         >
           <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 font-['Playfair_Display'] tracking-wide"
+            className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-6 font-['Playfair_Display'] tracking-wide px-1"
           >
             {language === "en" ? "It All Started with a Stomach Growl..." : "Alles begann mit einem knurrenden Magen..."}
           </motion.h2>
         </motion.div>
 
         {/* Comic Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[800px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-[800px] mx-auto">
           {scenes.map((scene, index) => (
             <motion.div
               key={`scene-${index}`}
@@ -147,7 +147,7 @@ const Storyline = () => {
               variants={sceneVariants}
               className="group"
             >
-              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[3/2] mb-3 transform transition-all duration-500 hover:shadow-xl">
+              <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[16/9] sm:aspect-[3/2] mb-2 sm:mb-3 transform transition-all duration-500 hover:shadow-xl">
                 <motion.img
                   src={`./${scene.image}`}
                   alt={scene.text}
@@ -170,7 +170,7 @@ const Storyline = () => {
               <motion.p 
                 custom={index}
                 variants={textVariants}
-                className="text-lg md:text-xl text-gray-600 leading-relaxed px-2"
+                className="text-sm sm:text-lg md:text-xl text-gray-600 leading-tight sm:leading-relaxed px-1 sm:px-2"
               >
                 {scene.text}
               </motion.p>
@@ -181,9 +181,9 @@ const Storyline = () => {
         {/* Final Message */}
         <motion.div
           variants={finalMessageVariants}
-          className="mt-14 text-center max-w-2xl mx-auto"
+          className="mt-6 sm:mt-10 md:mt-14 text-center max-w-2xl mx-auto px-2 sm:px-4"
         >
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-semibold">
+          <p className="text-sm sm:text-lg md:text-xl text-gray-600 leading-tight sm:leading-relaxed font-semibold">
             {language === "en"
               ? "Wouldn't you wish for a hot meal vending machine to satisfy your hunger? That's exactly why SmartFoodie was born – to provide fresh, delicious, hot meals to anyone, anytime, anywhere."
               : "Würden Sie sich nicht einen warmen Mahlzeitenautomaten wünschen, der Ihren Hunger stillt? Genau deshalb wurde SmartFoodie geboren – um frisches, leckeres, warmes Essen für jeden, jederzeit und überall bereitzustellen."}

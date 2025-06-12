@@ -78,8 +78,8 @@ const Introduct = () => {
   }, []);
 
   return (
-    <div className="bg-orange-100">
-      <section ref={sectionRef} className="flex justify-center items-center py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans px-4 sm:px-6 md:px-8">
+    <div className="bg-orange-100 w-full overflow-hidden">
+      <section ref={sectionRef} className="flex justify-center items-center py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans">
         <div className="flex flex-col lg:flex-row items-center max-w-[1200px] w-full gap-8 md:gap-12 lg:gap-16">
           <motion.div 
             className="flex-1 w-full lg:pr-5"

@@ -1,8 +1,0 @@
-<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#ffecdb" />
-  <rect x="20" y="20" width="360" height="260" fill="#ffffff" stroke="#ffb997" stroke-width="3" />
-  <text x="200" y="150" font-family="Arial" font-size="28" text-anchor="middle" fill="#ff8a5c">Featured Event</text>
-  <text x="200" y="190" font-family="Arial" font-size="16" text-anchor="middle" fill="#666666">Grand Opening Berlin</text>
-  <path d="M160,80 L240,80 L250,100 L150,100 Z" fill="#ff8a5c" />
-  <rect x="175" y="35" width="50" height="50" fill="#ff8a5c" rx="5" />
-</svg> 

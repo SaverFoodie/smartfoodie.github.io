@@ -24,10 +24,10 @@ function HomeFooter() {
   };
 
   const getContainerHeight = () => {
-    if (windowWidth <= 480) return '50vh';
-    if (windowWidth <= 768) return '70vh';
+    if (windowWidth <= 480) return '65vh';
+    if (windowWidth <= 768) return '75vh';
     if (windowWidth <= 1024) return '80vh';
-    return '85vh';
+    return '80vh';
   };
 
   const getButtonStyles = () => {
@@ -100,7 +100,7 @@ function HomeFooter() {
       <div style={getContentWrapperStyles()}>
         {language === "en" ? (
           <>
-            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight font-['Cormorant_Garamond',serif]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight font-['Cormorant_Garamond',serif]">
               Recommend SmartFoodie &{' '}
               <span className="text-[#ffb700] text-5xl md:text-6xl font-semibold font-['Cormorant_Garamond',serif]">up to €2000</span> reward!
             </h2>
@@ -155,7 +155,7 @@ function HomeFooter() {
                 After a successful contract conclusion and completion of the trial phase, you will receive your referral reward by bank transfer. The amount of the reward depends on the sales achieved by the referred customer. SmartFoodie reserves the right to make the final decision on the award of the reward.<br/>
                 Note: The reward may be subject to income tax. Proper taxation is the responsibility of the participant. SmartFoodie assumes no tax obligations for the reward.<br/>
                 <span style={{fontWeight:600}}>c. Campaign Period</span><br/>
-                The referral program is valid from 11.06.2025 to 11.06.2026. Referrals outside this period are excluded. Referrals received during the campaign period but not resulting in a contract within 6 months of first contact are also invalid.<br/>
+                The referral program is valid from 11.06.2025 to 15.08.2026. Referrals outside this period are excluded. Referrals received during the campaign period but not resulting in a contract within 6 months of first contact are also invalid.<br/>
                 <span style={{fontWeight:600}}>d. Notification</span><br/>
                 You will be notified by email no later than 14 days after a successful contract conclusion. You will then be asked to provide your bank details for the reward transfer.<br/>
                 <span style={{fontWeight:600}}>e. Exclusion of Multiple Referrals</span><br/>

@@ -133,12 +133,14 @@ const Highlights = () => {
     .slick-center {
       transform: scale(1.3);
       opacity: 1;
+      z-index: 1;
     }
     .slick-slide:hover {
       opacity: 0.6;
     }
     .slick-list {
       padding: 3rem 0;
+      overflow: visible;
     }
     .slick-track {
       margin: 0 -1rem;
@@ -209,12 +211,12 @@ const Highlights = () => {
         <Slider {...settings} className="w-full">
           {slides.map((slide, index) => (
             <div key={index} className="px-1 md:px-2">
-              <div className="relative group">
-                <div className="relative overflow-hidden h-96 w-full max-w-[1400px] mx-auto">
+              <div className="relative group transition-all duration-500">
+                <div className="relative overflow-visible h-96 w-full max-w-[1400px] mx-auto">
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-500"
                   />
                 </div>
               </div>

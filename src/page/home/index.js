@@ -8,7 +8,7 @@ import Storyline from "./storyline";
 
 function Index() {
   const [refresh,setRefresh]=useState(false)
-
+  // div style={{ overflow: "hidden" }}
   return (
     <>
       <Main />

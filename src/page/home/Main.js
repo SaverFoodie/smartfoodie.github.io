@@ -33,7 +33,7 @@ const Main = () => {
         backgroundImage: "url('./main.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
+        
         marginTop: '-64px', // Offset for the header height
         paddingTop: '64px', // Add padding to account for the header
       }}

@@ -24,24 +24,26 @@ const Partner = () => {
           ? 'Diese Orte haben bereits mit uns zusammengearbeitet und genießen jetzt leckere, warme Mahlzeiten aus unseren Automaten!'
           : 'These places have partnered with us and are now enjoying convenient, delicious hot meals from our vending machines!'}
       </p>
-      <div className="partners-wrapper">
-        <div className="partners-track">
-          {duplicatedImages.map((image, index) => (
-            <div key={index} className="partner-card">
-              <img 
-                src={image} 
-                alt="Partner logo"
-                className="partner-logo"
-              />
-            </div>
-          ))}
+      <div className="partners-full-width-section">
+        <div className="partners-wrapper">
+          <div className="partners-track">
+            {duplicatedImages.map((image, index) => (
+              <div key={index} className="partner-card">
+                <img 
+                  src={image} 
+                  alt="Partner logo"
+                  className="partner-logo"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       <style jsx>{`
         .partners-container {
           padding: 4rem 2rem;
-          max-width: 1200px;
+          max-width: 100%;
           margin: 0 auto;
           overflow: hidden;
         }
@@ -57,7 +59,7 @@ const Partner = () => {
         .partners-subtitle {
           text-align: center;
           font-size: 1.2rem;
-          margin-bottom: 3rem;
+          margin-bottom: 1.5rem;
           color: #666;
           max-width: 800px;
           margin-left: auto;
@@ -65,8 +67,25 @@ const Partner = () => {
           line-height: 1.5;
         }
 
+        .partners-full-width-section {
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          background: white;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          border: 1px solid rgba(26, 35, 126, 0.1);
+          display: flex;
+          justify-content: center;
+          padding: 1rem 0;
+        }
+
         .partners-wrapper {
           width: 100%;
+          max-width: 1200px;
           overflow: hidden;
           position: relative;
         }
@@ -81,7 +100,6 @@ const Partner = () => {
           background: white;
           padding: 1.5rem;
           border-radius: 10px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           margin: 0 1rem;
           flex: 0 0 250px;
           display: flex;

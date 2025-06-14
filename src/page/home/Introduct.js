@@ -78,7 +78,7 @@ const Introduct = () => {
   }, []);
 
   return (
-    <div className="bg-orange-100 w-full overflow-hidden">
+    <div className="bg-transparent w-full overflow-hidden">
       <section ref={sectionRef} className="flex justify-center items-center py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans">
         <div className="flex flex-col lg:flex-row items-center max-w-[1200px] w-full gap-8 md:gap-12 lg:gap-16">
           <motion.div 
@@ -88,22 +88,47 @@ const Introduct = () => {
             viewport={{ amount: 0.2 }}
             variants={slideInLeftVariants}
           >
-            <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide">
-              {language === "en" ? "The 24/7 on-site dining solution" : "Die 24/7 On-Site-Essenslösung"}
-            </h1>
+            {/* 贴纸效果组件 */}
+            <div className="relative transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              {/* 贴纸边框和阴影 */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#1a237e]/20 to-[#1a237e]/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white border-4 border-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
+                {/* 胶带效果 */}
+                <div className="absolute -top-4 -right-4 w-16 h-8 bg-gradient-to-r from-yellow-200/80 to-yellow-300/80 rounded-sm rotate-45 shadow-md border border-yellow-400/30"></div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-6 bg-gradient-to-r from-blue-200/80 to-blue-300/80 rounded-sm -rotate-12 shadow-md border border-blue-400/30"></div>
+                
+                {/* 内边界效果 */}
+                <div className="absolute inset-3 border-2 border-dashed border-[#1a237e]/20 rounded-xl pointer-events-none"></div>
+                
+                {/* 内容区域 */}
+                <div className="relative z-10">
+                  <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide">
+                    {language === "en" ? "The 24/7 on-site dining solution" : "Die 24/7 On-Site-Essenslösung"}
+                  </h1>
 
-            <p className="text-lg sm:text-xl text-[#2A1A1F] mb-8">
-              {language === "en" 
-                ? "SmartFoodie GmbH delivers innovative catering solutions through automated vending machines with steamers, providing fresh, hot meals in 2 minutes. Perfect for companies, universities, and institutions seeking convenient food options."
-                : "SmartFoodie GmbH bietet innovative Catering-Lösungen durch automatisierte Verkaufsautomaten mit Dampfgarern, die in 2 Minuten frische, warme Mahlzeiten liefern. Ideal für Unternehmen, Universitäten und Institutionen, die nach praktischen Essensoptionen suchen."}
-            </p>
+                  <p className="text-lg sm:text-xl text-[#2A1A1F] mb-8 leading-relaxed">
+                    {language === "en" 
+                      ? "SmartFoodie GmbH delivers innovative catering solutions through automated vending machines with steamers, providing fresh, hot meals in 2 minutes. Perfect for companies, universities, and institutions seeking convenient food options."
+                      : "SmartFoodie GmbH bietet innovative Catering-Lösungen durch automatisierte Verkaufsautomaten mit Dampfgarern, die in 2 Minuten frische, warme Mahlzeiten liefern. Ideal für Unternehmen, Universitäten und Institutionen, die nach praktischen Essensoptionen suchen."}
+                  </p>
 
-            <ul className="mt-4 sm:mt-6 lg:mt-8 mb-6 sm:mb-8 lg:mb-10 space-y-4 md:space-y-6 text-[#2A1A1F] list-none text-base sm:text-lg">
-              <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Smart: Automated vending machines with steam technology for fresh, hot meals" : "Komfort: Vor Ort frisch erwärmte Mahlzeiten - spart Zeit und Aufwand."}</li>
-              <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Fast: Ready-to-eat meals in just 2 minutes" : "Erschwinglichkeit: Automatisierung gewährleistet hochwertige Mahlzeiten zu niedrigen Kosten."}</li>
-              <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Sustainable: Eco-friendly packaging and local ingredients" : "Geschmack: Dampftechnologie für optimalen Geschmack und Erhaltung von Nährstoffen."}</li>
-              <li className="flex items-start before:content-['•'] before:text-[#2A1A1F] before:mr-2">{language === "en" ? "Cost-effective: No upfront investment, try free for 3 months" : "Schnell: Genießen Sie frisch gedämpfte, warme Mahlzeiten in weniger als 2 Minuten."}</li>
-            </ul>
+                  <ul className="mt-4 sm:mt-6 lg:mt-8 mb-6 sm:mb-8 lg:mb-10 space-y-4 md:space-y-6 text-[#2A1A1F] list-none text-base sm:text-lg">
+                    <li className="flex items-start before:content-['•'] before:text-[#1a237e] before:mr-3 before:text-xl before:font-bold hover:translate-x-1 transition-transform duration-300">
+                      {language === "en" ? "Smart: Automated vending machines with steam technology for fresh, hot meals" : "Komfort: Vor Ort frisch erwärmte Mahlzeiten - spart Zeit und Aufwand."}
+                    </li>
+                    <li className="flex items-start before:content-['•'] before:text-[#1a237e] before:mr-3 before:text-xl before:font-bold hover:translate-x-1 transition-transform duration-300">
+                      {language === "en" ? "Fast: Ready-to-eat meals in just 2 minutes" : "Erschwinglichkeit: Automatisierung gewährleistet hochwertige Mahlzeiten zu niedrigen Kosten."}
+                    </li>
+                    <li className="flex items-start before:content-['•'] before:text-[#1a237e] before:mr-3 before:text-xl before:font-bold hover:translate-x-1 transition-transform duration-300">
+                      {language === "en" ? "Sustainable: Eco-friendly packaging and local ingredients" : "Geschmack: Dampftechnologie für optimalen Geschmack und Erhaltung von Nährstoffen."}
+                    </li>
+                    <li className="flex items-start before:content-['•'] before:text-[#1a237e] before:mr-3 before:text-xl before:font-bold hover:translate-x-1 transition-transform duration-300">
+                      {language === "en" ? "Cost-effective: No upfront investment, try free for 3 months" : "Schnell: Genießen Sie frisch gedämpfte, warme Mahlzeiten in weniger als 2 Minuten."}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -146,20 +171,36 @@ const Introduct = () => {
             viewport={{ amount: 0.2 }}
             variants={slideInRightVariants}
           > 
-            <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left px-4 md:px-6">
-              {language === "en" ? "Fresh, Convenient, and Affordable" : "Frisch, Bequem, und Günstig"}
-            </h1>
-            <ul className="mt-4 md:mt-6 list-none px-4 md:px-6 mb-4 md:mb-5 text-[#222222] text-left">
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
-                {language === "en" ? "Fresh & Hot Meals - Meals are heated using steam, preserving nutrients and flavor." : "Frisch & Warm Mahlzeiten - Mahlzeiten werden dampfgegart, wodurch Nährstoffe und Geschmack erhalten bleiben."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
-                {language === "en" ? "Time-Saving & Hassle-Free - Skip the restaurant trip, hot meals on site for maximum convenience." : "Zeitsparend & Stressfrei - Sparen Sie sich den Weg ins Restaurant und genießen Sie warme Mahlzeiten direkt vor Ort für maximalen Komfort."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
-                {language === "en" ? "Affordable Excellence - Savor quality, flavorful meals at a price that fits everyone's budget." : "Preiswerte Spitzenqualität: Genießen Sie hochwertige, schmackhafte Gerichte zu einem budgetfreundlichen Preis.​"}
-              </li>
-            </ul>
+            {/* 贴纸效果组件 */}
+            <div className="relative transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full">
+              {/* 贴纸边框和阴影 */}
+              <div className="absolute -inset-2 bg-gradient-to-l from-green-400/20 to-green-300/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white border-4 border-white rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
+                {/* 胶带效果 */}
+                <div className="absolute -top-3 -left-3 w-12 h-6 bg-gradient-to-r from-green-200/80 to-green-300/80 rounded-sm rotate-12 shadow-md border border-green-400/30"></div>
+                
+                {/* 内边界效果 */}
+                <div className="absolute inset-2 border-2 border-dashed border-green-400/20 rounded-xl pointer-events-none"></div>
+                
+                {/* 内容区域 */}
+                <div className="relative z-10">
+                  <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left">
+                    {language === "en" ? "Fresh, Convenient, and Affordable" : "Frisch, Bequem, und Günstig"}
+                  </h1>
+                  <ul className="mt-4 md:mt-6 list-none mb-4 md:mb-5 text-[#222222] text-left">
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
+                      {language === "en" ? "Fresh & Hot Meals - Meals are heated using steam, preserving nutrients and flavor." : "Frisch & Warm Mahlzeiten - Mahlzeiten werden dampfgegart, wodurch Nährstoffe und Geschmack erhalten bleiben."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
+                      {language === "en" ? "Time-Saving & Hassle-Free - Skip the restaurant trip, hot meals on site for maximum convenience." : "Zeitsparend & Stressfrei - Sparen Sie sich den Weg ins Restaurant und genießen Sie warme Mahlzeiten direkt vor Ort für maximalen Komfort."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e] text-left">
+                      {language === "en" ? "Affordable Excellence - Savor quality, flavorful meals at a price that fits everyone's budget." : "Preiswerte Spitzenqualität: Genießen Sie hochwertige, schmackhafte Gerichte zu einem budgetfreundlichen Preis.​"}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>       
         
@@ -177,20 +218,36 @@ const Introduct = () => {
             viewport={{ amount: 0.2 }}
             variants={slideInLeftVariants}
           > 
-            <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left px-4 md:px-6">
-              {language === "en" ? "Diverse, Delicious and Nutritious" : "Vielseitig, Geschmackvoll und Nährstoffreich"}
-            </h1>
-            <ul className="mt-4 md:mt-6 list-none px-4 md:px-6 mb-4 md:mb-5 text-[#222222] text-left">
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Diverse & Customizable Menu - Over 50 dishes, including a variety of cuisines, with dietary-friendly options." : "Umfangreiches & anpassbares Menü: Mehr als 50 Gerichte aus verschiedenen Küchenrichtungen, inklusive diätetischer Optionen."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Warm & Tasty Cuisine - Delicious, nutrient-rich dishes served with flavor and enjoyment." : "Warm & Geschmackvoll - Leckere, nährstoffreiche Speisen, die mit Genuss serviert werden."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Nutritional & Balanced Choices - Meals are prepared and developed by nutrition experts to ensure well-balanced nutrition." : "Nährstoffreich & Ausgewogen - Mahlzeiten werden von Nahrungsmittelexperten vorbereitet und entwickelt, um eine ausgewogene Ernährung zu gewährleisten."}
-              </li>
-            </ul>
+            {/* 贴纸效果组件 */}
+            <div className="relative transform rotate-2 hover:rotate-0 transition-transform duration-300 w-full">
+              {/* 贴纸边框和阴影 */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-purple-300/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white border-4 border-white rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
+                {/* 胶带效果 */}
+                <div className="absolute -top-3 -right-3 w-14 h-7 bg-gradient-to-r from-purple-200/80 to-purple-300/80 rounded-sm -rotate-45 shadow-md border border-purple-400/30"></div>
+                
+                {/* 内边界效果 */}
+                <div className="absolute inset-2 border-2 border-dashed border-purple-400/20 rounded-xl pointer-events-none"></div>
+                
+                {/* 内容区域 */}
+                <div className="relative z-10">
+                  <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left">
+                    {language === "en" ? "Diverse, Delicious and Nutritious" : "Vielseitig, Geschmackvoll und Nährstoffreich"}
+                  </h1>
+                  <ul className="mt-4 md:mt-6 list-none mb-4 md:mb-5 text-[#222222] text-left">
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "Diverse & Customizable Menu - Over 50 dishes, including a variety of cuisines, with dietary-friendly options." : "Umfangreiches & anpassbares Menü: Mehr als 50 Gerichte aus verschiedenen Küchenrichtungen, inklusive diätetischer Optionen."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "Warm & Tasty Cuisine - Delicious, nutrient-rich dishes served with flavor and enjoyment." : "Warm & Geschmackvoll - Leckere, nährstoffreiche Speisen, die mit Genuss serviert werden."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "Nutritional & Balanced Choices - Meals are prepared and developed by nutrition experts to ensure well-balanced nutrition." : "Nährstoffreich & Ausgewogen - Mahlzeiten werden von Nahrungsmittelexperten vorbereitet und entwickelt, um eine ausgewogene Ernährung zu gewährleisten."}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </motion.div>
           <motion.img 
             src="./2.jpg" 
@@ -226,20 +283,37 @@ const Introduct = () => {
             viewport={{ amount: 0.2 }}
             variants={slideInRightVariants}
           > 
-            <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left px-4 md:px-6">
-              {language === "en" ? "Sustainable, Eco-friendly, and Responsible" : "Nachhaltig, Umweltfreundlich, und Verantwortungsbewusst"}
-            </h1>
-            <ul className="mt-4 md:mt-6 list-none px-4 md:px-6 mb-4 md:mb-5 text-[#222222] text-left">
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Locally Sourced Ingredients - Reducing the carbon footprint by prioritizing local suppliers." : "Lokal eingesetzte Zutaten - Reduzierung des Kohlenstofffußabdrucks durch Priorisierung lokaler Anbieter."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "Eco-Friendly Packaging - Boxes made from recycable materials." : "Umweltschonende Verpackung - Boxen aus recycelbaren Materialien."}
-              </li>
-              <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
-                {language === "en" ? "AI-Powered Waste Reduction - Reduces food waste and optimizes meal choices for customers." : "KI-gestützte Abfallreduktion: Durch den Einsatz von Künstlicher Intelligenz reduzieren wir Lebensmittelverschwendung und optimieren die Mahlzeitenwahl für unsere Kunden."}
-              </li>
-            </ul>
+            {/* 贴纸效果组件 */}
+            <div className="relative transform -rotate-2 hover:rotate-0 transition-transform duration-300 w-full">
+              {/* 贴纸边框和阴影 */}
+              <div className="absolute -inset-2 bg-gradient-to-l from-orange-400/20 to-orange-300/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white border-4 border-white rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
+                {/* 胶带效果 */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-gradient-to-r from-orange-200/80 to-orange-300/80 rounded-sm rotate-6 shadow-md border border-orange-400/30"></div>
+                <div className="absolute -bottom-3 -right-3 w-10 h-5 bg-gradient-to-r from-red-200/80 to-red-300/80 rounded-sm rotate-45 shadow-md border border-red-400/30"></div>
+                
+                {/* 内边界效果 */}
+                <div className="absolute inset-2 border-2 border-dashed border-orange-400/20 rounded-xl pointer-events-none"></div>
+                
+                {/* 内容区域 */}
+                <div className="relative z-10">
+                  <h1 className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-bold mb-4 md:mb-6 mt-2 md:mt-3 uppercase tracking-wide text-left">
+                    {language === "en" ? "Sustainable, Eco-friendly, and Responsible" : "Nachhaltig, Umweltfreundlich, und Verantwortungsbewusst"}
+                  </h1>
+                  <ul className="mt-4 md:mt-6 list-none mb-4 md:mb-5 text-[#222222] text-left">
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "Locally Sourced Ingredients - Reducing the carbon footprint by prioritizing local suppliers." : "Lokal eingesetzte Zutaten - Reduzierung des Kohlenstofffußabdrucks durch Priorisierung lokaler Anbieter."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "Eco-Friendly Packaging - Boxes made from recycable materials." : "Umweltschonende Verpackung - Boxen aus recycelbaren Materialien."}
+                    </li>
+                    <li className="mb-4 md:mb-6 leading-relaxed relative pl-6 text-base md:text-lg lg:text-xl before:content-['•'] before:absolute before:left-0 before:text-[#1a237e]">
+                      {language === "en" ? "AI-Powered Waste Reduction - Reduces food waste and optimizes meal choices for customers." : "KI-gestützte Abfallreduktion: Durch den Einsatz von Künstlicher Intelligenz reduzieren wir Lebensmittelverschwendung und optimieren die Mahlzeitenwahl für unsere Kunden."}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -12,19 +12,15 @@ const FoodieMachine = () => {
           backgroundImage: "url('./machine.png')",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          backgroundAttachment: 'fixed',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 0
+          marginTop: '-64px',
+
         }}
       >
         {/* Overlay with gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 z-0" />
         
         {/* Centered Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 pt-[64px]">
+        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4]">
           <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
             <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-normal mb-10 text-center drop-shadow-2xl whitespace-nowrap">
               {language === "en" ? "Meal Vending Machines" : "Mahlzeitenautomaten"}
@@ -49,7 +45,6 @@ const FoodieMachine = () => {
           </div>
         </div>
       </div>
-      <div className="h-screen" /> {/* Spacer to maintain scroll position */}
       <IntroVideo />
     </>    
   );

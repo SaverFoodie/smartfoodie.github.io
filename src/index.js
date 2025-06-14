@@ -10,9 +10,7 @@ import {
 import Layout from "./layout/layout";
 import Angebot from "./page/home/index";
 import Products from "./page/food/foodPage";
-import FoodieSteps from "./page/product_and_solutions/order";
-import FoodieMachine from "./page/product_and_solutions/machines";
-import FoodiePlaces from "./page/product_and_solutions/places";
+import ProductAndSolutions from "./page/product_and_solutions/index";
 import News from "./page/news/NewsCard";
 import Contact from "./page/contact/contact";
 import { LanguageProvider } from "./language";
@@ -36,9 +34,7 @@ const router = createBrowserRouter([
         path: "products-and-solutions",
         element: (
           <>
-            <FoodieMachine></FoodieMachine>
-            <FoodiePlaces></FoodiePlaces>
-            <FoodieSteps></FoodieSteps> 
+            <ProductAndSolutions></ProductAndSolutions>
           </>
         ),
       },

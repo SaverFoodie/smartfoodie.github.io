@@ -32,11 +32,11 @@ const FoodieSteps = () => {
   };
 
   return (
-    <div className="flex flex-col bg-orange-100">
+    <div className="flex flex-col bg-transparent">
       {/* Title Section */}
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-5">
             {translations.mainTitle[language]}
           </h2>
           <p className="text-lg text-gray-600">
@@ -49,7 +49,7 @@ const FoodieSteps = () => {
       <div className="flex flex-col lg:flex-row items-stretch justify-center space-y-10 lg:space-y-0 lg:space-x-8 px-4 sm:px-6 pb-12">
         {/* Left Side: Video */}
         <div className="flex flex-col w-full sm:w-4/5 lg:w-1/2 mx-auto lg:mx-0">
-          <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col">
+          <div className="bg-white rounded-3xl shadow-lg p-6 flex flex-col">
             <div className="mb-6">
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4">
                 {language === "en" ? "Ordering on Machine" : "Bestellen am Automaten"}
@@ -72,16 +72,16 @@ const FoodieSteps = () => {
 
         {/* Right Side: Steps and QR Code */}
         <div className="flex flex-col w-full sm:w-4/5 lg:w-1/2 mx-auto lg:mx-0">
-          <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col relative">
-            {/* QR Code positioned absolutely in top right */}
-            <div className="absolute top-6 right-6 flex flex-col items-center">
+          <div className="bg-white rounded-3xl shadow-lg p-6 flex flex-col relative">
+            {/* QR Code positioned absolutely in top right - only on medium and large screens */}
+            <div className="hidden md:flex absolute top-6 right-6 flex-col items-center">
               <img src="./qr.jpg" alt="QR Code" className="w-[10vh] h-[13vh]" />
               <span className="text-sm font-semibold text-gray-800 uppercase tracking-widest mt-2">
                 {translations.qrTitle[language]}
               </span>
             </div>
 
-            <div className="mb-6 pr-[12vh]"> {/* Add padding to prevent text overlap with QR code */}
+            <div className="mb-6 md:pr-[12vh] text-center md:text-left"> {/* Add padding to prevent text overlap with QR code on medium+ screens, center on small screens */}
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4">
                 {language === "en" ? "Ordering on APP" : "Bestellen über die App"}
               </h1>
@@ -91,6 +91,14 @@ const FoodieSteps = () => {
               <p className="text-base sm:text-lg text-orange-600 font-semibold mt-2">
                 {translations.promoText[language]}
               </p>
+            </div>
+
+            {/* QR Code for small screens - positioned below text content */}
+            <div className="md:hidden flex flex-col items-center mb-6">
+              <img src="./qr.jpg" alt="QR Code" className="w-[10vh] h-[13vh]" />
+              <span className="text-sm font-semibold text-gray-800 uppercase tracking-widest mt-2">
+                {translations.qrTitle[language]}
+              </span>
             </div>
 
             <div className="flex-grow space-y-5">

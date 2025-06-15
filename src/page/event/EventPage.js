@@ -86,7 +86,7 @@ const EventPage = () => {
   return (
     <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0' }}>
-        <h1 className="text-4xl font-bold text-center mb-2" style={{ color: '#212121' }}>
+        <h1 className="text-5xl font-bold text-center mb-10" style={{ color: '#212121' }}>
           {language === "en" ? "Celebrating Food. Creating Connections." : "Essen Feiern. Verbindungen Schaffen."}
         </h1>
         <p className="text-xl text-center mb-8" style={{ color: '#616161' }}>

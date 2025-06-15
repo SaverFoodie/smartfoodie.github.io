@@ -11,7 +11,7 @@ const Arrow = ({ onClick, direction }) => {
     <button
       onClick={onClick}
       className={`hidden sm:block absolute top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/90 backdrop-blur-sm text-orange-500 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 ${
-        direction === "left" ? "left-4" : "right-4"
+        direction === "left" ? "-left-16" : "-right-16"
       }`}
     >
       {direction === "left" ? <FaChevronLeft size={24} /> : <FaChevronRight size={24} />}
@@ -25,7 +25,7 @@ const PlaceCard = ({ image, title, description, bgColor, language }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative group overflow-hidden rounded-2xl bg-white shadow-xl mx-4 my-8 max-w-[900px] mx-auto"
+      className="relative group overflow-hidden rounded-2xl bg-white shadow-xl mx-4 my-8 max-w-[1200px] mx-auto"
     >
       <div className="relative h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden">
         <img
@@ -136,10 +136,10 @@ const FoodieSteps = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <section className="py-16 md:py-24 px-4 md:px-8 max-w-[1200px] mx-auto">
+    <div className="min-h-screen bg-transparent">
+      <section className="py-16 md:py-24 px-4 md:px-8 max-w-[1000px] mx-auto">
         <div className="text-center mb-2">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-5">
             {language === "en" ? "Where SmartFoodie Makes a Difference" : "Wo SmartFoodie einen Unterschied macht"}
           </h1>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -149,7 +149,7 @@ const FoodieSteps = () => {
           </p>
         </div>
 
-        <div className="relative max-w-[950px] mx-auto">
+        <div className="relative max-w-[1000px] mx-auto ">
           <Slider {...settings} className="places-slider">
             {places.map((place, index) => (
               <PlaceCard

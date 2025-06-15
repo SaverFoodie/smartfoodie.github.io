@@ -194,7 +194,7 @@ const Highlights = () => {
   };
 
   return (
-    <section className="py-8 md:py-12 lg:py-16 text-center bg-white px-4 md:px-6 lg:px-8">
+    <section className="py-6 md:py-8 lg:py-10 text-center bg-white rounded-3xl shadow-2xl px-4 md:px-6 lg:px-8 mx-4 md:mx-6 lg:mx-8 my-8 md:my-12">
       <style>{sliderStyles}</style>
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
         {language === "en" ? "Where You Can Expect to Meet Us" : "Wo Sie uns treffen können"}

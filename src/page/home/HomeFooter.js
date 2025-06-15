@@ -243,7 +243,7 @@ const styles = {
   warmthButtonContainer: {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'transparent',
     width: '100%',
     height: '85vh',
     padding: '0',

@@ -1,14 +1,8 @@
-import { useState } from "react";
-import Highlights from "./Highlights";
-import Introduct from "./Introduct";
-import Partner from "./partner";
-import HomeFooter from "./HomeFooter";
-import Main from "./Main";
-import Storyline from "./storyline";
-
+import FoodieSteps from "./order";
+import FoodieMachine from "./machines";
+import FoodiePlaces from "./places";
 function Index() {
-  const [refresh,setRefresh]=useState(false)
-  // div style={{ overflow: "hidden" }}
+
   return (
     <div className="relative">
       {/* Modern Gradient Background */}
@@ -67,12 +61,9 @@ function Index() {
       }}></div>
       
       <div className="relative z-10">
-        <Main />
-        <Storyline />
-        <Introduct />
-        <Highlights />
-        <Partner />
-        <HomeFooter />
+        <FoodieMachine></FoodieMachine>
+        <FoodiePlaces></FoodiePlaces>
+        <FoodieSteps></FoodieSteps> 
       </div>
     </div>
   );

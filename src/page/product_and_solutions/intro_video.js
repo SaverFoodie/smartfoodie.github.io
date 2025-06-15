@@ -5,10 +5,10 @@ const IntroVideo = () => {
   const { language } = useLanguage();
   
   return (
-    <div className="w-full px-4 sm:px-6 py-12 bg-orange-100 -mt-24">
+    <div className="w-full px-4 sm:px-6 py-16 bg-transparent">
       <div className="w-full max-w-5xl mx-auto">
-        <div className="text-center mb-8 mt-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-5">
             {language === "en" ? "How SmartFoodie Makes a Difference" : "Wie SmartFoodie einen Unterschied macht"}
           </h2>
           <p className="text-lg text-gray-600">

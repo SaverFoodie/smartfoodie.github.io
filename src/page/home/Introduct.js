@@ -1,6 +1,7 @@
 import { useLanguage } from '../../language';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Introduct = () => {
   const { language } = useLanguage();
@@ -79,8 +80,8 @@ const Introduct = () => {
 
   return (
     <div className="bg-transparent w-full overflow-hidden">
-      <section ref={sectionRef} className="flex justify-center items-center py-10 sm:py-16 md:py-20 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] font-sans">
-        <div className="flex flex-col lg:flex-row items-center max-w-[1200px] w-full gap-8 md:gap-12 lg:gap-16">
+      <section ref={sectionRef} className="flex justify-center items-center py-6 sm:py-16 md:py-20 min-h-[400px] md:min-h-[600px] lg:min-h-[700px] font-sans px-2 sm:px-0">
+        <div className="flex flex-col lg:flex-row items-center max-w-[1200px] w-full gap-6 md:gap-12 lg:gap-16">
           <motion.div 
             className="flex-1 w-full lg:pr-5"
             initial="hidden"
@@ -91,14 +92,14 @@ const Introduct = () => {
             {/* 贴纸效果组件 */}
             <div className="relative transform rotate-1 hover:rotate-0 transition-transform duration-300">
               {/* 贴纸边框和阴影 */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#1a237e]/20 to-[#1a237e]/10 rounded-2xl blur-sm"></div>
-              <div className="relative bg-white border-4 border-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
+              <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#1a237e]/20 to-[#1a237e]/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white border-2 sm:border-4 border-white rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] transform-gpu">
                 {/* 胶带效果 */}
-                <div className="absolute -top-4 -right-4 w-16 h-8 bg-gradient-to-r from-yellow-200/80 to-yellow-300/80 rounded-sm rotate-45 shadow-md border border-yellow-400/30"></div>
-                <div className="absolute -bottom-4 -left-4 w-12 h-6 bg-gradient-to-r from-blue-200/80 to-blue-300/80 rounded-sm -rotate-12 shadow-md border border-blue-400/30"></div>
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-6 sm:w-16 sm:h-8 bg-gradient-to-r from-yellow-200/80 to-yellow-300/80 rounded-sm rotate-45 shadow-md border border-yellow-400/30"></div>
+                <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-8 h-4 sm:w-12 sm:h-6 bg-gradient-to-r from-blue-200/80 to-blue-300/80 rounded-sm -rotate-12 shadow-md border border-blue-400/30"></div>
                 
                 {/* 内边界效果 */}
-                <div className="absolute inset-3 border-2 border-dashed border-[#1a237e]/20 rounded-xl pointer-events-none"></div>
+                <div className="absolute inset-2 sm:inset-3 border-2 border-dashed border-[#1a237e]/20 rounded-xl pointer-events-none"></div>
                 
                 {/* 内容区域 */}
                 <div className="relative z-10">
@@ -132,7 +133,7 @@ const Introduct = () => {
           </motion.div>
 
           <motion.div 
-            className="flex-1 w-full max-w-full sm:max-w-[600px] lg:max-w-[900px] mt-6 sm:mt-8 lg:mt-0 lg:ml-10"
+            className="flex-1 w-full max-w-full sm:max-w-[600px] lg:max-w-[900px] mt-4 sm:mt-8 lg:mt-0 lg:ml-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.2 }}
@@ -146,6 +147,84 @@ const Introduct = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Innovative Catering Solutions详细描述部分 */}
+      <section className="flex justify-center items-center py-8 md:py-12 lg:py-16 font-sans">
+        <div className="max-w-[1000px] w-full px-4 md:px-6 lg:px-8">
+          <motion.div 
+            className="w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2 }}
+            variants={fadeInVariants}
+          >
+            {/* 贴纸效果组件 */}
+            <div className="relative transform rotate-0 hover:rotate-1 transition-transform duration-300">
+              {/* 贴纸边框和阴影 */}
+              <div className="absolute -inset-3 bg-gradient-to-br from-[#1a237e]/15 to-purple-400/10 rounded-3xl blur-lg"></div>
+              <div className="relative bg-white border-4 border-white rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.01] transform-gpu">
+                                  {/* 胶带效果 */}
+                  <div className="absolute -top-3 -right-10 w-24 h-10 bg-gradient-to-r from-yellow-200/80 to-yellow-300/80 rounded-sm -rotate-45 shadow-md border border-yellow-400/30"></div>
+                  <div className="absolute -bottom-3 -left-9 w-24 h-10 bg-gradient-to-r from-green-200/80 to-green-300/80 rounded-sm rotate-45 shadow-md border border-green-400/30"></div>
+                {/* 内边界效果 */}
+                <div className="absolute inset-4 border-2 border-dashed border-[#1a237e]/15 rounded-2xl pointer-events-none"></div>
+                
+                {/* 内容区域 */}
+                <div className="relative z-10 text-center">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl text-[#1a237e] font-bold mb-6 md:mb-8 uppercase tracking-wide">
+                    {language === "en" ? "Partnership" : "Partnerschaft"}
+                  </h2>
+                  
+                  <div className="text-lg md:text-xl text-[#2A1A1F] leading-relaxed space-y-4 md:space-y-6 mb-8 md:mb-10">
+                    <p>
+                      {language === "en" 
+                        ? "We provide automated vending machines with steam technology at no upfront cost. Our partnership includes machine installation, maintenance, and regular food supply - you simply provide the space."
+                        : "Wir stellen automatisierte Essensautomaten mit modernster Dampfgar-Technologie ohne Vorabkosten zur Verfügung. Unser Partnerschaft umfasst Maschineninstallation, Wartung und regelmäßige Befüllung - Sie stellen einfach den Platz zur Verfügung."}
+                    </p>
+                    
+                    <p>
+                      {language === "en" 
+                        ? "Try our solution risk-free for 3 months. Enjoy fresh, hot meals 24/7 - for your employees and customers."
+                        : "Testen Sie unsere Lösung 3 Monate lang risikofrei. 24/7 frische, warme Mahlzeiten genießen - für Ihre Mitarbeiter und Kunden."}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      window.location.href = '/contact';
+                      window.scrollTo({ top: 0, behavior: 'instant' });
+                    }}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#F16E21] to-orange-600 text-white rounded-full font-semibold text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                  >
+                    <span>{language === "en" ? "Start Partnership" : "Partnerschaft Starten"}</span>
+                    <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 过渡部分 */}
+      <div className="flex justify-center items-center py-6 md:py-8">
+        <motion.div 
+          className="text-center max-w-[1000px] px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.3 }}
+          variants={fadeInVariants}
+        >
+          <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#1a237e] font-bold mb-4 md:mb-6">
+            {language === "en" ? "Why Choose SmartFoodie?" : "Warum SmartFoodie Wählen?"}
+          </h3>
+          <p className="text-xl text-[#555] leading-relaxed">
+            {language === "en" 
+              ? "Discover the key advantages that make our solution the perfect choice for your organization"
+              : "Entdecken Sie die wichtigsten Vorteile, die unsere Lösung zur perfekten Wahl für Ihr Unternehmen machen"}
+          </p>
+        </motion.div>
+      </div>
 
       <div className="flex flex-col items-center p-4 md:p-8 lg:p-10 gap-4 md:gap-6 lg:gap-10 max-w-[1400px] mx-auto">
         <motion.div 

@@ -32,29 +32,29 @@ useEffect(() => {
   const getButtonStyles = () => {
     if (windowWidth <= 480) {
       return {
-        fontSize: '0.9rem',
-        padding: '0.2rem 0.4rem',
+        fontSize: '0.8rem',
+        padding: '0.4rem 0.8rem',
         alignSelf: 'center', 
       };
     }
     if (windowWidth <= 768) {
       return {
-        fontSize: '1.1rem',
-        padding: '0.4rem 0.8rem',
+        fontSize: '0.8rem',
+        padding: '0.4rem 0.9rem',
         alignSelf: 'center',
       };
     }
     if (windowWidth <= 1024) {
       return {
-        fontSize: '1.2rem',
-        padding: '0.65rem 1.1rem',
+        fontSize: '1rem',
+        padding: '0.5rem 1.0rem',
         alignSelf: 'flex-start',
         marginLeft: '15%',
       };
     }
     return {
-      fontSize: '1.3rem',
-      padding: '0.8rem 1.4rem',
+      fontSize: '1.1rem',
+      padding: '0.6rem 1.2rem',
       alignSelf: 'flex-start',
       marginLeft: '25%',
     };
@@ -105,7 +105,7 @@ useEffect(() => {
           ...textStyle,
           fontSize: windowWidth <= 480 ? '1.2em' : windowWidth <= 768 ? '1.6em' : windowWidth <= 1024 ? '1.8em' : '2.2em',
           fontWeight: 'bold',
-          marginBottom: '20px',
+          marginBottom: windowWidth <= 480 ? '10px' : '15px',
           textTransform: 'uppercase',
           letterSpacing: '1px'
         }}>
@@ -115,7 +115,7 @@ useEffect(() => {
         <p style={{
           ...textStyle,
           fontSize: windowWidth <= 480 ? '0.95em' : windowWidth <= 768 ? '1.1em' : windowWidth <= 1024 ? '1.3em' : '1.4em',
-          marginBottom: '15px',
+          marginBottom: windowWidth <= 480 ? '8px' : '12px',
           
         }}>
           {language === "en" 
@@ -126,7 +126,7 @@ useEffect(() => {
         <p style={{
           ...textStyle,
           fontSize: windowWidth <= 480 ? '0.95em' : windowWidth <= 768 ? '1.1em' : windowWidth <= 1024 ? '1.3em' : '1.4em',
-          marginBottom: '15px',
+          marginBottom: windowWidth <= 480 ? '8px' : '12px',
           opacity: '0.95'
         }}>
           {language === "en" 
@@ -137,7 +137,7 @@ useEffect(() => {
         <p style={{
           ...textStyle,
           fontSize: windowWidth <= 480 ? '0.85em' : windowWidth <= 768 ? '1em' : windowWidth <= 1024 ? '1.1em' : '1.2em',
-          marginBottom: '25px',
+          marginBottom: windowWidth <= 480 ? '15px' : '20px',
           fontStyle: 'italic',
           opacity: '0.9'
         }}>
@@ -203,7 +203,7 @@ const styles = {
     zIndex: 1,
   },
   button: {
-    marginTop: '2rem',
+    marginTop: '1rem',
     width: 'auto',
     border: 'none',
     cursor: 'pointer',

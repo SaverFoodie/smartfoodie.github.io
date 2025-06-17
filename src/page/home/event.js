@@ -119,7 +119,7 @@ const EventBanner = () => {
                       window.location.href = '/contact';
                       window.scrollTo({ top: 0, behavior: 'instant' });
                     }}
-                    className="px-8 py-4 bg-white text-pink-600 rounded-full font-bold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap hover:bg-gray-50"
+                    className="px-6 py-3 bg-white text-pink-600 rounded-full font-bold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap hover:bg-gray-50"
                   >
                     {language === "en" ? "Start Now!" : "Jetzt Starten!"}
                   </button>

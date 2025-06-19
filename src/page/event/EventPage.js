@@ -84,12 +84,12 @@ const EventPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
+    <div style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0' }}>
-        <h1 className="text-5xl font-bold text-center mb-10" style={{ color: '#212121' }}>
+        <h1 className="text-5xl font-bold text-center mb-6" style={{ color: '#212121' }}>
           {language === "en" ? "Celebrating Food. Creating Connections." : "Essen Feiern. Verbindungen Schaffen."}
         </h1>
-        <p className="text-xl text-center mb-8" style={{ color: '#616161' }}>
+        <p className="text-xl text-center mb-8 text-gray-600">
           {language === "en" 
             ? "Join us on a journey of flavor, innovation, and shared experiences — where every event opens a new chapter." 
             : "Begleiten Sie uns auf einer Reise voller Geschmack, Innovation und gemeinsamer Erlebnisse — wo jedes Event ein neues Kapitel eröffnet."}
@@ -146,6 +146,11 @@ const EventPage = () => {
           );
         })}
       </div>
+      
+      {/* More events teaser */}
+      <h2 className="text-2xl font-bold text-center text-gray-600 mt-16 mb-24">
+        {language === "en" ? "More inspiring moments await your presence..." : "Weitere inspirierende Momente erwarten Sie..."}
+      </h2>
     </div>
   );
 };

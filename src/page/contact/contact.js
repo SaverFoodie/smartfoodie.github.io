@@ -4,7 +4,7 @@ import { useLanguage } from "../../language";
 export default function Contact() {
   const { language } = useLanguage();
   return (
-    <div className="w-full min-h-[100vh] bg-gradient-to-br from-orange-100 to-white">
+    <div className="w-full min-h-[100vh]">
       {/* Title section */}
       <div className="w-full text-center py-10 sm:py-16 md:py-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 transition-colors duration-300 px-4">
@@ -18,10 +18,10 @@ export default function Contact() {
           {/* Left half - text content */}
           <div className="w-full md:w-2/5 p-4 sm:p-6 md:p-8">
             <h3 className="text-2xl sm:text-3xl font-semibold mb-4 md:mb-6 text-orange-500">{language === "en" ? "Contact Us" : "Kontaktieren Sie uns"}</h3>
-            <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-base md:text-lg">
               {language === "en" ? "If you are interested in our services or have any questions, please feel free to contact us." : "Wenn Sie an unseren Leistungen interessiert sind oder Fragen haben, kontaktieren Sie uns bitte."}
             </p>
-            <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-base md:text-lg">
               {language === "en" ? "Our team will be happy to provide you with more information and personalized solutions." : "Unser Team wird sich freuen, Ihnen mehr Informationen zu geben und personalisierte Lösungen zu erstellen. "}
             </p>
           </div>

@@ -85,8 +85,8 @@ function Header() {
                 { path: "/", text: { en: "Home", de: "Startseite" } },
                 { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
                 { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
-                { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
                 { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+                { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
                 { path: "/contact", text: { en: "Contact us", de: "Kontakt" } }
               ].map((item) => (
                 <li 
@@ -162,8 +162,8 @@ function Header() {
               { path: "/", text: { en: "Home", de: "Startseite" } },
               { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
               { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
-              { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
               { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+              { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
               { path: "/contact", text: { en: "Contact us", de: "Kontakt" } }
             ].map((item) => (
               <li 

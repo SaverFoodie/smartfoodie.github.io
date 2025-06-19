@@ -77,7 +77,7 @@ const News = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-100 to-white" style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
+    <div className="container mx-auto px-4 py-16 min-h-screen">
       <h1 
         className="headline" 
         style={{ 
@@ -85,7 +85,7 @@ const News = () => {
           fontSize: 'clamp(2em, 5vw, 3em)', 
           textAlign: 'center', 
           marginTop: '0px',
-          marginBottom: '30px', 
+          marginBottom: '10px', 
           fontFamily: 'Arial, sans-serif' 
         }}
       >
@@ -96,6 +96,7 @@ const News = () => {
           textAlign: 'center', 
           fontSize: 'clamp(1em, 3vw, 1.3em)', 
           marginBottom: '30px',
+          color: '#616161',
           padding: '0 10px'
         }}
       >
@@ -133,6 +134,11 @@ const News = () => {
           </div>
         ))}
       </div>
+      
+      {/* More news teaser */}
+      <h2 className="text-2xl font-bold text-center text-gray-600 mt-16">
+        {language === "en" ? "The journey continues with more memorable moments..." : "Die Reise geht weiter mit weiteren unvergesslichen Momenten..."}
+      </h2>
     </div>
   );
 };

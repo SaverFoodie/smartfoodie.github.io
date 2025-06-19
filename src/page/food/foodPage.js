@@ -62,10 +62,10 @@ const ProductList = () => {
 
   const filteredProducts = products.filter(filterProducts);
   return (
-    <div className="bg-gradient-to-br from-orange-100 to-white">
-      <div className="container mx-auto px-4 py-16 min-h-screen bg-transparent">
+    <div>
+      <div className="container mx-auto px-4 py-16 min-h-screen">
         {/* Title */}
-        <h1 className="text-5xl font-bold text-center text-gray-800 mb-4">
+        <h1 className="text-5xl font-bold text-center text-gray-800 mb-6">
          {language === "en" ? "Food is our passion." : "Lebensmittel sind unsere Leidenschaft."}
         </h1>
         {/* Updated Headline */}
@@ -73,121 +73,167 @@ const ProductList = () => {
           {language === "en" ? "Explore a curated selection of our diverse product offerings." : "Entdecken Sie eine ausgewählte Auswahl unserer vielfältigen Produktangebote."}
         </p>
         
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col lg:flex-row lg:items-start">
           {/* Filter Sidebar */}
-          <aside className="w-full md:w-1/5 pr-6 mb-8 md:mb-0">
-            <h2 className="text-xl font-bold text-orange-500 mb-4">
-              {language === "en" ? "Filter by:" : "Filtern nach:"}
-            </h2>
+          <aside className="w-full lg:w-1/5 pr-6 mb-8 lg:mb-0">
+            {/* Elegant Filter Container */}
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 relative overflow-hidden">
+              {/* Subtle gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 via-pink-50/30 to-yellow-50/40"></div>
+              
+              <div className="relative z-10">
+                <h2 className="text-xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
+                  <span className="w-1 h-6 bg-gradient-to-b from-orange-400 to-pink-400 rounded-full"></span>
+                  {language === "en" ? "Filter by" : "Filtern nach"}
+                </h2>
 
-            <div className="mb-6">
-              <h3 className="text-sm font-bold text-gray-700 mb-3 uppercase tracking-wider">
-                {language === "en" ? "Ingredients" : "Zutaten"}
-              </h3>
-              <button 
-                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('vegan') 
-                    ? 'bg-orange-500 text-white border-none' 
-                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
-                }`}
-                onClick={() => toggleFilter('vegan')}
-                aria-pressed={activeFilter.includes('vegan')}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  🌱 <span className="font-medium">{language === "en" ? "Vegan" : "Vegan"}</span>
-                </span>
-              </button>
-              <div className="mb-4" />
-              <button 
-                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('non-vegan') 
-                    ? 'bg-orange-500 text-white border-none' 
-                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
-                }`}
-                onClick={() => toggleFilter('non-vegan')}
-                aria-pressed={activeFilter.includes('non-vegan')}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  🍖 <span className="font-medium">{language === "en" ? "Non-Vegan" : "Nicht-Vegan"}</span>
-                </span>
-              </button>
-            </div>
-            <div className="mb-6">
-              <h3 className="text-sm font-bold text-gray-700 mb-3 uppercase tracking-wider">
-                {language === "en" ? "Dish Type" : "Gerichtstyp"}
-              </h3>
-              <button 
-                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('rice') 
-                    ? 'bg-orange-500 text-white border-none' 
-                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
-                }`}
-                onClick={() => toggleFilter('rice')}
-                aria-pressed={activeFilter.includes('rice')}
-              >
-                <span className="flex items-center justify-center gap-2">
-                 🍚 <span className="font-medium">{language === "en" ? "Rice-Bowl" : "Reis-Bowl"}</span>
-                </span>
-              </button>
-              <div className="mb-4" />
-              <button 
-                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('noodle') 
-                    ? 'bg-orange-500 text-white border-none' 
-                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
-                }`}
-                onClick={() => toggleFilter('noodle')}
-                aria-pressed={activeFilter.includes('noodle')}
-              >
-                <span className="flex items-center justify-center gap-2">
-                 🍜 <span className="font-medium">{language === "en" ? "Noodle-Bowl" : "Nudel-Bowl"}</span>
-                </span>
-              </button>
-              <div className="mb-4" />
-              <button 
-                className={`block w-full md:w-[150px] h-[45px] rounded-full filter-button transition-all duration-300 ease-in-out hover:shadow-lg ${
-                  activeFilter.includes('dimSum') 
-                    ? 'bg-orange-500 text-white border-none' 
-                    : 'border-2 border-orange-400 text-gray-700 hover:bg-orange-50'
-                }`}
-                onClick={() => toggleFilter('dimSum')}
-                aria-pressed={activeFilter.includes('dimSum')}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  🥟 <span className="font-medium">{language === "en" ? "Dim Sum" : "Dim Sum"}</span>
-                </span>
-              </button>
+                <div className="mb-7">
+                  <h3 className="text-sm font-medium text-gray-600 mb-4 pl-1">
+                    {language === "en" ? "Ingredients" : "Zutaten"}
+                  </h3>
+                  <div className="space-y-3">
+                    <button 
+                      className={`group relative w-full py-3.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] ${
+                        activeFilter.includes('vegan') 
+                          ? 'bg-gradient-to-r from-green-100 to-green-50 text-green-800 border border-green-200/60 shadow-md' 
+                          : 'bg-white/80 text-gray-700 border border-gray-200/60 hover:bg-gradient-to-r hover:from-green-50 hover:to-white hover:border-green-200/60'
+                      }`}
+                      onClick={() => toggleFilter('vegan')}
+                      aria-pressed={activeFilter.includes('vegan')}
+                    >
+                      <span className="flex items-center justify-start gap-3">
+                        <span className="text-base">🌱</span>
+                        <span>{language === "en" ? "Vegetarian" : "Vegetarisch"}</span>
+                      </span>
+                      {activeFilter.includes('vegan') && (
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-green-500 rounded-full"></div>
+                      )}
+                    </button>
+                    
+                    <button 
+                      className={`group relative w-full py-3.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] ${
+                        activeFilter.includes('non-vegan') 
+                          ? 'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 border border-orange-200/60 shadow-md' 
+                          : 'bg-white/80 text-gray-700 border border-gray-200/60 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white hover:border-orange-200/60'
+                      }`}
+                      onClick={() => toggleFilter('non-vegan')}
+                      aria-pressed={activeFilter.includes('non-vegan')}
+                    >
+                      <span className="flex items-center justify-start gap-3">
+                        <span className="text-base">🍖</span>
+                        <span>{language === "en" ? "Non-Vegetarian" : "Nicht-Vegetarisch"}</span>
+                      </span>
+                      {activeFilter.includes('non-vegan') && (
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      )}
+                    </button>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-sm font-medium text-gray-600 mb-4 pl-1">
+                    {language === "en" ? "Dish Type" : "Gerichtstyp"}
+                  </h3>
+                  <div className="space-y-3">
+                    <button 
+                      className={`group relative w-full py-3.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] ${
+                        activeFilter.includes('rice') 
+                          ? 'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 border border-orange-200/60 shadow-md' 
+                          : 'bg-white/80 text-gray-700 border border-gray-200/60 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white hover:border-orange-200/60'
+                      }`}
+                      onClick={() => toggleFilter('rice')}
+                      aria-pressed={activeFilter.includes('rice')}
+                    >
+                      <span className="flex items-center justify-start gap-3">
+                        <span className="text-base">🍚</span>
+                        <span>{language === "en" ? "Rice-Bowl" : "Reis-Bowl"}</span>
+                      </span>
+                      {activeFilter.includes('rice') && (
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      )}
+                    </button>
+                    
+                    <button 
+                      className={`group relative w-full py-3.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] ${
+                        activeFilter.includes('noodle') 
+                          ? 'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 border border-orange-200/60 shadow-md' 
+                          : 'bg-white/80 text-gray-700 border border-gray-200/60 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white hover:border-orange-200/60'
+                      }`}
+                      onClick={() => toggleFilter('noodle')}
+                      aria-pressed={activeFilter.includes('noodle')}
+                    >
+                      <span className="flex items-center justify-start gap-3">
+                        <span className="text-base">🍜</span>
+                        <span>{language === "en" ? "Noodle-Bowl" : "Nudel-Bowl"}</span>
+                      </span>
+                      {activeFilter.includes('noodle') && (
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      )}
+                    </button>
+                    
+                    <button 
+                      className={`group relative w-full py-3.5 px-4 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] ${
+                        activeFilter.includes('dimSum') 
+                          ? 'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 border border-orange-200/60 shadow-md' 
+                          : 'bg-white/80 text-gray-700 border border-gray-200/60 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white hover:border-orange-200/60'
+                      }`}
+                      onClick={() => toggleFilter('dimSum')}
+                      aria-pressed={activeFilter.includes('dimSum')}
+                    >
+                      <span className="flex items-center justify-start gap-3">
+                        <span className="text-base">🥟</span>
+                        <span>{language === "en" ? "Dim Sum" : "Dim Sum"}</span>
+                      </span>
+                      {activeFilter.includes('dimSum') && (
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </aside>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-4 w-full md:w-3/4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-4 w-full lg:w-3/4 grid-rows-[repeat(auto-fit,360px)]">
             {filteredProducts.map((product, index) => (
               <div 
                 key={index} 
-                className="product-card bg-white rounded-xl shadow-[0_4px_12px_rgba(251,146,60,0.15)] hover:shadow-[0_8px_24px_rgba(251,146,60,0.2)] transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
+                className="group relative product-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1 border border-gray-200/50 h-90"
               >
-                <div className="relative">
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="w-full h-56 object-cover"
-                  />
-                  {product.tag && (
-                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                      {product.tag.includes("vegan") ? "🌱 " : "🍖 "}
-                      {product.tag.includes("dimSum") 
-                        ? "Dim Sum" 
-                        : product.tag.includes("noodle")
-                          ? (language === "en" ? "Noodle-Bowl" : "Nudel-Bowl")
-                          : (language === "en" ? "Rice-Bowl" : "Reis-Bowl")}
-                    </span>
-                  )}
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-800 text-center">
-                    {product.name}
-                  </h3>
+                <div className="relative z-10">
+                  <div className="relative overflow-hidden rounded-t-2xl">
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Simple overlay on hover */}
+                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Simplified tag */}
+                    {product.tag && (
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium shadow-md border border-gray-200/50">
+                          {product.tag.includes("vegan") ? "🌱" : "🍖"}
+                          <span className="ml-1 text-gray-700">
+                            {product.tag.includes("dimSum") 
+                              ? "Dim Sum" 
+                              : product.tag.includes("noodle")
+                                ? (language === "en" ? "Noodle-Bowl" : "Nudel-Bowl")
+                                : (language === "en" ? "Rice-Bowl" : "Reis-Bowl")}
+                          </span>
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 text-center leading-relaxed">
+                      {product.name}
+                    </h3>
+                  </div>
                 </div>
               </div>
             ))}

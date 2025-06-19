@@ -9,13 +9,13 @@ import {
 } from "react-router-dom";
 import Layout from "./layout/layout";
 import Angebot from "./page/home/index";
-import Products from "./page/food/foodPage";
+import Products from "./page/food/index";
 import ProductAndSolutions from "./page/product_and_solutions/index";
-import News from "./page/news/NewsCard";
-import Contact from "./page/contact/contact";
+import News from "./page/news/index";
+import Contact from "./page/contact/index";
 import { LanguageProvider } from "./language";
 import NewsDetail from "./page/news/NewsDetails";
-import EventPage from "./page/event/EventPage";
+import Events from "./page/event/index";
 import EventDetails from "./page/event/EventDetails";
 import PrivacyPolicy from "./layout/privacy";
 import Impressum from "./layout/impressum";
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "events",
-        element: <EventPage />
+        element: <Events />
       },
       {
         path: "events/:eventId",

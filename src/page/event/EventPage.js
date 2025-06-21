@@ -84,7 +84,7 @@ const EventPage = () => {
   };
 
   return (
-    <div style={{ margin: 0, minHeight: '100vh', padding: '70px 15px 0 15px' }}>
+    <div className="container mx-auto px-4 py-16 min-h-screen">
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0' }}>
         <h1 className="text-5xl font-bold text-center mb-6" style={{ color: '#212121' }}>
           {language === "en" ? "Celebrating Food. Creating Connections." : "Essen Feiern. Verbindungen Schaffen."}
@@ -148,7 +148,7 @@ const EventPage = () => {
       </div>
       
       {/* More events teaser */}
-      <h2 className="text-2xl font-bold text-center text-gray-600 mt-16 mb-24">
+      <h2 className="text-2xl font-bold text-center text-gray-600 mt-16 ">
         {language === "en" ? "More inspiring moments await your presence..." : "Weitere inspirierende Momente erwarten Sie..."}
       </h2>
     </div>

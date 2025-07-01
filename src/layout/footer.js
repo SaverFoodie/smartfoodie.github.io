@@ -28,12 +28,6 @@ export default function Footer() {
             </div>
             <div className="text-center w-full md:w-2/4 flex items-center justify-center">
               <div className="flex items-center space-x-6">
-                <a href="tel:+49 15122019721" className="text-gray-800 hover:text-gray-900 transition-colors duration-300 flex items-center space-x-1 whitespace-nowrap">
-                  <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                  <span className="text-xs md:text-sm font-medium">+49 15122019721</span>
-                </a>
                 <a
                   onClick={handlePrivacyClick}
                   className="text-gray-800 hover:text-gray-900 transition-colors duration-300 flex items-center space-x-1 cursor-pointer whitespace-nowrap"
@@ -60,13 +54,21 @@ export default function Footer() {
               </div>
             </div>
             <div className="text-center md:text-right w-full md:w-1/4">
-              <a href="mailto:smartfoodie@smartfoodiegmbh.eu" className="text-gray-800 hover:text-gray-900 transition-colors duration-300 flex items-center justify-center md:justify-end space-x-1 whitespace-nowrap">
-                <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                <span className="text-xs md:text-sm font-medium">smartfoodie@smartfoodiegmbh.eu</span>
-              </a>
+              <div className="flex items-center justify-center md:justify-end space-x-6">
+                <a href="tel:+49 15122019721" className="text-gray-800 hover:text-gray-900 transition-colors duration-300 flex items-center space-x-1 whitespace-nowrap">
+                  <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <span className="text-xs md:text-sm font-medium">+49 15122019721</span>
+                </a>
+                <a href="mailto:info@smartfoodiegmbh.eu" className="text-gray-800 hover:text-gray-900 transition-colors duration-300 flex items-center space-x-1 whitespace-nowrap">
+                  <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <span className="text-xs md:text-sm font-medium">info@smartfoodiegmbh.eu</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

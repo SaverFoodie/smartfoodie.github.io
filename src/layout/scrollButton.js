@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../language';
+import { IoChatbubbleEllipses } from 'react-icons/io5';
 
 const ScrollButton = () => {
   const navigate = useNavigate();
@@ -12,17 +13,25 @@ const ScrollButton = () => {
   };
 
   return (
-    <button
-      onClick={handleClick}
-      className="fixed right-3 bottom-6 md:bottom-4 lg:bottom-2 bg-[#F16E21] text-white 
-      px-3 py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 rounded-full text-xs md:text-sm
-      shadow-lg hover:bg-orange-600 transform hover:scale-105 active:scale-95
-      transition-all duration-300 ease-in-out font-semibold tracking-wide
-      flex items-center gap-1 group"
-      style={{ zIndex: 1000 }}
-    >
-      <span>{language === "en" ? "Contact" : "Kontakt"}</span>
-    </button>
+    <div style={{ 
+      position: 'fixed', 
+      right: '16px', 
+      top: '65%',
+      zIndex: 1000
+    }}>
+      <div className="relative group">
+        <button
+          onClick={handleClick}
+          className="bg-[#F16E21] text-white py-2 px-2 rounded-full shadow-lg hover:scale-110 transition mb-2"
+          style={{ zIndex: 1000 }}
+        >
+          <IoChatbubbleEllipses className="w-7 h-7 sm:w-7 sm:h-7 w-5 h-5" />
+        </button>
+        <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
+          {language === "en" ? "Contact Us" : "Kontakt"}
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -164,7 +164,7 @@ function Header() {
               { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
               { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
               { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
-              { path: "/contact", text: { en: "Contact us", de: "Kontakt" } }
+              { path: "/contact", text: { en: "Contact & Locations", de: "Kontakt & Standorte" } }
             ].map((item) => (
               <li 
                 key={item.path}

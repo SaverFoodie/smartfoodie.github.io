@@ -8,15 +8,15 @@ const News = () => {
   const navigate = useNavigate();
 
   const newsData = [
-    {
-      id: 1,
-      title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
-      summary: language === "en" ? "Hello World!" : "Hallo Welt!",
-      date: language === "en" ? "22-02-2024" : "22.02.2024",
-      image: "./SF.jpg",
-      docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
-      docFile_de: "Founding of SmartFoodie GmbH_DE.docx"
-    },
+    //{
+    //  id: 1,
+    //  title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
+    //  summary: language === "en" ? "Hello World!" : "Hallo Welt!",
+    //  date: language === "en" ? "22-02-2024" : "22.02.2024",
+    //  image: "./SF.jpg",
+    //  docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
+    //  docFile_de: "Founding of SmartFoodie GmbH_DE.docx"
+    //},
     {
         id: 2,
         title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",

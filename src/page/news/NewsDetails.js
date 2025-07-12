@@ -15,13 +15,13 @@ const NewsDetails = () => {
   const [newsItem, setNewsItem] = useState(null);
 
   const newsData = [
-    {
-      id: 1,
-      title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
-      docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
-      docFile_de: "Founding of SmartFoodie GmbH_DE.docx",
-      date: language === "en" ? "2024-02-22" : "22.02.2024"
-    },
+   // {
+   //   id: 1,
+   //   title: language === "en" ? "Founding of SmartFoodie GmbH" : "Gründung von SmartFoodie GmbH",
+   //   docFile_en: "Founding of SmartFoodie GmbH_EN.docx",
+   //   docFile_de: "Founding of SmartFoodie GmbH_DE.docx",
+   //   date: language === "en" ? "2024-02-22" : "22.02.2024"
+   // },
     {
       id: 2,
       title: language === "en" ? "Spring Festival in Munich" : "Frühlingsfest in München",

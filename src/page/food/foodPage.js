@@ -210,7 +210,7 @@ const ProductList = () => {
                       onClick={() => toggleFilter('vegan')}
                       emoji="🌱"
                       label={language === "en" ? "Vegetarian" : "Vegetarisch"}
-                      color="green"
+                      color="orange"
                     />
                     <FilterButton
                       filter="non-vegan"
@@ -258,7 +258,7 @@ const ProductList = () => {
                       onClick={() => toggleFilter('dessert')}
                       emoji="🍰"
                       label={language === "en" ? "Dessert" : "Nachtisch"}
-                      color="pink"
+                      color="orange"
                     />
                   </div>
                 </div>

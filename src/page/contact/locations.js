@@ -60,7 +60,7 @@ export default function Locations() {
       {/* Title section with improved styling */}
       <div className="max-w-6xl mx-auto px-4 text-center mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-800 mb-4">
-          {language === "en" ? "Visit Our Locations" : "Besuche unsere Standorte"}
+          {language === "en" ? "Some of Our Locations" : "Einige unserer Standorte"}
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
           {language === "en" 

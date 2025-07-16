@@ -28,26 +28,26 @@ export default function Contact() {
           </div>
           {/* Right half - content */}
           <div className="w-full md:w-3/5 p-4 sm:p-6 md:p-8">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-800">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-orange-500">
               SmartFoodie GmbH
             </h2>
-              <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 bg-gradient-to-r from-orange-300 to-orange-500 p-4 sm:p-6 rounded-xl shadow-lg">
+              <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 bg-white p-4 sm:p-6 rounded-xl ">
                 <img
                   src="./guo.jpg"
                   alt="Theo Guo"
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-md"
+                  className="w-20 h-25 md:w-40 md:h-40 rounded-3xl object-cover border-2 border-white "
                 />
                 <div className="text-center md:text-left w-full">
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">{language === "en" ? "Theo Guo" : "Theo Guo"}</h4>
-                  <p className="text-orange-100 mb-3 sm:mb-4">{language === "en" ? "Sales Manager" : "Verkaufsmanager"}</p>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">{language === "en" ? "Theo Guo" : "Theo Guo"}</h4>
+                  <p className="text-gray-800 mb-3 sm:mb-4">{language === "en" ? "Sales Manager" : "Verkaufsmanager"}</p>
                   <div className="space-y-2 flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-6 md:flex-col md:gap-x-0">
-                    <p className="text-white transition-colors text-sm sm:text-base">
+                    <p className="text-gray-800 transition-colors text-sm sm:text-base">
                     📧 info@smartfoodiegmbh.eu
                     </p>
-                    <p className="text-white transition-colors text-sm sm:text-base">
+                    <p className="text-gray-800 transition-colors text-sm sm:text-base">
                       📞 +49 15122019721
                     </p>
-                    <p className="text-white transition-colors text-sm sm:text-base">
+                    <p className="text-gray-800 transition-colors text-sm sm:text-base">
                       📍 Schellingstr. 109a, 80798 München
                     </p>
                   </div>

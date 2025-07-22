@@ -116,7 +116,7 @@ const EventBanner = () => {
                 <div className="flex-shrink-0">
                   <button
                     onClick={() => {
-                      window.location.href = '/contact';
+                      window.location.href = '/kontakt';
                       window.scrollTo({ top: 0, behavior: 'instant' });
                     }}
                     className="px-6 py-3 bg-white text-pink-600 rounded-full font-bold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap hover:bg-gray-50"

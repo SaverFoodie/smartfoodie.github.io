@@ -100,7 +100,7 @@ const EventPage = () => {
         {/* Featured Event */}
         {featuredEvent && (
           <Link 
-            to={`/events/${featuredEvent.id}`} 
+            to={`/veranstaltungen/${featuredEvent.id}`} 
             className="featured-event"
             style={{ 
               backgroundImage: `url(${featuredEventBg})`,
@@ -121,7 +121,7 @@ const EventPage = () => {
           return (
             <Link 
               key={event.id} 
-              to={`/events/${event.id}`} 
+              to={`/veranstaltungen/${event.id}`} 
               className={`event-card ${isPastEvent ? 'past-event' : ''}`}
             >
               <div className={`event-image-container ${isPastEvent ? 'past-event-image' : ''}`}>

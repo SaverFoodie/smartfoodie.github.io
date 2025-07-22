@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "products-and-solutions",
+        path: "produkte-und-lösungen",
         element: (
           <>
             <ProductAndSolutions></ProductAndSolutions>
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "our-food",
+        path: "unser-essen",
         element: <Products></Products>
       },
       {
@@ -47,23 +47,23 @@ const router = createBrowserRouter([
         element: <News></News>
       },
       {
-        path: "contact",
+        path: "kontakt",
         element: <Contact></Contact>
       },
       {
-        path: "news/:newsId",
+        path: "blogs/:newsId",
         element: <NewsDetail />
       },
       {
-        path: "events",
+        path: "veranstaltungen",
         element: <Events />
       },
       {
-        path: "events/:eventId",
+        path: "veranstaltungen/:eventId",
         element: <EventDetails />
       },
       {
-        path: "privacy",
+        path: "datenschutz",
         element: <PrivacyPolicy />
       },
       {

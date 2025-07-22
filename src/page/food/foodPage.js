@@ -281,27 +281,11 @@ const getProducts = (language) => [
       salt: "1,3g"
     }
   },
-  //{ 
-  //  name: language === "en" ? "Fried Rice with Shrimp" : "Gebratener Reis mit Garnelen", 
-  //  img: "./meals/18.jpg", 
+  { 
+    name: language === "en" ? "Roasted Cabbage Rice Bowl" : "Gebratene Kohl Reis Bowl", 
+    img: "./meals/19.jpg", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "780KJ/186kcal",
-  //    fat: "6,1g",
-  //    saturatedFat: "1,3g",
-  //    carbohydrates: "24g",
-  //    sugar: "2,9g",
-  //    fiber: "2,7g",
-  //    protein: "9g",
-  //    salt: "1,65g"
-  //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Roasted Cabbage Rice Bowl" : "Gebratene Kohl Reis Bowl", 
-  //  img: "./meals/19.jpg", 
-  //  description: language === "en" ? "en" : "de", 
-  //  tag: ["vegan","rice"],
+    tag: ["vegan","rice"],
   //  nutrition: {
   //    energy: "620KJ/148kcal",
   //    fat: "4,2g",
@@ -312,7 +296,7 @@ const getProducts = (language) => [
   //    protein: "6g",
   //    salt: "1,15g"
   //  }
-  //},
+  },
   { 
     name: language === "en" ? "Pork Belly & Cabbage Rice Bowl" : "Schweinebauch & Kohl Reis Bowl", 
     img: "./meals/20.jpg", 
@@ -361,11 +345,11 @@ const getProducts = (language) => [
       salt: "0,71g"
     }
   },
-  //{ 
-  //  name: language === "en" ? "Vegetarian Eggplant Rice Bowl" : "Vegetarisch Auberginen Reis Bowl", 
-  //  img: "./meals/23.png", 
+  { 
+    name: language === "en" ? "Vegetarian Eggplant Rice Bowl" : "Vegetarisch Auberginen Reis Bowl", 
+    img: "./meals/23.png", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["vegan","rice"],
+    tag: ["vegan","rice"],
   //  nutrition: {
   //    energy: "680KJ/162kcal",
   //    fat: "5,8g",
@@ -376,12 +360,12 @@ const getProducts = (language) => [
   //    protein: "7g",
   //    salt: "1,28g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Roasted Lamb with Cumin Rice bowl" : "Gebratenes Lammfleisch mit Kreuzkümmel Reis Bowl", 
-  //  img: "./meals/24.png", 
+  },
+  { 
+    name: language === "en" ? "Roasted Lamb with Cumin Rice bowl" : "Gebratenes Lammfleisch mit Kreuzkümmel Reis Bowl", 
+    img: "./meals/24.png", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+    tag: ["non-vegan","rice"],
   //  nutrition: {
   //    energy: "980KJ/234kcal",
   //    fat: "11,2g",
@@ -392,12 +376,12 @@ const getProducts = (language) => [
   //    protein: "16g",
   //    salt: "2,05g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Pepper & Fried Pork Rice bowl" : "Gebratener Schweinebauch & Pfeffer Reis Bowl", 
-  //  img: "./meals/25.png", 
+  },
+  { 
+    name: language === "en" ? "Pepper & Fried Pork Rice bowl" : "Gebratener Schweinebauch & Pfeffer Reis Bowl", 
+    img: "./meals/25.png", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+    tag: ["non-vegan","rice"],
   //  nutrition: {
   //    energy: "1120KJ/268kcal",
   //    fat: "14,5g",
@@ -408,12 +392,12 @@ const getProducts = (language) => [
   //    protein: "15g",
   //    salt: "2,25g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Kung Pao Chicken Rice Bowl" : "Kung Pao Hähnchen Reis Bowl", 
-  //  img: "./meals/26.jpg", 
+  },
+  { 
+    name: language === "en" ? "Kung Pao Chicken Rice Bowl" : "Kung Pao Hähnchen Reis Bowl", 
+    img: "./meals/26.jpg", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+    tag: ["non-vegan","rice"],
   //  nutrition: {
   //    energy: "850KJ/203kcal",
   //    fat: "7,8g",
@@ -424,12 +408,12 @@ const getProducts = (language) => [
   //    protein: "12g",
   //    salt: "1,75g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Kung Pao Tofu Rice Bowl" : "Kung Pao Tofu und Gemüse Reis Bowl", 
-  //  img: "./meals/27.jpg", 
+  },
+  { 
+    name: language === "en" ? "Kung Pao Tofu Rice Bowl" : "Kung Pao Tofu und Gemüse Reis Bowl", 
+    img: "./meals/27.jpg", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["vegan","rice"],
+    tag: ["vegan","rice"],
   //  nutrition: {
   //    energy: "720KJ/172kcal",
   //    fat: "6,2g",
@@ -440,12 +424,12 @@ const getProducts = (language) => [
   //    protein: "8g",
   //    salt: "1,45g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Mapo Tofu Rice Bowl" : "Mapo Tofu Reis Bowl", 
-  //  img: "./meals/28.png", 
+  },
+  { 
+    name: language === "en" ? "Mapo Tofu Rice Bowl" : "Mapo Tofu Reis Bowl", 
+    img: "./meals/28.png", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+    tag: ["non-vegan","rice"],
   //  nutrition: {
   //    energy: "780KJ/186kcal",
   //    fat: "8,1g",
@@ -456,12 +440,12 @@ const getProducts = (language) => [
   //    protein: "9g",
   //    salt: "2,15g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Curry-Beef-Potato Reis Bowl" : "Curry-Rindfleisch & Kartoffeln Reis Bowl", 
-  //  img: "./meals/29.png", 
+  },
+  { 
+    name: language === "en" ? "Curry-Beef-Potato Reis Bowl" : "Curry-Rindfleisch & Kartoffeln Reis Bowl", 
+    img: "./meals/29.png", 
   //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+    tag: ["non-vegan","rice"],
   //  nutrition: {
   //    energy: "890KJ/213kcal",
   //    fat: "8,5g",
@@ -472,23 +456,23 @@ const getProducts = (language) => [
   //    protein: "11g",
   //    salt: "1,68g"
   //  }
-  //},
-  //{ 
-  //  name: language === "en" ? "Beef & Bean Curd Rice bowl" : "Rindfleisch & Yuba(Tofu Produkt) Reis Bowl", 
-  //  img: "./meals/30.png", 
-  //  description: language === "en" ? "en" : "de", 
-  //  tag: ["non-vegan","rice"],
+  },
+  { 
+    name: language === "en" ? "Beef & Bean Curd Rice bowl" : "Rindfleisch & Yuba(Tofu Produkt) Reis Bowl", 
+    img: "./meals/30.png", 
+  //  description: language === "en" ? "Beef (100-120g), tofu skin (100-120g), Hongshao sauce (15g), rice (200-220g), soy sauce, vegetable oil, garlic, ginger, spring onions, sugar, cornstarch, salt" : "Rindfleisch (100-120g), Tofuhaut (100-120g), Hongshao-Sauce (15g), Reis (200-220g), Sojasauce, Pflanzenöl, Knoblauch, Ingwer, Frühlingszwiebeln, Zucker, Speisestärke, Salz", 
+    tag: ["non-vegan","rice"],
   //  nutrition: {
-  //    energy: "820KJ/196kcal",
-  //    fat: "7,8g",
-  //    saturatedFat: "2,9g",
-  //    carbohydrates: "23g",
-  //    sugar: "2,7g",
-  //    fiber: "3,8g",
-  //    protein: "10g",
-  //    salt: "1,55g"
-  //  }
-  //},
+      //energy: "1054.5KJ/251.9kcal",
+      //fat: "7,8g",
+      //saturatedFat: "2,9g",
+      //carbohydrates: "23g",
+      //sugar: "2,7g",
+      //fiber: "3,8g",
+      //protein: "10g",
+      //salt: "1,55g"
+   // }
+  },
   { 
     name: language === "en" ? "Braised Beef Noodle" : "Geschmorte Rindfleisch Nudeln", 
     img: "./meals/31.jpg", 

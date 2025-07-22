@@ -154,7 +154,7 @@ useEffect(() => {
             letterSpacing: '0.5px'
           }}
           onClick={() => {
-            navigate('/contact');
+            navigate('/kontakt');
             window.scrollTo({ top: 0, behavior: 'instant' });
           }} 
         >

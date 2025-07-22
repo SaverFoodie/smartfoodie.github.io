@@ -72,7 +72,7 @@ const News = () => {
 
   const handleClick = (newsId) => {
     // Navigate to the news detail page with the news ID
-    navigate(`/news/${newsId}`);
+    navigate(`/blogs/${newsId}`);
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 

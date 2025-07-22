@@ -83,16 +83,16 @@ function Header() {
             <ul className="flex items-center space-x-8 font-semibold">
               {[
                 { path: "/", text: { en: "Home", de: "Startseite" } },
-                { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
-                { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
-                { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+                { path: "/produkte-und-lösungen", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
+                { path: "/unser-essen", text: { en: "Our Food", de: "Unser Essen" } },
+                { path: "/veranstaltungen", text: { en: "Events", de: "Veranstaltungen" } },
                 { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
-                { path: "/contact", text: { en: "Contact & Locations", de: "Kontakt & Standorte" } }
+                { path: "/kontakt", text: { en: "Contact & Locations", de: "Kontakt & Standorte" } }
               ].map((item) => (
                 <li 
                   key={item.path}
                   className={`${
-                    pathname === item.path || (item.path === "/events" && pathname.startsWith("/events")) 
+                    pathname === item.path || (item.path === "/veranstaltungen" && pathname.startsWith("/veranstaltungen")) 
                       ? "active-link" 
                       : "nav-link"
                   } hover:scale-110 transition-transform duration-200 ${
@@ -160,11 +160,11 @@ function Header() {
           <ul className="space-y-1">
             {[
               { path: "/", text: { en: "Home", de: "Startseite" } },
-              { path: "/products-and-solutions", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
-              { path: "/our-food", text: { en: "Our Food", de: "Unser Essen" } },
-              { path: "/events", text: { en: "Events", de: "Veranstaltungen" } },
+              { path: "/produkte-und-lösungen", text: { en: "Products&Solutions", de: "Produkte&Lösungen" } },
+              { path: "/unser-essen", text: { en: "Our Food", de: "Unser Essen" } },
+              { path: "/veranstaltungen", text: { en: "Events", de: "Veranstaltungen" } },
               { path: "/blogs", text: { en: "Blogs", de: "Blogs" } },
-              { path: "/contact", text: { en: "Contact & Locations", de: "Kontakt & Standorte" } }
+              { path: "/kontakt", text: { en: "Contact & Locations", de: "Kontakt & Standorte" } }
             ].map((item) => (
               <li 
                 key={item.path}

@@ -191,7 +191,7 @@ const Introduct = () => {
 
                   <button
                     onClick={() => {
-                      window.location.href = '/contact';
+                      window.location.href = '/kontakt';
                       window.scrollTo({ top: 0, behavior: 'instant' });
                     }}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#F16E21] to-orange-600 text-white rounded-full font-semibold text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"

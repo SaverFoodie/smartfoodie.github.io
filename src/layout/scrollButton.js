@@ -8,7 +8,7 @@ const ScrollButton = () => {
   const { language } = useLanguage();
 
   const handleClick = () => {
-    navigate('/contact');
+    navigate('/kontakt');
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 

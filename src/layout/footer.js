@@ -7,7 +7,7 @@ export default function Footer() {
   const { language } = useLanguage();
 
   const handlePrivacyClick = () => {
-    navigate('/privacy');
+    navigate('/datenschutz');
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 

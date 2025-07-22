@@ -4,7 +4,7 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    return sessionStorage.getItem('language') || 'en';
+    return sessionStorage.getItem('language') || 'de';
   });
 
   useEffect(() => {

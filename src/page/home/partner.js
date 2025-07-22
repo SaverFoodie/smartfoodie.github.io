@@ -8,7 +8,8 @@ const Partner = () => {
     './partner/eren.png',
     './partner/zd.png',
     './partner/sunlit.png',
-    './partner/Klinikum.jpg'
+    './partner/Klinikum.jpg',
+    './partner/backstage.jpg',
   ];
 
   // 复制图片数组以创建无缝滚动效果

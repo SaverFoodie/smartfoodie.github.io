@@ -34,6 +34,12 @@ export default function Locations() {
       name: language === "en" ? "SmartFoodie e-Bistro24H @Klinikum Großhadern" : "SmartFoodie e-Bistro24H @Klinikum Großhadern",
       address: "Marchioninistraße 15, 81377 München",
       coordinates: [48.1107, 11.4693]
+    },
+    {
+      id: 4,
+      name: language === "en" ? "SmartFoodie @backstage" : "SmartFoodie @backstage",
+      address: "Reitknechtstraße 6, 80639 München",
+      coordinates: [48.1443, 11.5189]
     }
   ];
 

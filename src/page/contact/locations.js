@@ -37,7 +37,7 @@ export default function Locations() {
     },
     {
       id: 4,
-      name: language === "en" ? "SmartFoodie @backstage" : "SmartFoodie @backstage",
+      name: language === "en" ? "SmartFoodie @Backstage" : "SmartFoodie @Backstage",
       address: "Reitknechtstraße 6, 80639 München",
       coordinates: [48.1443, 11.5189]
     }

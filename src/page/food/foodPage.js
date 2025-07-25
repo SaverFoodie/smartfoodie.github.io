@@ -4,67 +4,290 @@ import { useLanguage } from "../../language";
 // Move products data outside component to avoid recreation on each render
 const getProducts = (language) => [
   { 
-    name: language === "en" ? "Steamed Beef Bulgongi Dumplings" : "Gedämpfte Rinder-Bulgogi-Dumplings", 
-    img: "./meals/1.jpg", 
-    description: language === "en" ? "Vegetables 30%* [white cabbage (29%), spring onions (26%), onions (25%), carrots (20%). Wheat flour, beef 19%)*, water, soy sauce (water, soybeans, wheat, salt), apple sauce (apple, glucose-fructose syrup, sugar, acidity regulator: citric acid, antioxidant: Ascorbic acid), sugar, texturized soy protein, garlic tapioca starch, corn starch, sesame oil, yeast extract, soy protein isolate, salt, wheat gluten, rapeseed oil, black pepper, ginger" : "Gemüse 30%* (WeiBkohl(29%), Früuhlingszwiebeln(26%), Zwiebeln (25%), Karotten (20%). Weizenmehl, Rindfleisch 19%)*, Wasser, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Apfelmus (Apfel, Glucose-Fructose-Sirup, Zucker, Saureregulator: Citronensäure, Antioxidationsmittel: Ascorbinsäure), Zucker, texturiertes Sojaprotein, KnoblauchTapiokastärke, Maisstärke, Sesamöl, Hefeextrakt, Sojaprotein Isolat, Salz, Weizengluten, Rapsöl, schwarzer Pfeffer, Ingwer", 
-    tag: ["non-vegan","dimSum"],
+    name: language === "en" ? "Fried Rice with BBQ-flavored Chicken & Vegetable" : "Gebratener Reis mit Hähnchen & Gemüse - BBQ-Geschmack", 
+    img: "./meals/15.jpg", 
+    description: language === "en" ? "Cooked rice 52% (rice, water), fried chicken breast 10% (chicken breast, salt, dextrose), onion 10%, carrot 8%, spring onion 7%, soy sauce 3% (water, soybeans, wheat, salt), spring onion oil (rapeseed oil, sugar, sunflower oil, garlic, yeast extract, chicken stock), rice flour, natural flavoring, caramel syrup, salt, antioxidant E307, black pepper, onion powder." : "Gekochter Reis 52% (Reis, Wasser), gebratene Hühnerbrust 10%(Hühnerbrust, Salz, Dextrose), Zwiebel 10%, Karotte 8%, Frühlingszwiebel 7%, Sojasauce 3% (Wasser, Sojabohnen, Weizen, Salz), Frühlingszwiebelöl (Rapsöl, Zucker,  Sonnenblumenöl, Knoblauch, Hefeextrakt, Hühnerbrühe), Reismehl, natürliches Aroma, Karamellsirup, Salz, Antioxidationsmittel E307, schwarzer Pfeffer, Zwiebelpulver.", 
+    tag: ["non-vegan","rice"],
     nutrition: {
-      energy: "750KJ/178kcal",
-      fat: "5,0g",
-      saturatedFat: "1,9g",
-      carbohydrates: "23,6g",
-      sugar: "4,5g",
-      fiber: "2,6g",
-      protein: "8,4g",
-      salt: "1,2g"
-    }
-  },
-  { 
-    name: language === "en" ? "Steamed Beef Dumplings with BBQ Flavor" : "Gedämpfte Rindfleisch-Dumplings mit BBQ-Geschmack", 
-    img: "./meals/2.jpg", 
-    description: language === "en" ? "Beef (29%), vegetables (24%) [cabbage (49%), onion (26%), garlic (13%), spring onion (12%)], wheat flour, water, beef fat (5%), BBQ sauce (3%) [water, soy sauce (water, soybeans, wheat, salt], sugar, corn syrup, onion puree, garlic puree, Bimen puree, salt, rice-based alcoholic beverage, seasoning mix [maltodextrin, hydrolyzed wheat and soybean protein, sugar, salt, glucose syrup, glucose, onion, yeast extract, garlic, spring onion, ginger, black pepper powder] Ginger extract, flavor enhancer: monosodium glutamate, black pepper, spring onion extract, thickener: xanthan gum, acidity regulator: citric acid, color: [ammonium sulphate caramel, sesame], sugar, sesame oil, tapioca, protein powder [chicken protein, acidity regulator: Citric acid], soy sauce (water, soybeans, wheat, salt), texturized soy protein, salt, yeast extract, natural flavouring, wheat gluten, sugar syrup, rapeseed oil, black pepper" : "Rindfleisch (29%), Gemüse (24%) [Kohl (49%), Zwiebel (26%), Knoblauch(13%), Frühlingzwiebel(12%)], Weizenmehl, Wasser, Rinderfett (5%), BBQSauce(3%) [Wasser, Sojasauce (Wasser, Sojabohnen, Weizen, Salz], Zucker, Maissirup, Zwiebelpüree, Knoblauchpüree, Bimenpüree, Salz, Alkoholisches Getränk auf Reisbasis, Würzmischung [Maltodextrin, hydrolisiertes Weizen- und Sojabohnenprotein, Zucker, Salz, Glucosesirup, Glukose, Zwiebel, Hefeextrakt, Knoblauch,Fruhlingzwiebel, Ingwer, schwarzes Pfefferpulver] Ingwerextrakt, Geschmacksverstärker: Mononatriumglutamat, Schwarzer Pfeffer, Fruhlingszwiebelextrakt, Verdickungsmittel: Xanthan, Saureregulator: Citronensäure, Farbstoff: [Ammoniumsulft-Zuckerkulör, Sesam], Zucker, Sesamöl, Tapiokastänke, Eiweißpulver [Hühner-Eiweiß, Säureregulator: Citronensäure], Sojasauce (Wasser, Sojabohnen, Weizen, Salz),texturiertes Sojaprotein, Salz, Hefeextrakt, natürliches Aroma, Weizengluten, Zuckersirup, Rapsol, schwarzer Pfeffer", 
-    tag: ["non-vegan","dimSum"],
-    nutrition: {
-      energy: "825KJ/197kcal",
-      fat: "7,3g",
-      saturatedFat: "2,8g",
+      energy: "580KJ/139kcal",
+      fat: "3,7g",
+      saturatedFat: "0,4g",
       carbohydrates: "21g",
-      sugar: "3,2g",
-      fiber: "2,3g",
-      protein: "10g",
-      salt: "1,7g"
+      sugar: "3,0g",
+      fiber: "1,2g",
+      protein: "4,9g",
+      salt: "1,3g"
+    }
+  },   
+  { 
+    name: language === "en" ? "Fried Rice with Kimchi & Chicken" : "Gebratener Reis mit Kimchi & Hähnchen", 
+    img: "./meals/16.jpg", 
+    description: language === "en" ? "cooked rice 50% (rice, water), cabbage 16%, fried chicken breast 10% (chicken breast, salt, dextrose), kimchi sauce 7. 5% [water, garlic, red bell pepper powder, fructose, iodized salt (salt, potassium iodate), ginger, natural flavouring, thickener (E4151), carrot 4%, onion 2%, spring onion 2%, spring onion oil [rapeseed oil, spring onion, dehydrated spring onion, antioxidant (E307)], sunflower oil, garlic, oyster sauce (molluscs, wheat), flete extract, sugar, red bell pepper powder, soy sauce (soy, wheat), natural flavoring, hünner broth, salt, black bell pepper powder." : "gekochter Reis 50% (Reis, Wasser), Kohl 16%, gebratene Hähnchenbrust 10% (Hähnchenbrust, Salz, Dextrose), Kimchi Sauce 7.5% [Wasser, Knoblauch, rotes Paprikaputiver, Frukose, jodiertes Salz (Salz, Kaliumjodat), Ingwer, natüriches Aroma, Verdickungsmittel(E4151), Karotte 4%, Zwiebel 2%, Frühlingszwiebel 2%, Frühingszwiebelöl [Rapsöl, Fruhlingszwiebel, dehydrierte Frühlingszwiebel, Antroxidationsmittel (E307)], Sonnenblumenöl, Knoblauch, Austernsauce (Weichtiere, Weizen), Fleteextrakt, Zucker, rotes Paprikapulver,Sojasauce (Soja, Weizen), natürliches Aroma, hünnerbrühe, Salz, schwarzes Paprikapuiver.", 
+    tag: ["non-vegan","rice"],
+    nutrition: {
+      energy: "534KJ/128kcal",
+      fat: "4,0g",
+      saturatedFat: "0,5g",
+      carbohydrates: "18g",
+      sugar: "1,5g",
+      fiber: "1,1g",
+      protein: "4,5g",
+      salt: "0,77g"
     }
   },
   { 
-    name: language === "en" ? "Steamed Pork & Vegetable Dumplings" : "Gedämpfte Schweinefleisch & Gemüse-Dumplings", 
-    img: "./meals/3.jpg", 
-    description: language === "en" ? "Cabbage 27%*, pork and pork fat 22%*, wheat flour, water, onion 7%*, spring onion 2%*, soy sauce 2%* (water, soybeans, wheat, salt), garlic 2%*, tofu (soybeans, water), tapioca starch, yeast extract, textured soy proteins, wheat gluten, spices, sesame oil, rapeseed oil" : "Kohl 27%*, Schweinefleisch und -fett 22%*, Weizenmehl, Wasser, Zwiebel 7%*, Frühlingszwiebel 2%*,Sojasoße 2%* (Wasser, Sojabohnen, Weizen, Salz), Knoblauch 2%*, Tofu (Sojabohnen,Wasser), Tapiokastärke, Hefe-Extrakt, Strukturierte Sojaproteine, Weizengluten, Gewürze, Sesamöl, Rapssamenöl", 
-    tag: ["non-vegan","dimSum"],
+    name: language === "en" ? "Fried Rice with Teriyaki-flavored Chicken" : "Gebratener Reis mit Hähnchen - Teriyaki-Geschmack",  
+    description: language === "en" ? "Cooked rice 62.4%* [water, rice]; sliced chicken 9%* (origin: EU); teriyaki sauce 7.8%* [soy sauce (water, soy sauce, wheat flour (gluten), salt), water, mirin seasoning, chicken stock, sugar, salt, starch, rice vinegar seasoning, natural flavoring], onions, red peppers, mushrooms, sunflower oil, green jalapeños, garlic, grilled sesame seeds, ginger, salt, sugar" : "Gekochter Reis 62,4%* [Wasser, Reis]; Hähnchenfleisch in Scheiben 9%* (Ursprung:EU); Teriyaki-Soße 7,8%* [Sojasoße  (Wasser, Sojasoße, Weizenmehl (Gluten), Salz), Wasser, Mirin-Würze, Hühnerbrühe, Zucker, Salz, Stärke, Reisessig-Würze, natürliches Aroma], Zwiebeln, rote Paprika, Champignons, Sonnenblumenöl, grüne Jalapeños, Knoblauch, gegrillter Sesam, lngwer, Salz, Zucker, Stärke.", 
+    img: "./meals/17.jpg", 
+    tag: ["non-vegan","rice"],
     nutrition: {
-      energy: "700KJ/167kcal",
-      fat: "6,5g",
-      saturatedFat: "2,6g",
-      carbohydrates: "19g",
-      sugar: "2,6g",
-      protein: "8,0g",
-      salt: "0,8g"
+      energy: "605KJ/145kcal",
+      fat: "4,3g",
+      saturatedFat: "0,6g",
+      carbohydrates: "22g",
+      sugar: "1,2g",
+      fiber: "4,3g",
+      protein: "0,9g",
+      salt: "1,3g"
     }
   },
   { 
-    name: language === "en" ? "Steamed Chicken & Vegetable Dumplings" : "Gedämpfte Hähnchen & Gemüse-Dumplings", 
-    img: "./meals/4.jpg", 
-    description: language === "en" ? "Wheat flour, white cabbage(21%), water, chicken meat (20%), onions(12%), chicken skin(6%), spring onions(2%), chicken broth (water, chicken meat fat, bone fat and salt), wheat flour, tapioca starch, soy sauce (water, soybeans, wheat, salt), ginger (0.9%), yeast extract, garlic (0.8%), sugar, rapeseed oil, black pepper, wheat gluten, sesame oil, texturized soy protein, salt" : "Weizenmehl, Weißkohl(21%), Wasser, Hänchenfleisch (20%), Zwiebeln(12%), Hähnchenhaut(6%), Frühlingszwiebeln(2%), Hühnerbrühe (Wasser, Hühnerfleisch-, Knochenfett und Salz), Weizenmehl, Tapiokastärke, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Ingwer(0,9%), Hefeextrakt, Knoblauch (0,8%), Zucker, Rapsöl, Schwarzer Pfeffer, Weizengluten, Sesamöl, Texturiertes Sojaprotein, Salz", 
-    tag: ["non-vegan","dimSum"],
+    name: language === "en" ? "Pork Belly & Cabbage Rice Bowl" : "Schweinebauch & Kohl Reis Bowl", 
+    img: "./meals/20.jpg", 
+    description: language === "en" ? "Rice, cabbage, pork belly, dried chilli peppers, peppercorns, garlic, ginger, light soy sauce, dark soy sauce, salt, sugar, MSG, chicken powder, edible vegetable oil" : "dReis, Kohl, Schweinebauch, getrocknete Chilischoten, Pfefferkörner, Knoblauch, Ingwer, helle Sojasauce, dunkle Sojasauce, Salz, Zucker, MSG, Hühnerpulver, essbares Pfanzenöl", 
+    tag: ["non-vegan","rice"],
     nutrition: {
-      energy: "660KJ/157kcal",
-      fat: "4,4g",
-      saturatedFat: "1,4g",
-      carbohydrates: "20,4g",
-      sugar: "2,8g",
-      fiber: "2,4g",
-      protein: "7,6g",
-      salt: "1,0g"
+      energy: "724KJ/173kcal",
+      fat: "7,8g",
+      saturatedFat: "3,3g",
+      carbohydrates: "16,7g",
+      sugar: "2,7g",
+      fiber: "1,1g",
+      protein: "6,7g",
+      salt: "0,84g"
     }
+  },
+  { 
+    name: language === "en" ? "Beef & Carrot Rice Bowl" : "Rindfleisch & Karotten Reis Bowl", 
+    img: "./meals/21.jpg", 
+    description: language === "en" ? "Cooked rice (water, rice), beef (topside), carrots, onions, rapeseed oil, water, soya beans, wheat, soya sauce (water, salt), oyster sauce (water, sugar, salt, oyster extract), rice wine (water, rice, koji culture), ginger, garlic, starch, sugar, pepper" : "Gekochter Reis (Wasser, Reis), Rindfleisch (Oberschale), Möhren, Zwiebeln, Rapsöl, WasserSojabohnen, Weizen, Sojasauce (Wasser, Salz), Austernsauce (Wasser, Zucker, Salz, Austernextrakt), Reiswein (Wasser, Reis, Koji-Kultur), Ingwer, Knoblauch, Stärke, Zucker, Pfeffer", 
+    tag: ["non-vegan","rice"],
+    nutrition: {
+      energy: "724KJ/173kcal",
+      fat: "7,8g",
+      saturatedFat: "3,3g",
+      carbohydrates: "16,7g",
+      sugar: "2,7g",
+      fiber: "1,1g",
+      protein: "6,7g",
+      salt: "0,84g"
+    }
+  },
+  { 
+    name: language === "en" ? "Beef with Black Pepper Rice Bowl" : "Rindfleisch mit schwarzem Pfeffer Reis Bowl", 
+    img: "./meals/22.jpg", 
+    description: language === "en" ? "Black pepper, beef, onion, red pepper, green pepper, rice, oyster sauce, soy sauce, dark soy sauce, table salt, sesame oil, vegetable oil" : "Schwarzer Pfeffer, Rindfleisch, Zwiebel, rote Paprika, grüne Paprika, Reis, Austernsauce, Sojasauce, Dunkle Sojasauce , Speisesalz, Sesamöl, Pflanzenöl", 
+    tag: ["non-vegan","rice"],
+    nutrition: {
+      energy: "669KJ/160kcal",
+      fat: "6,2g",
+      saturatedFat: "1,8g",
+      carbohydrates: "17,3g",
+      sugar: "2,2g",
+      fiber: "0,9g",
+      protein: "8,4g",
+      salt: "0,71g"
+    }
+  },
+  { 
+    name: language === "en" ? "Roasted Lamb with Cumin Rice bowl" : "Gebratenes Lammfleisch mit Kreuzkümmel Reis Bowl", 
+    img: "./meals/24.png", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+  //    energy: "980KJ/234kcal",
+  //    fat: "11,2g",
+  //    saturatedFat: "4,8g",
+  //    carbohydrates: "24g",
+  //    sugar: "2,9g",
+  //    fiber: "2,6g",
+  //    protein: "16g",
+  //    salt: "2,05g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Pepper & Fried Pork Rice bowl" : "Gebratener Schweinebauch & Pfeffer Reis Bowl", 
+    img: "./meals/25.png", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+  //    energy: "1120KJ/268kcal",
+  //    fat: "14,5g",
+  //    saturatedFat: "5,2g",
+  //    carbohydrates: "26g",
+  //    sugar: "3,1g",
+  //    fiber: "2,8g",
+  //    protein: "15g",
+  //    salt: "2,25g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Kung Pao Chicken Rice Bowl" : "Kung Pao Hähnchen Reis Bowl", 
+    img: "./meals/26.jpg", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+  //    energy: "850KJ/203kcal",
+  //    fat: "7,8g",
+  //    saturatedFat: "2,1g",
+  //    carbohydrates: "24g",
+  //    sugar: "3,5g",
+  //    fiber: "2,9g",
+  //    protein: "12g",
+  //    salt: "1,75g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Kung Pao Tofu Rice Bowl" : "Kung Pao Tofu und Gemüse Reis Bowl", 
+    img: "./meals/27.jpg", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["vegan","rice"],
+  //  nutrition: {
+  //    energy: "720KJ/172kcal",
+  //    fat: "6,2g",
+  //    saturatedFat: "1,0g",
+  //    carbohydrates: "22g",
+  //    sugar: "2,8g",
+  //    fiber: "4,1g",
+  //    protein: "8g",
+  //    salt: "1,45g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Curry-Beef-Potato Reis Bowl" : "Curry-Rindfleisch & Kartoffeln Reis Bowl", 
+    img: "./meals/29.png", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+  //    energy: "890KJ/213kcal",
+  //    fat: "8,5g",
+  //    saturatedFat: "3,2g",
+  //    carbohydrates: "26g",
+  //    sugar: "3,1g",
+  //    fiber: "3,4g",
+  //    protein: "11g",
+  //    salt: "1,68g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Beef & Bean Curd Rice bowl" : "Rindfleisch & Yuba(Tofu Produkt) Reis Bowl", 
+    img: "./meals/30.png", 
+  //  description: language === "en" ? "Beef (100-120g), tofu skin (100-120g), Hongshao sauce (15g), rice (200-220g), soy sauce, vegetable oil, garlic, ginger, spring onions, sugar, cornstarch, salt" : "Rindfleisch (100-120g), Tofuhaut (100-120g), Hongshao-Sauce (15g), Reis (200-220g), Sojasauce, Pflanzenöl, Knoblauch, Ingwer, Frühlingszwiebeln, Zucker, Speisestärke, Salz", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+      //energy: "1054.5KJ/251.9kcal",
+      //fat: "7,8g",
+      //saturatedFat: "2,9g",
+      //carbohydrates: "23g",
+      //sugar: "2,7g",
+      //fiber: "3,8g",
+      //protein: "10g",
+      //salt: "1,55g"
+   // }
+  },
+  { 
+    name: language === "en" ? "Mapo Tofu Rice Bowl" : "Mapo Tofu Reis Bowl", 
+    img: "./meals/28.png", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["non-vegan","rice"],
+  //  nutrition: {
+  //    energy: "780KJ/186kcal",
+  //    fat: "8,1g",
+  //    saturatedFat: "2,8g",
+  //    carbohydrates: "21g",
+  //    sugar: "2,9g",
+  //    fiber: "3,2g",
+  //    protein: "9g",
+  //    salt: "2,15g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Braised Beef Noodle" : "Geschmorte Rindfleisch Nudeln", 
+    img: "./meals/31.jpg", 
+    description: language === "en" ? "Beef soup (450g): Water, beef (36.75%), soy sauce, spicy bean paste (chilli, salt, field beans, wheat flour), beef bones, bean paste (water, soybeans, wheat flour, salt, flavour enhancer: E621, preservative: E210), chicken powder (salt, maltodextrin, flavour enhancers E621, E631, E635, sugar, corn starch, soy sauce powder, flavourings, yeast, chicken powder, thickener: E415, spices, colour E150d), ginger, garlic, onion, sugar, rice wine (water, rice, purified cooking alcohol), Szechuan pepper, star anise, cinnamon, sweet hoz, noodles (200g):wheat flour, water, acetate starch, salt, koniak powder, crispy fried onions (6g): Onions, palm oil, wheat flour, salt" : "Rindfleischsuppe (450g): Wasser, Rindfleisch (36,75%), Sojasauce, Würzige Bohnenpaste (Chili, Salz, Ackerbohnen, Weizenmehl), Rinderknochen, Bohnenpaste (Wasser, Sojabohnen, Weizenmehl, Salz, Geschmacksverstärker: E621, Konservierungsstoff: E210), Hühnerpulver (Salz, Maltodextrin,  Geschmacksverstärker E621, E631, E635, Zucker,  Maisstärke, Sojasaucenpulver, Aromen, Hefe, Hühnerpulver,  Verdickungsmittel: E415, Gewürze, Farbstoff E150d), Ingwer, Knoblauch, Zwiebel, Zucker, Reiswein (Wasser, Reis, gereinigter Speisealkohol), Szechuanpfeffer, Sternanis, Zimt, Süßhoz, Nudeln (200g):Weizenmehl, Wasser, Acetatstärke, Salz, Koniakpulver, Knusprige Röstzwiebeln (6g): Zwiebeln, Palmöl, Weizenmehl, Salz", 
+    tag: ["non-vegan","noodle"],
+    nutrition: {
+      energy: "602KJ/144kcal",
+      fat: "3,4g",
+      saturatedFat: "1,3g",
+      carbohydrates: "23,4g",
+      sugar: "0,4g",
+      fiber: "1,6g",
+      protein: "5,4g",
+      salt: "0,4g"
+    }
+  },
+  { 
+    name: language === "en" ? "Tonkotsu Ramen" : "Tonkotsu-Ramen", 
+    img: "./meals/32.jpg", 
+    description: language === "en" ? "Wheat flour, water, modified tapioca starch, salt, acidity regulators: E500, E501, wheat gluten, colour: E101, pork belly, glucose syrup, sugar, sake (glucose syrup, water, spirit vinegar, fermented rice alcohol (water, rice, alcohol, salt, rice malt), sugar, acidity regulator: E330, sugar cane molasses), soy sauce (water, soybeans, wheat, salt), flavour enhancer: E621, stabiliser: E450, ginger, garlic powder, surimi (fish) [Threadfin Bream (Nemipterus spp. ), sugar, emulsifier: E450, E451, E452, water, protein powder, modified starch, acidity regulator: E260, acidity regulator: E270, yeast extract, soya oil, soya protein, colour: E150c, colour: E120, pork bones, pork meat, pork fat, concentrated pork stock, chicken bones, chicken meat, chicken fat, antioxidant: E392, anti-caking agent: E535, maltodextrin, flavour enhancer: E635, bonito flavoured sauce (water, salt, sugar, maltodextrin, fish extract, tuna extract (fish), vinegar, yeast extract, smoke flavouring), herbs, spices, lard, garlic, antioxidant: E306, spring onion, onion, mu-err mushroom, bamboo shoot" : "Weizenmehl, Wasser, modifizierte Tapiokastärke, Salz, Säureregulatoren: E500, E501, Weizengluten, Farbstoff: E101, Schweinebauch, Glukosesirup, Zucker, Sake (Glukosesirup, Wasser, Branntweinessig, fermentierter Reisalkohol (Wasser,  Reis, Alkohol, Salz, Reismalz), Zucker, Säureregulator: E330, Zuckerrohrmelasse), Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Geschmacksverstärker: E621,  Stabilisator: E450, Ingwer, Knoblauchpulver, Surimi (Fisch) [Threadfin Bream (Nemipterus spp.), Zucker, Emulgator: E450, E451, E452, Wasser,  Eiweißpulver, modifizierte Stärke, Säuereregulator: E260, Säuereregulator: E270, Hefeextrakt, Sojaöl, Sojaeiweiß, Farbstoff: E150c, Farbstoff: E120, Schweineknochen,  Schweinefleisch, Schweinefett, konzentrierte Schweinebouillon, Hühnerknochen, Hühnerfleisch, Hühnerfett, Antioxidationsmittel: E392, Antiklumpmittel: E535, Maltodextrin, Geschmacksverstärker: E635, Bonito Flavoured Sauce (Wasser,  Salz, Zucker, Maltodextrin, Fischextrakt, Thunfischextrakt (Fisch), Essig, Hefeextrakt, Raucharoma), Kräuter, Gewürze, Schmalz, Knoblauch, Antioxidationsmittel: E306, Frühlingszwiebel, Zwiebel, Mu-Err-Pilz, Bambussprosse", 
+    tag: ["non-vegan","noodle"],
+    nutrition: {
+      energy: "775KJ/184kcal",
+      fat: "5,4g",
+      saturatedFat: "2,2g",
+      carbohydrates: "27,2g",
+      sugar: "1,4g",
+      protein: "5,8g",
+      salt: "1,21g"
+    }
+  },
+  { 
+    name: language === "en" ? "Tonkotsu Udon" : "Tonkotsu-Udon", 
+    img: "./meals/33.jpg", 
+    description: language === "en" ? "Wheat flour, water, salt, thickener: E1442, E405, acidity regulator: E501, E500, pork belly, glucose syrup. Sugar, sake (glucose syrup, water, spirit vinegar, fermented rice alcohol (water, rice, alcohol, salt, rice malt), sugar, acidity regulator: E330, sugar cane molasses), soy sauce (water, soybeans, wheat, salt), flavour enhancer: E621, stabiliser: E450, ginger, garlic powder, surimi (fish) [threadfin bream (Nemipterus spp. ), sugar, emulsifier: E450, E451, E452water, protein powder], modified starch, acidity regulator: E260, E270, yeast extract, soya oil, soya protein, colour: E150c, E120, pork bones, pork meat, pork fat, concentrated pork stock, chicken bones, chicken meat, chicken fat, antioxidant: E392, anticaking agent: E535, maltodextrin, flavour enhancer: E635, bonito flavoured sauce (water, salt, sugar, maltodextrin, fish extract, tuna extract (fish), vinegar, yeast extract, smoke flavouring), herbs, spices, lard, garlic, antioxidant: E306, spring onion, onion, mu-err mushroom, bamboo shoot" : "Weizenmehl, Wasser, Salz, Verdickungsmittel: E1442,  E405,  Säureregulator: E501, E500, Schweinebauch, Glukosesirup. Zucker, Sake (Glukosesirup, Wasser, Branntweinessig, fermentierter Reisalkohol (Wasser, Reis, Alkohol, Salz, Reismalz), Zucker, Säureregulator: E330,  Zuckerrohrmelasse), Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Geschmacksverstärker: E621, Stabilisator: E450, Ingwer, Knoblauchpulver, Surimi (Fisch) [Threadfin Bream (Nemipterus spp.), Zucker, Emulgator: E450, E451, E452Wasser, Eiweißpulven], modifizierte Stärke, Säuereregulator: E260, E270, Hefeextrakt, Sojaöl, Sojaeiweiß, Farbstoff: E150c, E120, Schweineknochen, Schweinefleisch, Schweinefett, Konzentrierte Schweinebouillon, Hühnerknochen, Hühnerfleisch, Hühnerfett, Antioxidationsmittel: E392, Antklumpmittel: E535, Maltodextrin,  Geschmacksverstarker: E635, Bonito Flavoured Sauce (Wasser, Salz, Zucker,  Maltodextrin, Fischextrakt, Thunfischextrakt (Fisch), Essig, Hefeextrakt, Raucharoma), Kräuter, Gewürze, Schmalz, Knoblauch, Antioxidationsmittel: E306, Frühlingszwiebel, Zwiebel, Mu-Err-Pilz, Bambussprosse", 
+    tag: ["non-vegan","noodle"],
+    nutrition: {
+      energy: "665KJ/158kcal",
+      fat: "5,1g",
+      saturatedFat: "2,1g",
+      carbohydrates: "23,3g",
+      sugar: "1,0g",
+      protein: "4,7g",
+      salt: "0,88g"
+    }
+  },
+  { 
+    name: language === "en" ? "Roasted Cabbage Rice Bowl" : "Gebratene Kohl Reis Bowl", 
+    img: "./meals/19.jpg", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["vegan","rice"],
+  //  nutrition: {
+  //    energy: "620KJ/148kcal",
+  //    fat: "4,2g",
+  //    saturatedFat: "0,8g",
+  //    carbohydrates: "22g",
+  //    sugar: "2,1g",
+  //    fiber: "4,2g",
+  //    protein: "6g",
+  //    salt: "1,15g"
+  //  }
+  },
+  { 
+    name: language === "en" ? "Vegetarian Eggplant Rice Bowl" : "Vegetarisch Auberginen Reis Bowl", 
+    img: "./meals/23.png", 
+  //  description: language === "en" ? "en" : "de", 
+    tag: ["vegan","rice"],
+  //  nutrition: {
+  //    energy: "680KJ/162kcal",
+  //    fat: "5,8g",
+  //    saturatedFat: "1,1g",
+  //    carbohydrates: "23g",
+  //    sugar: "2,5g",
+  //    fiber: "4,8g",
+  //    protein: "7g",
+  //    salt: "1,28g"
+  //  }
   },
   { 
     name: language === "en" ? "Vegetarian Steamed Tofu & Vegetabels Dumplings" : "Vegetarische Gedämpfte Tofu & Gemüse-Dumplings", 
@@ -125,6 +348,99 @@ const getProducts = (language) => [
       sugar: "6,4g",
       protein: "4,8g",
       salt: "0,95g"
+    }
+  },
+  { 
+    name: language === "en" ? "Vegetarian Mushroom Baozi" : "Vegetarische Gedämpfte Pilzen-Baozi", 
+    img: "./meals/13.jpg", 
+    description: language === "en" ? "Dough: wheat flour, water, purple sweet potato puree (15%), sugar, palm oil, antioxidants (E307, E304), modified starch (E1422), acidity regulators (E450, E500, E341, E170), corn starch, yeast.\nFilling: water chestnuts, mushrooms 16.6% (king oyster mushroom, cultivated mushroom, shiitake, mu-err), soybean oil, sugar, soy sauce (water, soybeans, wheat, salt), chives, salt, flavor enhancer (E635), portee, white pepper, shallot." : "Teig: Weizenmehl, Wasser, lila Süßkartoffe Püree (15%), Zucker, Palmöl, Antioxidationsmitteln(E307, E304), Modifizierte Stärke (E1422), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe. \nFüllung: Wasserkastanien, Pilze 16.6% (Kräuterseitling, Zucht-Champignon, Shiitake, Mu-Err), Sojaöl, Zucker, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Schnittlauch, Salz, Geschmacksverstärker (E635), Portee, weißer Pfeffer, Schalotte.", 
+    tag: ["vegan", "dimSum"],
+    nutrition: {
+      energy: "794KJ/189kcal",
+      fat: "4,7g",
+      saturatedFat: "0,9g",
+      carbohydrates: "32,2g",
+      sugar: "2,3g",
+      protein: "4,3g",
+      salt: "0,7g"
+    }
+  },
+  { 
+    name: language === "en" ? "Vegetarian Pickled Bamboo Shoots Baozi" : "Vegetarische Gedämpfte Sauerkraut-Bambussprossen-Baozi", 
+    img: "./meals/14.jpg", 
+    description: language === "en" ? "Dough: wheat flour, water, spinach juice (6%), sugar, palm oil, antioxidants (E307, E304), modified starch (E1422), acidity regulators (E450, E500, E341, E170), maize starch, yeast. \Filling: pickled mustard leaves (13%, bamboo shoots, sugar, soybean oil, soy sauce (water, soybeans, salt), chives, cooking wine (water, millet, wheat), flavor enhancer (E635), ginger, salt, white pepper." : "Teig: Weizenmehl, Wasser, Spinatsaft(6%), Zucker, Palmöl, AntioxidationsmitteIn (E307, E304), Modifzierte Stärke (E1422), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe.\nFüllung: eingelegte Senfblätter (13%, Bambussprossen, Zucker, Sojaöl, Sojasauce (Wasser, Soiabohnen, Salz), Schnittlauch, Kochwein (Wasser, Hirse, Weizen), Geschmacksverstärker (E635), Ingwer, Salz, weißer Pfeffer.", 
+    tag: ["vegan", "dimSum"],
+    nutrition: {
+      energy: "876KJ/209kcal",
+      fat: "4,6g",
+      saturatedFat: "0,9g",
+      carbohydrates: "36g",
+      sugar: "2,8g",
+      protein: "5,5g",
+      salt: "1,9g"
+    }
+  },
+  { 
+    name: language === "en" ? "Steamed Beef Bulgongi Dumplings" : "Gedämpfte Rinder-Bulgogi-Dumplings", 
+    img: "./meals/1.jpg", 
+    description: language === "en" ? "Vegetables 30%* [white cabbage (29%), spring onions (26%), onions (25%), carrots (20%). Wheat flour, beef 19%)*, water, soy sauce (water, soybeans, wheat, salt), apple sauce (apple, glucose-fructose syrup, sugar, acidity regulator: citric acid, antioxidant: Ascorbic acid), sugar, texturized soy protein, garlic tapioca starch, corn starch, sesame oil, yeast extract, soy protein isolate, salt, wheat gluten, rapeseed oil, black pepper, ginger" : "Gemüse 30%* (WeiBkohl(29%), Früuhlingszwiebeln(26%), Zwiebeln (25%), Karotten (20%). Weizenmehl, Rindfleisch 19%)*, Wasser, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Apfelmus (Apfel, Glucose-Fructose-Sirup, Zucker, Saureregulator: Citronensäure, Antioxidationsmittel: Ascorbinsäure), Zucker, texturiertes Sojaprotein, KnoblauchTapiokastärke, Maisstärke, Sesamöl, Hefeextrakt, Sojaprotein Isolat, Salz, Weizengluten, Rapsöl, schwarzer Pfeffer, Ingwer", 
+    tag: ["non-vegan","dimSum"],
+    nutrition: {
+      energy: "750KJ/178kcal",
+      fat: "5,0g",
+      saturatedFat: "1,9g",
+      carbohydrates: "23,6g",
+      sugar: "4,5g",
+      fiber: "2,6g",
+      protein: "8,4g",
+      salt: "1,2g"
+    }
+  },
+  { 
+    name: language === "en" ? "Steamed Beef Dumplings with BBQ Flavor" : "Gedämpfte Rindfleisch-Dumplings mit BBQ-Geschmack", 
+    img: "./meals/2.jpg", 
+    description: language === "en" ? "Beef (29%), vegetables (24%) [cabbage (49%), onion (26%), garlic (13%), spring onion (12%)], wheat flour, water, beef fat (5%), BBQ sauce (3%) [water, soy sauce (water, soybeans, wheat, salt], sugar, corn syrup, onion puree, garlic puree, Bimen puree, salt, rice-based alcoholic beverage, seasoning mix [maltodextrin, hydrolyzed wheat and soybean protein, sugar, salt, glucose syrup, glucose, onion, yeast extract, garlic, spring onion, ginger, black pepper powder] Ginger extract, flavor enhancer: monosodium glutamate, black pepper, spring onion extract, thickener: xanthan gum, acidity regulator: citric acid, color: [ammonium sulphate caramel, sesame], sugar, sesame oil, tapioca, protein powder [chicken protein, acidity regulator: Citric acid], soy sauce (water, soybeans, wheat, salt), texturized soy protein, salt, yeast extract, natural flavouring, wheat gluten, sugar syrup, rapeseed oil, black pepper" : "Rindfleisch (29%), Gemüse (24%) [Kohl (49%), Zwiebel (26%), Knoblauch(13%), Frühlingzwiebel(12%)], Weizenmehl, Wasser, Rinderfett (5%), BBQSauce(3%) [Wasser, Sojasauce (Wasser, Sojabohnen, Weizen, Salz], Zucker, Maissirup, Zwiebelpüree, Knoblauchpüree, Bimenpüree, Salz, Alkoholisches Getränk auf Reisbasis, Würzmischung [Maltodextrin, hydrolisiertes Weizen- und Sojabohnenprotein, Zucker, Salz, Glucosesirup, Glukose, Zwiebel, Hefeextrakt, Knoblauch,Fruhlingzwiebel, Ingwer, schwarzes Pfefferpulver] Ingwerextrakt, Geschmacksverstärker: Mononatriumglutamat, Schwarzer Pfeffer, Fruhlingszwiebelextrakt, Verdickungsmittel: Xanthan, Saureregulator: Citronensäure, Farbstoff: [Ammoniumsulft-Zuckerkulör, Sesam], Zucker, Sesamöl, Tapiokastänke, Eiweißpulver [Hühner-Eiweiß, Säureregulator: Citronensäure], Sojasauce (Wasser, Sojabohnen, Weizen, Salz),texturiertes Sojaprotein, Salz, Hefeextrakt, natürliches Aroma, Weizengluten, Zuckersirup, Rapsol, schwarzer Pfeffer", 
+    tag: ["non-vegan","dimSum"],
+    nutrition: {
+      energy: "825KJ/197kcal",
+      fat: "7,3g",
+      saturatedFat: "2,8g",
+      carbohydrates: "21g",
+      sugar: "3,2g",
+      fiber: "2,3g",
+      protein: "10g",
+      salt: "1,7g"
+    }
+  },
+  { 
+    name: language === "en" ? "Steamed Pork & Vegetable Dumplings" : "Gedämpfte Schweinefleisch & Gemüse-Dumplings", 
+    img: "./meals/3.jpg", 
+    description: language === "en" ? "Cabbage 27%*, pork and pork fat 22%*, wheat flour, water, onion 7%*, spring onion 2%*, soy sauce 2%* (water, soybeans, wheat, salt), garlic 2%*, tofu (soybeans, water), tapioca starch, yeast extract, textured soy proteins, wheat gluten, spices, sesame oil, rapeseed oil" : "Kohl 27%*, Schweinefleisch und -fett 22%*, Weizenmehl, Wasser, Zwiebel 7%*, Frühlingszwiebel 2%*,Sojasoße 2%* (Wasser, Sojabohnen, Weizen, Salz), Knoblauch 2%*, Tofu (Sojabohnen,Wasser), Tapiokastärke, Hefe-Extrakt, Strukturierte Sojaproteine, Weizengluten, Gewürze, Sesamöl, Rapssamenöl", 
+    tag: ["non-vegan","dimSum"],
+    nutrition: {
+      energy: "700KJ/167kcal",
+      fat: "6,5g",
+      saturatedFat: "2,6g",
+      carbohydrates: "19g",
+      sugar: "2,6g",
+      protein: "8,0g",
+      salt: "0,8g"
+    }
+  },
+  { 
+    name: language === "en" ? "Steamed Chicken & Vegetable Dumplings" : "Gedämpfte Hähnchen & Gemüse-Dumplings", 
+    img: "./meals/4.jpg", 
+    description: language === "en" ? "Wheat flour, white cabbage(21%), water, chicken meat (20%), onions(12%), chicken skin(6%), spring onions(2%), chicken broth (water, chicken meat fat, bone fat and salt), wheat flour, tapioca starch, soy sauce (water, soybeans, wheat, salt), ginger (0.9%), yeast extract, garlic (0.8%), sugar, rapeseed oil, black pepper, wheat gluten, sesame oil, texturized soy protein, salt" : "Weizenmehl, Weißkohl(21%), Wasser, Hänchenfleisch (20%), Zwiebeln(12%), Hähnchenhaut(6%), Frühlingszwiebeln(2%), Hühnerbrühe (Wasser, Hühnerfleisch-, Knochenfett und Salz), Weizenmehl, Tapiokastärke, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Ingwer(0,9%), Hefeextrakt, Knoblauch (0,8%), Zucker, Rapsöl, Schwarzer Pfeffer, Weizengluten, Sesamöl, Texturiertes Sojaprotein, Salz", 
+    tag: ["non-vegan","dimSum"],
+    nutrition: {
+      energy: "660KJ/157kcal",
+      fat: "4,4g",
+      saturatedFat: "1,4g",
+      carbohydrates: "20,4g",
+      sugar: "2,8g",
+      fiber: "2,4g",
+      protein: "7,6g",
+      salt: "1,0g"
     }
   },
 //  { 
@@ -201,322 +517,6 @@ const getProducts = (language) => [
       sugar: "2,3g",
       protein: "9,1g",
       salt: "0,76g"
-    }
-  },
-  { 
-    name: language === "en" ? "Vegetarian Mushroom Baozi" : "Vegetarische Gedämpfte Pilzen-Baozi", 
-    img: "./meals/13.jpg", 
-    description: language === "en" ? "Dough: wheat flour, water, purple sweet potato puree (15%), sugar, palm oil, antioxidants (E307, E304), modified starch (E1422), acidity regulators (E450, E500, E341, E170), corn starch, yeast.\nFilling: water chestnuts, mushrooms 16.6% (king oyster mushroom, cultivated mushroom, shiitake, mu-err), soybean oil, sugar, soy sauce (water, soybeans, wheat, salt), chives, salt, flavor enhancer (E635), portee, white pepper, shallot." : "Teig: Weizenmehl, Wasser, lila Süßkartoffe Püree (15%), Zucker, Palmöl, Antioxidationsmitteln(E307, E304), Modifizierte Stärke (E1422), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe. \nFüllung: Wasserkastanien, Pilze 16.6% (Kräuterseitling, Zucht-Champignon, Shiitake, Mu-Err), Sojaöl, Zucker, Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Schnittlauch, Salz, Geschmacksverstärker (E635), Portee, weißer Pfeffer, Schalotte.", 
-    tag: ["vegan", "dimSum"],
-    nutrition: {
-      energy: "794KJ/189kcal",
-      fat: "4,7g",
-      saturatedFat: "0,9g",
-      carbohydrates: "32,2g",
-      sugar: "2,3g",
-      protein: "4,3g",
-      salt: "0,7g"
-    }
-  },
-  { 
-    name: language === "en" ? "Vegetarian Pickled Bamboo Shoots Baozi" : "Vegetarische Gedämpfte Sauerkraut-Bambussprossen-Baozi", 
-    img: "./meals/14.jpg", 
-    description: language === "en" ? "Dough: wheat flour, water, spinach juice (6%), sugar, palm oil, antioxidants (E307, E304), modified starch (E1422), acidity regulators (E450, E500, E341, E170), maize starch, yeast. \Filling: pickled mustard leaves (13%, bamboo shoots, sugar, soybean oil, soy sauce (water, soybeans, salt), chives, cooking wine (water, millet, wheat), flavor enhancer (E635), ginger, salt, white pepper." : "Teig: Weizenmehl, Wasser, Spinatsaft(6%), Zucker, Palmöl, AntioxidationsmitteIn (E307, E304), Modifzierte Stärke (E1422), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe.\nFüllung: eingelegte Senfblätter (13%, Bambussprossen, Zucker, Sojaöl, Sojasauce (Wasser, Soiabohnen, Salz), Schnittlauch, Kochwein (Wasser, Hirse, Weizen), Geschmacksverstärker (E635), Ingwer, Salz, weißer Pfeffer.", 
-    tag: ["vegan", "dimSum"],
-    nutrition: {
-      energy: "876KJ/209kcal",
-      fat: "4,6g",
-      saturatedFat: "0,9g",
-      carbohydrates: "36g",
-      sugar: "2,8g",
-      protein: "5,5g",
-      salt: "1,9g"
-    }
-  },
-  { 
-    name: language === "en" ? "Fried Rice with BBQ-flavored Chicken & Vegetable" : "Gebratener Reis mit Hähnchen & Gemüse - BBQ-Geschmack", 
-    img: "./meals/15.jpg", 
-    description: language === "en" ? "Cooked rice 52% (rice, water), fried chicken breast 10% (chicken breast, salt, dextrose), onion 10%, carrot 8%, spring onion 7%, soy sauce 3% (water, soybeans, wheat, salt), spring onion oil (rapeseed oil, sugar, sunflower oil, garlic, yeast extract, chicken stock), rice flour, natural flavoring, caramel syrup, salt, antioxidant E307, black pepper, onion powder." : "Gekochter Reis 52% (Reis, Wasser), gebratene Hühnerbrust 10%(Hühnerbrust, Salz, Dextrose), Zwiebel 10%, Karotte 8%, Frühlingszwiebel 7%, Sojasauce 3% (Wasser, Sojabohnen, Weizen, Salz), Frühlingszwiebelöl (Rapsöl, Zucker,  Sonnenblumenöl, Knoblauch, Hefeextrakt, Hühnerbrühe), Reismehl, natürliches Aroma, Karamellsirup, Salz, Antioxidationsmittel E307, schwarzer Pfeffer, Zwiebelpulver.", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "580KJ/139kcal",
-      fat: "3,7g",
-      saturatedFat: "0,4g",
-      carbohydrates: "21g",
-      sugar: "3,0g",
-      fiber: "1,2g",
-      protein: "4,9g",
-      salt: "1,3g"
-    }
-  },   
-  { 
-    name: language === "en" ? "Fried Rice with Kimchi & Chicken" : "Gebratener Reis mit Kimchi & Hähnchen", 
-    img: "./meals/16.jpg", 
-    description: language === "en" ? "cooked rice 50% (rice, water), cabbage 16%, fried chicken breast 10% (chicken breast, salt, dextrose), kimchi sauce 7. 5% [water, garlic, red bell pepper powder, fructose, iodized salt (salt, potassium iodate), ginger, natural flavouring, thickener (E4151), carrot 4%, onion 2%, spring onion 2%, spring onion oil [rapeseed oil, spring onion, dehydrated spring onion, antioxidant (E307)], sunflower oil, garlic, oyster sauce (molluscs, wheat), flete extract, sugar, red bell pepper powder, soy sauce (soy, wheat), natural flavoring, hünner broth, salt, black bell pepper powder." : "gekochter Reis 50% (Reis, Wasser), Kohl 16%, gebratene Hähnchenbrust 10% (Hähnchenbrust, Salz, Dextrose), Kimchi Sauce 7.5% [Wasser, Knoblauch, rotes Paprikaputiver, Frukose, jodiertes Salz (Salz, Kaliumjodat), Ingwer, natüriches Aroma, Verdickungsmittel(E4151), Karotte 4%, Zwiebel 2%, Frühlingszwiebel 2%, Frühingszwiebelöl [Rapsöl, Fruhlingszwiebel, dehydrierte Frühlingszwiebel, Antroxidationsmittel (E307)], Sonnenblumenöl, Knoblauch, Austernsauce (Weichtiere, Weizen), Fleteextrakt, Zucker, rotes Paprikapulver,Sojasauce (Soja, Weizen), natürliches Aroma, hünnerbrühe, Salz, schwarzes Paprikapuiver.", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "534KJ/128kcal",
-      fat: "4,0g",
-      saturatedFat: "0,5g",
-      carbohydrates: "18g",
-      sugar: "1,5g",
-      fiber: "1,1g",
-      protein: "4,5g",
-      salt: "0,77g"
-    }
-  },
-  { 
-    name: language === "en" ? "Fried Rice with Teriyaki-flavored Chicken" : "Gebratener Reis mit Hähnchen - Teriyaki-Geschmack",  
-    description: language === "en" ? "Cooked rice 62.4%* [water, rice]; sliced chicken 9%* (origin: EU); teriyaki sauce 7.8%* [soy sauce (water, soy sauce, wheat flour (gluten), salt), water, mirin seasoning, chicken stock, sugar, salt, starch, rice vinegar seasoning, natural flavoring], onions, red peppers, mushrooms, sunflower oil, green jalapeños, garlic, grilled sesame seeds, ginger, salt, sugar" : "Gekochter Reis 62,4%* [Wasser, Reis]; Hähnchenfleisch in Scheiben 9%* (Ursprung:EU); Teriyaki-Soße 7,8%* [Sojasoße  (Wasser, Sojasoße, Weizenmehl (Gluten), Salz), Wasser, Mirin-Würze, Hühnerbrühe, Zucker, Salz, Stärke, Reisessig-Würze, natürliches Aroma], Zwiebeln, rote Paprika, Champignons, Sonnenblumenöl, grüne Jalapeños, Knoblauch, gegrillter Sesam, lngwer, Salz, Zucker, Stärke.", 
-    img: "./meals/17.jpg", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "605KJ/145kcal",
-      fat: "4,3g",
-      saturatedFat: "0,6g",
-      carbohydrates: "22g",
-      sugar: "1,2g",
-      fiber: "4,3g",
-      protein: "0,9g",
-      salt: "1,3g"
-    }
-  },
-  { 
-    name: language === "en" ? "Roasted Cabbage Rice Bowl" : "Gebratene Kohl Reis Bowl", 
-    img: "./meals/19.jpg", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["vegan","rice"],
-  //  nutrition: {
-  //    energy: "620KJ/148kcal",
-  //    fat: "4,2g",
-  //    saturatedFat: "0,8g",
-  //    carbohydrates: "22g",
-  //    sugar: "2,1g",
-  //    fiber: "4,2g",
-  //    protein: "6g",
-  //    salt: "1,15g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Pork Belly & Cabbage Rice Bowl" : "Schweinebauch & Kohl Reis Bowl", 
-    img: "./meals/20.jpg", 
-    description: language === "en" ? "Rice, cabbage, pork belly, dried chilli peppers, peppercorns, garlic, ginger, light soy sauce, dark soy sauce, salt, sugar, MSG, chicken powder, edible vegetable oil" : "dReis, Kohl, Schweinebauch, getrocknete Chilischoten, Pfefferkörner, Knoblauch, Ingwer, helle Sojasauce, dunkle Sojasauce, Salz, Zucker, MSG, Hühnerpulver, essbares Pfanzenöl", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "724KJ/173kcal",
-      fat: "7,8g",
-      saturatedFat: "3,3g",
-      carbohydrates: "16,7g",
-      sugar: "2,7g",
-      fiber: "1,1g",
-      protein: "6,7g",
-      salt: "0,84g"
-    }
-  },
-  { 
-    name: language === "en" ? "Beef & Carrot Rice Bowl" : "Rindfleisch & Karotten Reis Bowl", 
-    img: "./meals/21.jpg", 
-    description: language === "en" ? "Cooked rice (water, rice), beef (topside), carrots, onions, rapeseed oil, water, soya beans, wheat, soya sauce (water, salt), oyster sauce (water, sugar, salt, oyster extract), rice wine (water, rice, koji culture), ginger, garlic, starch, sugar, pepper" : "Gekochter Reis (Wasser, Reis), Rindfleisch (Oberschale), Möhren, Zwiebeln, Rapsöl, WasserSojabohnen, Weizen, Sojasauce (Wasser, Salz), Austernsauce (Wasser, Zucker, Salz, Austernextrakt), Reiswein (Wasser, Reis, Koji-Kultur), Ingwer, Knoblauch, Stärke, Zucker, Pfeffer", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "724KJ/173kcal",
-      fat: "7,8g",
-      saturatedFat: "3,3g",
-      carbohydrates: "16,7g",
-      sugar: "2,7g",
-      fiber: "1,1g",
-      protein: "6,7g",
-      salt: "0,84g"
-    }
-  },
-  { 
-    name: language === "en" ? "Beef with Black Pepper Rice Bowl" : "Rindfleisch mit schwarzem Pfeffer Reis Bowl", 
-    img: "./meals/22.jpg", 
-    description: language === "en" ? "Black pepper, beef, onion, red pepper, green pepper, rice, oyster sauce, soy sauce, dark soy sauce, table salt, sesame oil, vegetable oil" : "Schwarzer Pfeffer, Rindfleisch, Zwiebel, rote Paprika, grüne Paprika, Reis, Austernsauce, Sojasauce, Dunkle Sojasauce , Speisesalz, Sesamöl, Pflanzenöl", 
-    tag: ["non-vegan","rice"],
-    nutrition: {
-      energy: "669KJ/160kcal",
-      fat: "6,2g",
-      saturatedFat: "1,8g",
-      carbohydrates: "17,3g",
-      sugar: "2,2g",
-      fiber: "0,9g",
-      protein: "8,4g",
-      salt: "0,71g"
-    }
-  },
-  { 
-    name: language === "en" ? "Vegetarian Eggplant Rice Bowl" : "Vegetarisch Auberginen Reis Bowl", 
-    img: "./meals/23.png", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["vegan","rice"],
-  //  nutrition: {
-  //    energy: "680KJ/162kcal",
-  //    fat: "5,8g",
-  //    saturatedFat: "1,1g",
-  //    carbohydrates: "23g",
-  //    sugar: "2,5g",
-  //    fiber: "4,8g",
-  //    protein: "7g",
-  //    salt: "1,28g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Roasted Lamb with Cumin Rice bowl" : "Gebratenes Lammfleisch mit Kreuzkümmel Reis Bowl", 
-    img: "./meals/24.png", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "980KJ/234kcal",
-  //    fat: "11,2g",
-  //    saturatedFat: "4,8g",
-  //    carbohydrates: "24g",
-  //    sugar: "2,9g",
-  //    fiber: "2,6g",
-  //    protein: "16g",
-  //    salt: "2,05g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Pepper & Fried Pork Rice bowl" : "Gebratener Schweinebauch & Pfeffer Reis Bowl", 
-    img: "./meals/25.png", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "1120KJ/268kcal",
-  //    fat: "14,5g",
-  //    saturatedFat: "5,2g",
-  //    carbohydrates: "26g",
-  //    sugar: "3,1g",
-  //    fiber: "2,8g",
-  //    protein: "15g",
-  //    salt: "2,25g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Kung Pao Chicken Rice Bowl" : "Kung Pao Hähnchen Reis Bowl", 
-    img: "./meals/26.jpg", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "850KJ/203kcal",
-  //    fat: "7,8g",
-  //    saturatedFat: "2,1g",
-  //    carbohydrates: "24g",
-  //    sugar: "3,5g",
-  //    fiber: "2,9g",
-  //    protein: "12g",
-  //    salt: "1,75g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Kung Pao Tofu Rice Bowl" : "Kung Pao Tofu und Gemüse Reis Bowl", 
-    img: "./meals/27.jpg", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["vegan","rice"],
-  //  nutrition: {
-  //    energy: "720KJ/172kcal",
-  //    fat: "6,2g",
-  //    saturatedFat: "1,0g",
-  //    carbohydrates: "22g",
-  //    sugar: "2,8g",
-  //    fiber: "4,1g",
-  //    protein: "8g",
-  //    salt: "1,45g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Mapo Tofu Rice Bowl" : "Mapo Tofu Reis Bowl", 
-    img: "./meals/28.png", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "780KJ/186kcal",
-  //    fat: "8,1g",
-  //    saturatedFat: "2,8g",
-  //    carbohydrates: "21g",
-  //    sugar: "2,9g",
-  //    fiber: "3,2g",
-  //    protein: "9g",
-  //    salt: "2,15g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Curry-Beef-Potato Reis Bowl" : "Curry-Rindfleisch & Kartoffeln Reis Bowl", 
-    img: "./meals/29.png", 
-  //  description: language === "en" ? "en" : "de", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-  //    energy: "890KJ/213kcal",
-  //    fat: "8,5g",
-  //    saturatedFat: "3,2g",
-  //    carbohydrates: "26g",
-  //    sugar: "3,1g",
-  //    fiber: "3,4g",
-  //    protein: "11g",
-  //    salt: "1,68g"
-  //  }
-  },
-  { 
-    name: language === "en" ? "Beef & Bean Curd Rice bowl" : "Rindfleisch & Yuba(Tofu Produkt) Reis Bowl", 
-    img: "./meals/30.png", 
-  //  description: language === "en" ? "Beef (100-120g), tofu skin (100-120g), Hongshao sauce (15g), rice (200-220g), soy sauce, vegetable oil, garlic, ginger, spring onions, sugar, cornstarch, salt" : "Rindfleisch (100-120g), Tofuhaut (100-120g), Hongshao-Sauce (15g), Reis (200-220g), Sojasauce, Pflanzenöl, Knoblauch, Ingwer, Frühlingszwiebeln, Zucker, Speisestärke, Salz", 
-    tag: ["non-vegan","rice"],
-  //  nutrition: {
-      //energy: "1054.5KJ/251.9kcal",
-      //fat: "7,8g",
-      //saturatedFat: "2,9g",
-      //carbohydrates: "23g",
-      //sugar: "2,7g",
-      //fiber: "3,8g",
-      //protein: "10g",
-      //salt: "1,55g"
-   // }
-  },
-  { 
-    name: language === "en" ? "Braised Beef Noodle" : "Geschmorte Rindfleisch Nudeln", 
-    img: "./meals/31.jpg", 
-    description: language === "en" ? "Beef soup (450g): Water, beef (36.75%), soy sauce, spicy bean paste (chilli, salt, field beans, wheat flour), beef bones, bean paste (water, soybeans, wheat flour, salt, flavour enhancer: E621, preservative: E210), chicken powder (salt, maltodextrin, flavour enhancers E621, E631, E635, sugar, corn starch, soy sauce powder, flavourings, yeast, chicken powder, thickener: E415, spices, colour E150d), ginger, garlic, onion, sugar, rice wine (water, rice, purified cooking alcohol), Szechuan pepper, star anise, cinnamon, sweet hoz, noodles (200g):wheat flour, water, acetate starch, salt, koniak powder, crispy fried onions (6g): Onions, palm oil, wheat flour, salt" : "Rindfleischsuppe (450g): Wasser, Rindfleisch (36,75%), Sojasauce, Würzige Bohnenpaste (Chili, Salz, Ackerbohnen, Weizenmehl), Rinderknochen, Bohnenpaste (Wasser, Sojabohnen, Weizenmehl, Salz, Geschmacksverstärker: E621, Konservierungsstoff: E210), Hühnerpulver (Salz, Maltodextrin,  Geschmacksverstärker E621, E631, E635, Zucker,  Maisstärke, Sojasaucenpulver, Aromen, Hefe, Hühnerpulver,  Verdickungsmittel: E415, Gewürze, Farbstoff E150d), Ingwer, Knoblauch, Zwiebel, Zucker, Reiswein (Wasser, Reis, gereinigter Speisealkohol), Szechuanpfeffer, Sternanis, Zimt, Süßhoz, Nudeln (200g):Weizenmehl, Wasser, Acetatstärke, Salz, Koniakpulver, Knusprige Röstzwiebeln (6g): Zwiebeln, Palmöl, Weizenmehl, Salz", 
-    tag: ["non-vegan","noodle"],
-    nutrition: {
-      energy: "602KJ/144kcal",
-      fat: "3,4g",
-      saturatedFat: "1,3g",
-      carbohydrates: "23,4g",
-      sugar: "0,4g",
-      fiber: "1,6g",
-      protein: "5,4g",
-      salt: "0,4g"
-    }
-  },
-  { 
-    name: language === "en" ? "Tonkotsu Ramen" : "Tonkotsu-Ramen", 
-    img: "./meals/32.jpg", 
-    description: language === "en" ? "Wheat flour, water, modified tapioca starch, salt, acidity regulators: E500, E501, wheat gluten, colour: E101, pork belly, glucose syrup, sugar, sake (glucose syrup, water, spirit vinegar, fermented rice alcohol (water, rice, alcohol, salt, rice malt), sugar, acidity regulator: E330, sugar cane molasses), soy sauce (water, soybeans, wheat, salt), flavour enhancer: E621, stabiliser: E450, ginger, garlic powder, surimi (fish) [Threadfin Bream (Nemipterus spp. ), sugar, emulsifier: E450, E451, E452, water, protein powder, modified starch, acidity regulator: E260, acidity regulator: E270, yeast extract, soya oil, soya protein, colour: E150c, colour: E120, pork bones, pork meat, pork fat, concentrated pork stock, chicken bones, chicken meat, chicken fat, antioxidant: E392, anti-caking agent: E535, maltodextrin, flavour enhancer: E635, bonito flavoured sauce (water, salt, sugar, maltodextrin, fish extract, tuna extract (fish), vinegar, yeast extract, smoke flavouring), herbs, spices, lard, garlic, antioxidant: E306, spring onion, onion, mu-err mushroom, bamboo shoot" : "Weizenmehl, Wasser, modifizierte Tapiokastärke, Salz, Säureregulatoren: E500, E501, Weizengluten, Farbstoff: E101, Schweinebauch, Glukosesirup, Zucker, Sake (Glukosesirup, Wasser, Branntweinessig, fermentierter Reisalkohol (Wasser,  Reis, Alkohol, Salz, Reismalz), Zucker, Säureregulator: E330, Zuckerrohrmelasse), Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Geschmacksverstärker: E621,  Stabilisator: E450, Ingwer, Knoblauchpulver, Surimi (Fisch) [Threadfin Bream (Nemipterus spp.), Zucker, Emulgator: E450, E451, E452, Wasser,  Eiweißpulver, modifizierte Stärke, Säuereregulator: E260, Säuereregulator: E270, Hefeextrakt, Sojaöl, Sojaeiweiß, Farbstoff: E150c, Farbstoff: E120, Schweineknochen,  Schweinefleisch, Schweinefett, konzentrierte Schweinebouillon, Hühnerknochen, Hühnerfleisch, Hühnerfett, Antioxidationsmittel: E392, Antiklumpmittel: E535, Maltodextrin, Geschmacksverstärker: E635, Bonito Flavoured Sauce (Wasser,  Salz, Zucker, Maltodextrin, Fischextrakt, Thunfischextrakt (Fisch), Essig, Hefeextrakt, Raucharoma), Kräuter, Gewürze, Schmalz, Knoblauch, Antioxidationsmittel: E306, Frühlingszwiebel, Zwiebel, Mu-Err-Pilz, Bambussprosse", 
-    tag: ["non-vegan","noodle"],
-    nutrition: {
-      energy: "775KJ/184kcal",
-      fat: "5,4g",
-      saturatedFat: "2,2g",
-      carbohydrates: "27,2g",
-      sugar: "1,4g",
-      protein: "5,8g",
-      salt: "1,21g"
-    }
-  },
-  { 
-    name: language === "en" ? "Tonkotsu Udon" : "Tonkotsu-Udon", 
-    img: "./meals/33.jpg", 
-    description: language === "en" ? "Wheat flour, water, salt, thickener: E1442, E405, acidity regulator: E501, E500, pork belly, glucose syrup. Sugar, sake (glucose syrup, water, spirit vinegar, fermented rice alcohol (water, rice, alcohol, salt, rice malt), sugar, acidity regulator: E330, sugar cane molasses), soy sauce (water, soybeans, wheat, salt), flavour enhancer: E621, stabiliser: E450, ginger, garlic powder, surimi (fish) [threadfin bream (Nemipterus spp. ), sugar, emulsifier: E450, E451, E452water, protein powder], modified starch, acidity regulator: E260, E270, yeast extract, soya oil, soya protein, colour: E150c, E120, pork bones, pork meat, pork fat, concentrated pork stock, chicken bones, chicken meat, chicken fat, antioxidant: E392, anticaking agent: E535, maltodextrin, flavour enhancer: E635, bonito flavoured sauce (water, salt, sugar, maltodextrin, fish extract, tuna extract (fish), vinegar, yeast extract, smoke flavouring), herbs, spices, lard, garlic, antioxidant: E306, spring onion, onion, mu-err mushroom, bamboo shoot" : "Weizenmehl, Wasser, Salz, Verdickungsmittel: E1442,  E405,  Säureregulator: E501, E500, Schweinebauch, Glukosesirup. Zucker, Sake (Glukosesirup, Wasser, Branntweinessig, fermentierter Reisalkohol (Wasser, Reis, Alkohol, Salz, Reismalz), Zucker, Säureregulator: E330,  Zuckerrohrmelasse), Sojasauce (Wasser, Sojabohnen, Weizen, Salz), Geschmacksverstärker: E621, Stabilisator: E450, Ingwer, Knoblauchpulver, Surimi (Fisch) [Threadfin Bream (Nemipterus spp.), Zucker, Emulgator: E450, E451, E452Wasser, Eiweißpulven], modifizierte Stärke, Säuereregulator: E260, E270, Hefeextrakt, Sojaöl, Sojaeiweiß, Farbstoff: E150c, E120, Schweineknochen, Schweinefleisch, Schweinefett, Konzentrierte Schweinebouillon, Hühnerknochen, Hühnerfleisch, Hühnerfett, Antioxidationsmittel: E392, Antklumpmittel: E535, Maltodextrin,  Geschmacksverstarker: E635, Bonito Flavoured Sauce (Wasser, Salz, Zucker,  Maltodextrin, Fischextrakt, Thunfischextrakt (Fisch), Essig, Hefeextrakt, Raucharoma), Kräuter, Gewürze, Schmalz, Knoblauch, Antioxidationsmittel: E306, Frühlingszwiebel, Zwiebel, Mu-Err-Pilz, Bambussprosse", 
-    tag: ["non-vegan","noodle"],
-    nutrition: {
-      energy: "665KJ/158kcal",
-      fat: "5,1g",
-      saturatedFat: "2,1g",
-      carbohydrates: "23,3g",
-      sugar: "1,0g",
-      protein: "4,7g",
-      salt: "0,88g"
     }
   },
   { 

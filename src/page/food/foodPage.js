@@ -212,6 +212,21 @@ const getProducts = (language) => [
   //  }
   },
   { 
+    name: language === "en" ? "BBQ Chicken with Long Grain Rice" : "BBQ-Hähnchen mit Langkornreis", 
+    img: "./meals/94.jpg", 
+    description: language === "en" ? " Chicken strips (31.6%), long grain rice (49.7%), water, tomato paste, sugar, corn, chickpeas, kidney beans, white beans, black beans, wheat flour, apple cider vinegar, rapeseed oil, vegetable broth (salt, maltodextrin, sugar, sunflower oil, yeast extract, natural flavors, leek extract, natural onion flavor with other natural flavors, natural lovage flavor, turmeric, caramelized sugar), iodized table salt (salt, potassium iodate), Mexican-style spice blend, vegan gravy (maltodextrin, rice flour, starch, salt, sugar, natural flavors, yeast extract, caramelized sugar, tomatoes, sunflower oil, onions, garlic, acidifier: citric acid), table vinegar (distilled vinegar), spices" : "Hähnchenstreifen (31.6%), Langkornreis (49.7%), Wasser, Tomatenmark, Zucker, Mais, Kichererbsen, Kidneybohnen, Weiße Bohnen, Schwarze Bohnen, Weizenmehl, Apfelessig, Rapsöl, Gemüsebrühe (Salz, Maltodextrin, Zucker, Sonnenblumenöl, Hefeextrakt, natürliche Aromen, Lauchextrakt, natürliches Zwiebelaroma mit anderen natürlichen Aromen, natürliches Liebstöckelaroma, Kurkuma, karamellisierter Zucker), jodiertes Speisesalz (Salz, Kaliumjodat), Gewürzzubereitung mexikanische Art, vegane Bratensauce (Maltodextrin, Reismehl, Stärke, Salz, Zucker, natürliche Aromen, Hefeextrakt, karamellisierter Zucker, Tomaten, Sonnenblumenöl, Zwiebeln, Knoblauch, Säuerungsmittel: Citronensäure), Tafelessig (Branntweinessig), Gewürze", 
+    tag: ["non-vegan","rice"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+     // fat: "2,3g",
+     // saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    // protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  { 
     name: language === "en" ? "Braised Beef Noodle" : "Geschmorte Rindfleisch Nudeln", 
     img: "./meals/31.jpg", 
     description: language === "en" ? "Beef soup (450g): Water, beef (36.75%), soy sauce, spicy bean paste (chilli, salt, field beans, wheat flour), beef bones, bean paste (water, soybeans, wheat flour, salt, flavour enhancer: E621, preservative: E210), chicken powder (salt, maltodextrin, flavour enhancers E621, E631, E635, sugar, corn starch, soy sauce powder, flavourings, yeast, chicken powder, thickener: E415, spices, colour E150d), ginger, garlic, onion, sugar, rice wine (water, rice, purified cooking alcohol), Szechuan pepper, star anise, cinnamon, sweet hoz, noodles (200g):wheat flour, water, acetate starch, salt, koniak powder, crispy fried onions (6g): Onions, palm oil, wheat flour, salt" : "Rindfleischsuppe (450g): Wasser, Rindfleisch (36,75%), Sojasauce, Würzige Bohnenpaste (Chili, Salz, Ackerbohnen, Weizenmehl), Rinderknochen, Bohnenpaste (Wasser, Sojabohnen, Weizenmehl, Salz, Geschmacksverstärker: E621, Konservierungsstoff: E210), Hühnerpulver (Salz, Maltodextrin,  Geschmacksverstärker E621, E631, E635, Zucker,  Maisstärke, Sojasaucenpulver, Aromen, Hefe, Hühnerpulver,  Verdickungsmittel: E415, Gewürze, Farbstoff E150d), Ingwer, Knoblauch, Zwiebel, Zucker, Reiswein (Wasser, Reis, gereinigter Speisealkohol), Szechuanpfeffer, Sternanis, Zimt, Süßhoz, Nudeln (200g):Weizenmehl, Wasser, Acetatstärke, Salz, Koniakpulver, Knusprige Röstzwiebeln (6g): Zwiebeln, Palmöl, Weizenmehl, Salz", 
@@ -256,6 +271,36 @@ const getProducts = (language) => [
       protein: "4,7g",
       salt: "0,88g"
     }
+  },
+  { 
+    name: language === "en" ? "Shrimp Wonton TOM KHA Noodle Soup" : "Garnelen-Wonton TOM KHA Nudelsuppe", 
+    img: "./meals/98.jpg", 
+    description: language === "en" ? "Cooked noodles 41 % (wheat flour, water, pumpkin, wheat gluten, salt, acidity regulators: E500, E501, E339, E450, E452; thickeners: E412, E415), Tom Kha soup 33 % (coconut milk (coconut extract, water), sugar, lime juice, salt, fish sauce (fish, salt, sugar), shallots, lemongrass, galangal, modified tapioca starch, whey protein powder, fully refined soybean oil, spirit vinegar, maltodextrin, yeast extract, onion powder, kaffir lime leaves, chili, soy sauce powder (water, maltodextrin, soybeans, salt), garlic, sunflower oil, flavour enhancers: E635, E627, E631; natural flavour, colour: E160c; emulsifier: E471; palm oil), dumplings 14 % (water, prawns 34 %, wheat flour, tapioca starch, sugar, prawn broth (water, prawn head, salt), modified tapioca starch, sesame oil, fully refined soybean oil, salt, acidity regulator: E500; wheat gluten, white pepper, yeast extract), pak choi 12 %" : " Gekochte Noodles 41 % (Weizenmehl, Wasser, Kürbis, Weizengluten, Salz, Säureregulatoren: E500, E501, E339, E450, E452; Verdickungsmittel: E412, E415), Tom Kha Suppe 33 % (Kokosmilch (Kokosnussextrakt, Wasser), Zucker, Limettensaft, Salz, Fischsauce (Fisch, Salz, Zucker), Schalotten, Zitronengras, Galgant, modifizierte Tapiokastärke, Molkenproteinpulver, vollständig raffiniertes Sojabohnenöl, Branntweinessig, Maltodextrin, Hefeextrakt, Zwiebelpulver, Kaffirlimettenblätter, Chili, Sojasaucenpulver (Wasser, Maltodextrin, Sojabohnen, Salz), Knoblauch, Sonnenblumenöl, Geschmacksverstärker: E635, E627, E631; natürliches Aroma, Farbstoff: E160c; Emulgator: E471; Palmöl), Teigtaschen 14 % (Wasser, Garnelen 34 %, Weizenmehl, Tapiokastärke, Zucker, Garnelensuppe (Wasser, Garnelenkopf, Salz), modifizierte Tapiokastärke, Sesamöl, vollständig raffiniertes Sojabohnenöl, Salz, Säureregulator: E500; Weizengluten, weißer Pfeffer, Hefeextrakt), Pak Choi 12 %", 
+    tag: ["non-vegan","noodle"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  { 
+    name: language === "en" ? "Linguine with Beef Bolognese" : "Rinderbolognese Linguine", 
+    img: "./meals/96.jpg", 
+    description: language === "en" ? "Water, minced beef preparation 31.5% (beef, carrots, onions, celery, tomato paste, sea salt), tomatoes (diced and puréed) (tomatoes, salt, acidifier: citric acid), linguine (durum wheat semolina), tomato paste, onions, vegan gravy (maltodextrin, rice flour, starch, salt, sugar, natural flavors, yeast extract, caramelized sugar, tomatoes, sunflower oil, onions, garlic, acidifier: citric acid), beef broth (salt, maltodextrin, natural flavor, sunflower oil, yeast extract, beef powder, sugar, caramel sugar, acidifier: citric acid, antioxidant: rosemary extract), sugar, garlic, olive oil, wheat flour, iodized table salt (salt, potassium iodate), rapeseed oil, spices" : "Rinderhackfleischzubereitung 31.5% (Rindfleisch, Möhren, Zwiebeln, Sellerie, Tomatenmark, Meersalz), Tomaten (stückig und passiert) (Tomaten, Salz, Säuerungsmittel: Citronensäure), Linguine (Hartweizengrieß), Tomatenmark, Zwiebeln, vegane Bratensauce (Maltodextrin, Reismehl, Stärke, Salz, Zucker, natürliche Aromen, Hefeextrakt, karamellisierter Zucker, Tomaten, Sonnenblumenöl, Zwiebeln, Knoblauch, Säuerungsmittel: Citronensäure), Rinderbrühe (Salz, Maltodextrin, natürliches Aroma, Sonnenblumenöl, Hefeextrakt, Rindfleischpulver, Zucker, Karamellzucker, Säuerungsmittel: Zitronensäure, Antioxidationsmittel: Rosmarin-Extrakt), Zucker, Knoblauch, Olivenöl, Weizenmehl, jodiertes Speisesalz (Salz, Kaliumjodat), Rapsöl, Gewürze", 
+    tag: ["non-vegan","noodle"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
   },
   { 
     name: language === "en" ? "Roasted Cabbage Rice Bowl" : "Gebratene Kohl Reis Bowl", 
@@ -379,6 +424,36 @@ const getProducts = (language) => [
       protein: "5,5g",
       salt: "1,9g"
     }
+  },
+  { 
+    name: language === "en" ? "Steamed Leek & Tofu Baozi" : "Gedämpfte Schnittknoblauch mit Toufu Baozi", 
+    img: "./meals/102.jpg", 
+    description: language === "en" ? "Dough: wheat flour, water, tomato paste (5 %), sugar, palm oil, antioxidants (E307, E304), acidity regulators (E450, E500, E341, E170), corn starch, yeast. Filling: garlic chives (20 %), dougan [soybeans, water, soy sauce (water, soybeans, wheat, salt, flavour enhancer E621), spices, firming agent E511], soybean oil, sugar, flavour enhancer (E635), salt, ginger, leek, white pepper, shallot" : "Teig: Weizenmehl, Wasser, Tomatenmark (5 %), Zucker, Palmöl, Antioxidationsmittel (E307, E304), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe.Füllung: Schnittknoblauch (20 %), Dougan [Sojabohnen, Wasser, Sojasauce (Wasser, Sojabohnen, Weizen, Salz, Geschmacksverstärker E621), Gewürze, Festigungsmittel E511], Sojaöl, Zucker, Geschmacksverstärker (E635), Salz, Ingwer, Porree, weißer Pfeffer, Schalotte.", 
+    tag: ["vegan","dimSum"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  { 
+    name: language === "en" ? "Steamed Mustard Greens & Shiitake Mushrooms Baozi" : "Gedämpfte Senfblätter mit Shiitake-Pilz Baozi", 
+    img: "./meals/101.jpg", 
+    description: language === "en" ? "Dough - wheat flour, water, pumpkin powder (2.5 %), sugar, palm oil, antioxidants (E307, E304), acidity regulators (E450, E500, E341, E170), corn starch, yeast. Filling - mustard leaves (22.8 %), shiitake, wood-ear mushrooms, soybean oil, sugar, ginger, cooking wine (water, millet, wheat), chives, salt, flavour enhancer (E635), leek, white pepper, shallot." : "Teig - Weizenmehl, Wasser, Kürbispulver (2,5 %), Zucker, Palmöl, Antioxidationsmittel (E307, E304), Säureregulatoren (E450, E500, E341, E170), Maisstärke, Hefe. Füllung - Senfblätter (22,80 %), Shiitake, Mu-Err-Pilze, Sojaöl, Zucker, Ingwer, Kochwein (Wasser, Hirse, Weizen), Schnittlauch, Salz, Geschmacksverstärker (E635), Porree, weißer Pfeffer, Schalotte.", 
+    tag: ["vegan","dimSum"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
   },
   { 
     name: language === "en" ? "Steamed Beef Bulgongi Dumplings" : "Gedämpfte Rinder-Bulgogi-Dumplings", 
@@ -579,6 +654,66 @@ const getProducts = (language) => [
       salt: "0,2g"
     }
   },
+  { 
+    name: language === "en" ? "Milk rice with cherry compote" : "Milchreis mit Kirschkompott", 
+    img: "./meals/95.jpg", 
+    description: language === "en" ? "Whole milk (83.4%), round grain rice (10.1%), pitted sour cherries (57.5%), water, apple juice (from apple juice concentrate), sugar, modified corn starch, iodized table salt (salt, potassium iodate)" : "Vollmilch (83.4%), Rundkornreis (10.1%), Sauerkirschen entsteint (57.5%), Wasser, Apfelsaft (aus Apfelsaftkonzentrat), Zucker, modifizierte Maisstärke, jodiertes Speisesalz (Salz, Kaliumjodat)", 
+    tag: ["vegan","dessert"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  { 
+    name: language === "en" ? "Buns with Taro Filling" : "Süße Buns mit Taro Füllung", 
+    img: "./meals/99.jpg", 
+    description: language === "en" ? "wheat flour, water, taro, sugar, palm oil, soybean oil, emulsifiers (E471, E432, E491), humectant (E420), stabilisers (E414, E300), yeast, salt, taro flavour, milk flavour, colourings (E129*, E133)" : "Weizenmehl, Wasser, Taro, Zucker, Palmöl, Sojaöl, Emulgatoren (E471, E432, E491), Feuchthaltemittel (E420), Stabilisatoren (E414, E300), Hefe, Salz, Taro-Aroma, Milcharoma, Farbstoffe (E129, E133)", 
+    tag: ["vegan","dessert"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  { 
+    name: language === "en" ? "Cheese Cake" : "Käsekuchen", 
+    img: "./meals/100.jpg", 
+    description: language === "en" ? "wheat flour, egg, white sugar, shortening, D-sorbitol (glucose), cream cheese, whipping cream, baking powder E500, salt, Edam cheese flavour, cheese flavour" : "Weizenmehl, Ei, Weißzucker, Backfett, D-Sorbit (Glucose), Frischkäse, Schlagsahne, Backpulver E500, Salz, Edamer Käsearoma, Käsearoma", 
+    tag: ["vegan","dessert"],
+    //nutrition: {
+    //  energy: "1031KJ/246kcal",
+    //  fat: "2,3g",
+    //  saturatedFat: "0g",
+    //  carbohydrates: "49,2g",
+    //  sugar: "9,2g",
+    //  protein: "6,2g",
+    //  salt: "0,2g"
+    //}
+  },
+  //{ 
+  //  name: language === "en" ? "Egg Mustard Ragout with Mashed Potatoes" : "Eier-Senfragout mit Kartoffelstampf", 
+  //  img: "./meals/97.jpg", 
+  //  description: language === "en" ? "Water, egg custard cubes (22.5%) (whole egg, egg white, whole milk, salt, concentrated lemon juice), potatoes (76.0%), whole milk, whipped cream, mustard (10.4%) (water, mustard seeds, distilled vinegar, salt, sugar, spices, natural flavoring), carrot, peas, celery, onion, wheat flour, butter, sugar, whole grain mustard (1.1%) (mustard seeds, distilled vinegar, water, salt), iodized table salt (salt, potassium iodate), distilled vinegar, nutmeg, spices" : "Wasser, Eierstichwürfel (22.5%) (Vollei, Eiweiß, Vollmilch, Salz, Zitronensaftkonzentrat), Kartoffel (76.0%), Vollmilch, Schlagsahne, Senf (10.4%) (Wasser, Senfsaat, Branntweinessig, Salz, Zucker, Gewürze, natürliches Aroma), Möhre, Erbse, Sellerie, Zwiebel, Weizenmehl, Butter, Zucker, Körniger Senf (1.1%) (Senfkörner, Branntweinessig, Wasser, Salz), jodiertes Speisesalz (Salz, Kaliumjodat), Branntweinessig, Muskatnuss, Gewürze", 
+  //  tag: ["non-vegan","dessert"],
+  //  nutrition: {
+  //    energy: "1031KJ/246kcal",
+  //    fat: "2,3g",
+  //    saturatedFat: "0g",
+  //    carbohydrates: "49,2g",
+  //    sugar: "9,2g",
+  //    protein: "6,2g",
+  //    salt: "0,2g"
+  //  }
+  //},
 ];
 
 // Memoized filter button component

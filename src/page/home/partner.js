@@ -5,7 +5,6 @@ const Partner = () => {
   const { language } = useLanguage();
   
   const partnerImages = [
-    './partner/eren.png',
     './partner/zd.png',
     './partner/sunlit.png',
     './partner/Klinikum.jpg',

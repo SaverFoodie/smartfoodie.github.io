@@ -9,7 +9,11 @@ const InstagramButton = () => {
   };
 
   const handleLinkedInClick = () => {
-    window.open('https://www.linkedin.com/in/smartfoodie-gmbh-b122b7338/', '_blank');
+    window.open('https://www.linkedin.com/company/smartfoodie-gmbh/', '_blank');
+  };
+
+  const handleTikTokClick = () => {
+    window.open('https://www.tiktok.com/@smartfoodie.steam', '_blank');
   };
 
   return (
@@ -45,7 +49,7 @@ const InstagramButton = () => {
       <div className="relative group">
         <button
           onClick={handleLinkedInClick}
-          className="bg-white text-white py-2 px-2 rounded-full shadow-lg hover:scale-110 transition"
+          className="bg-white text-white py-2 px-2 rounded-full shadow-lg hover:scale-110 transition mb-2"
           style={{ 
             zIndex: 1000,
           }}
@@ -58,6 +62,35 @@ const InstagramButton = () => {
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
           {language === "en" ? "Follow us on LinkedIn" : "Folgen Sie uns auf LinkedIn"}
+        </div>
+      </div>
+
+      <div className="relative group">
+        <button
+          onClick={handleTikTokClick}
+          className="rounded-full shadow-lg hover:scale-110 transition overflow-hidden"
+          style={{ 
+            zIndex: 1000,
+            width: '44px',
+            height: '44px',
+            padding: '0',
+            border: 'none',
+            background: 'none'
+          }}
+        >
+          <img 
+            src="/TikTok.png" 
+            alt="TikTok" 
+            style={{ 
+              width: '100%', 
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
+        </button>
+        <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
+          {language === "en" ? "Follow us on TikTok" : "Folgen Sie uns auf TikTok"}
         </div>
       </div>
     </div>

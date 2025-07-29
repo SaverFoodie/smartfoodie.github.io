@@ -25,18 +25,12 @@ export default function Locations() {
     },
     {
       id: 2,
-      name: language === "en" ? "SmartFoodie @EDEKA Eren" : "SmartFoodie @EDEKA Eren",
-      address: "Tegernseer Landstraße 64, 81541 München",
-      coordinates: [48.1159, 11.5801]
-    },
-    {
-      id: 3,
       name: language === "en" ? "SmartFoodie e-Bistro24H @Klinikum Großhadern" : "SmartFoodie e-Bistro24H @Klinikum Großhadern",
       address: "Marchioninistraße 15, 81377 München",
       coordinates: [48.1107, 11.4693]
     },
     {
-      id: 4,
+      id: 3,
       name: language === "en" ? "SmartFoodie @Backstage" : "SmartFoodie @Backstage",
       address: "Reitknechtstraße 6, 80639 München",
       coordinates: [48.1443, 11.5189]

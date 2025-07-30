@@ -42,7 +42,7 @@ const InstagramButton = () => {
           />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
-          {language === "en" ? "Follow us on Instagram" : "Folgen Sie uns auf Instagram"}
+          {language === "en" ? "Follow us on Instagram" : "Folge uns auf Instagram"}
         </div>
       </div>
       
@@ -61,7 +61,7 @@ const InstagramButton = () => {
           />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
-          {language === "en" ? "Follow us on LinkedIn" : "Folgen Sie uns auf LinkedIn"}
+          {language === "en" ? "Follow us on LinkedIn" : "Folge uns auf LinkedIn"}
         </div>
       </div>
 
@@ -90,7 +90,7 @@ const InstagramButton = () => {
           />
         </button>
         <div className="absolute hidden group-hover:block right-full mr-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-1 py-0.3 rounded-md text-sm whitespace-nowrap">
-          {language === "en" ? "Follow us on TikTok" : "Folgen Sie uns auf TikTok"}
+          {language === "en" ? "Follow us on TikTok" : "Folge uns auf TikTok"}
         </div>
       </div>
     </div>

@@ -65,8 +65,20 @@ const News = () => {
       image: "./klinikum_blog.jpg",
       docFile_en: "SmartFoodie Opens at Klinikum Großhadern.docx",
       docFile_de: "SmartFoodie eröffnet im Klinikum Großhadern.docx"
+    },
+    {
+      id: 6,
+      title: language === "en" 
+        ? "SmartFoodie Now at Backstage Munich" 
+        : "SmartFoodie jetzt im Backstage München",
+      summary: language === "en"
+        ? "Located at one of Munich's most popular cultural and event venues, our machine offers artists, staff and visitors convenient access to fresh hot and cold meals - 24/7."
+        : "In einem der beliebtesten Kultur- und Veranstaltungszentren Münchens versorgt unser Automat Künstler, Mitarbeitende und Besucher rund um die Uhr mit frischen, kalten und warmen Mahlzeiten.",
+      date: language === "en" ? "23-07-2025" : "23.07.2025",
+      image: "./backstage.JPG",
+      docFile_en: "Backstage Blog英语.docx",
+      docFile_de: "Backstage Blog德语.docx"
     }
-    
       
   ];
 

@@ -8,7 +8,12 @@ function Logo({ isScrolled }) {
     if ((location.pathname === "/" || location.pathname === "/products-and-solutions") && !isScrolled) {
         return null;
     }
-    return <img className={"w-20 lg:w-[200px]"} src="/header.png" />;
+    return (
+        <div className="flex items-center space-x-2">
+            <img className="w-4 lg:w-6 h-auto" src="/logo_main.png" alt="Logo" />
+            <img className={"w-20 lg:w-[200px]"} src="/header.png" />
+        </div>
+    );
 }
 
 function Header() {

@@ -6,6 +6,7 @@ import HomeFooter from "./HomeFooter";
 import Main from "./Main";
 import Storyline from "./storyline";
 import EventBanner from "./event";
+import Announcement from "./Announcement";
 
 function Index() {
   const [refresh,setRefresh]=useState(false)
@@ -69,6 +70,7 @@ function Index() {
       
       <div className="relative z-10">
         <Main />
+        <Announcement />
         <Storyline />
         <EventBanner />
         <Introduct />

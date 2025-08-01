@@ -10,7 +10,6 @@ function Logo({ isScrolled }) {
     }
     return (
         <div className="flex items-center space-x-2">
-            <img className="w-6 lg:w-9 h-auto" src="/logo_main.png" alt="Logo" />
             <img className={"w-20 lg:w-[200px]"} src="/header.png" />
         </div>
     );

@@ -31,6 +31,12 @@ export default function Locations() {
     },
     {
       id: 3,
+      name: language === "en" ? "SmartFoodie @CrossFit" : "SmartFoodie @CrossFit",
+      address: "Hofmannstraße 7, 81379 München",
+      coordinates: [48.1020, 11.5304]
+    },
+    {
+      id: 4,
       name: language === "en" ? "SmartFoodie @Backstage" : "SmartFoodie @Backstage",
       address: "Reitknechtstraße 6, 80639 München",
       coordinates: [48.1443, 11.5189]

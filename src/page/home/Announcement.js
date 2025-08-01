@@ -32,13 +32,17 @@ const Announcement = () => {
     );
   };
 
+  const getAnnouncementLabel = () => {
+    return language === 'de' ? 'ANKÜNDIGUNG' : 'ANNOUNCEMENT';
+  };
+
   return (
     <div className="relative w-full bg-gradient-to-r from-orange-500 to-pink-400 py-8 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center">
           <div className="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-4">
             <FaBullhorn className="text-yellow-300 text-sm mr-2" />
-            <span className="text-white text-sm font-medium">ANNOUNCEMENT</span>
+            <span className="text-white text-sm font-medium">{getAnnouncementLabel()}</span>
           </div>
           
           <div className="text-white text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-6">

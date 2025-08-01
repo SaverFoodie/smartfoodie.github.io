@@ -33,28 +33,28 @@ useEffect(() => {
     if (windowWidth <= 480) {
       return {
         fontSize: '0.8rem',
-        padding: '0.4rem 0.8rem',
+        padding: '0.3rem 0.6rem',
         alignSelf: 'center', 
       };
     }
     if (windowWidth <= 768) {
       return {
         fontSize: '0.8rem',
-        padding: '0.4rem 0.9rem',
+        padding: '0.3rem 0.7rem',
         alignSelf: 'center',
       };
     }
     if (windowWidth <= 1024) {
       return {
         fontSize: '1rem',
-        padding: '0.5rem 1.0rem',
+        padding: '0.3rem 0.6rem',
         alignSelf: 'flex-start',
         marginLeft: '15%',
       };
     }
     return {
       fontSize: '1.1rem',
-      padding: '0.6rem 1.2rem',
+      padding: '0.4rem 1rem',
       alignSelf: 'flex-start',
       marginLeft: '25%',
     };
@@ -103,9 +103,9 @@ useEffect(() => {
       <div style={getContentWrapperStyles()}>
         <h2 style={{
           ...textStyle,
-          fontSize: windowWidth <= 480 ? '1.2em' : windowWidth <= 768 ? '1.6em' : windowWidth <= 1024 ? '1.8em' : '2.2em',
+          fontSize: windowWidth <= 480 ? '1.2em' : windowWidth <= 768 ? '1.4em' : windowWidth <= 1024 ? '1.6em' : '2.2em',
           fontWeight: 'bold',
-          marginBottom: windowWidth <= 480 ? '10px' : '15px',
+          marginBottom: windowWidth <= 480 ? '18px' : '12px',
           textTransform: 'uppercase',
           letterSpacing: '1px'
         }}>
@@ -147,9 +147,9 @@ useEffect(() => {
         <button 
           className="bg-gradient-to-r from-[#F16E21] to-orange-600 text-white rounded-full font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           style={{
-            ...styles.button,
+            ...styles.homeFooterButton,
             ...getButtonStyles(),
-            borderRadius: '50px',
+            borderRadius: '40px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px'
           }}
@@ -202,13 +202,13 @@ const styles = {
     background: 'linear-gradient(to right, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0) 100%)',
     zIndex: 1,
   },
-  button: {
-    marginTop: '1rem',
+  homeFooterButton: {
+    
     width: 'auto',
     border: 'none',
     cursor: 'pointer',
     position: 'relative',
-    overflow: 'hidden',
+    
   }
 };
 

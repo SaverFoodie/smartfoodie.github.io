@@ -47,7 +47,7 @@ const Announcement = () => {
           
           {/* New Logo */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-full p-6 shadow-lg">
+            <div className="bg-[#fcf2e8] rounded-full p-6 shadow-lg">
               <img 
                 src="./logo_main.png" 
                 alt="SmartFoodie New Logo" 

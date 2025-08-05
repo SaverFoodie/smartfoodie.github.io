@@ -76,6 +76,18 @@ const NewsDetails = () => {
       docFile_en: "Backstage Blog英语.docx",
       docFile_de: "Backstage Blog德语.docx",
       date: language === "en" ? "23-07-2025" : "23.07.2025"
+    },
+    {
+      id: 7,
+      title: language === "en" 
+      ? "SmartFoodie vending machine new at CrossFit Munich South" 
+      : "SmartFoodie-Automat neu bei CrossFit Munich South",
+      summary: language === "en"
+      ? "SmartFoodie supplies the fitness community with delicious, nutrient-rich meals – quickly, easily and exactly when it matters most."
+      : "SmartFoodie versorgt die Fitness-Community mit leckeren, nährstoffreichen Mahlzeiten - schnell, unkompliziert und genau dann, wenn es darauf ankommt.",
+      docFile_en: "官网CrossFit Blog英语.docx",
+      docFile_de: "官网CrossFit Blog德语.docx",
+      date: language === "en" ? "01-08-2025" : "01.08.2025"
     }
   ];
 

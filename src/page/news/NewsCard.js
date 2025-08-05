@@ -26,20 +26,19 @@ const News = () => {
         docFile_en: "spring festival_EN.docx",
         docFile_de: "spring festival_DE.docx"
     },
-    {
-      id: 3,
-      title: language === "en" 
-        ? "SmartFoodie @ EDEKA Eren Edition" 
-        : "SmartFoodie @ EDEKA Eren Edition",
-      summary: language === "en"
-        ? "From dumplings to udon — Munich's taste buds lit up at our 2-day pop-up with EDEKA." 
-        : "Von Dumplings bis Udon - Münchens Geschmacksknospen wurden bei unserem zweitägigen Pop-up mit EDEKA begeistert.",
-      date: language === "en" ? "06-04-2025" : "06.04.2025",
-      image: "./news_edeka.jpg",  
-      docFile_en: "smartfoodie-edeka-news_EN.docx",
-      docFile_de: "smartfoodie-edeka-news_DE.docx"
-    },
-    
+    //{
+    //  id: 3,
+    //  title: language === "en" 
+    //    ? "SmartFoodie @ EDEKA Eren Edition" 
+    //    : "SmartFoodie @ EDEKA Eren Edition",
+    //  summary: language === "en"
+    //    ? "From dumplings to udon — Munich's taste buds lit up at our 2-day pop-up with EDEKA." 
+    //    : "Von Dumplings bis Udon - Münchens Geschmacksknospen wurden bei unserem zweitägigen Pop-up mit EDEKA begeistert.",
+    //  date: language === "en" ? "06-04-2025" : "06.04.2025",
+    //  image: "./news_edeka.jpg",  
+    //  docFile_en: "smartfoodie-edeka-news_EN.docx",
+    //  docFile_de: "smartfoodie-edeka-news_DE.docx"
+    //},
     {
       id: 4,
       title: language === "en" 

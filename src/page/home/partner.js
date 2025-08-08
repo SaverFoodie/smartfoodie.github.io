@@ -18,7 +18,7 @@ const Partner = () => {
   return (
     <div className="partners-container">
       <h2 className="partners-title">
-        {language === 'de' ? 'Unsere Partner' : 'Some of Our Partners'}
+        {language === 'de' ? 'Einige Unserer Partner' : 'Some of Our Partners'}
       </h2>
       <p className="partners-subtitle">
         {language === 'de' 

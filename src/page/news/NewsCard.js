@@ -90,8 +90,20 @@ const News = () => {
       image: "./crossfit.JPG",
       docFile_en: "官网CrossFit Blog德语.docx",
       docFile_de: "官网CrossFit Blog英语.docx"
-    }
-      
+    },
+    {
+      id: 8,
+      title: language === "en" 
+      ? "SmartFoodie vending machine new at CrossFit Munich South" 
+      : "SmartFoodie-Automat neu bei CrossFit Munich South",
+      summary: language === "en"
+        ? "SmartFoodie was recently featured in the renowned startup magazine StartingUp."
+        : "SmartFoodie wurde kürzlich im renommierten Startup-Magazin StartingUp vorgestellt.",
+      date: language === "en" ? "11-08-2025" : "11.08.2025",
+      image: "./start.png",
+      docFile_en: "官网StartingUp英语.docx",
+      docFile_de: "官网StartingUp德语.docx"
+    },
   ];
 
   const handleClick = (newsId) => {

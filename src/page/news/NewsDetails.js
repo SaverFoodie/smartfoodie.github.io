@@ -92,8 +92,8 @@ const NewsDetails = () => {
     {
       id: 8,
       title: language === "en" 
-      ? "SmartFoodie vending machine new at CrossFit Munich South" 
-      : "SmartFoodie-Automat neu bei CrossFit Munich South",
+      ? "How SmartFoodie is redefining the vending market–Interview at StartingUp" 
+      : "Wie SmartFoodie den Markt für Automatenverpflegung neu definiert – Interview bei StartingUp",
       summary: language === "en"
       ? "How SmartFoodie is redefining the vending market - Interview at StartingUp"
       : "Wie SmartFoodie den Markt für Automatenverpflegung neu definiert - Interview bei StartingUp",

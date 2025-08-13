@@ -19,6 +19,8 @@ import Events from "./page/event/index";
 import EventDetails from "./page/event/EventDetails";
 import PrivacyPolicy from "./layout/privacy";
 import Impressum from "./layout/impressum";
+import AppBanner from "./page/app/app_banner";
+
 
 const router = createBrowserRouter([
   {
@@ -71,6 +73,10 @@ const router = createBrowserRouter([
         element: <Impressum />
       },
     ],
+  },
+  {
+    path: "/app",
+    element: <AppBanner />
   },
 ]);
 

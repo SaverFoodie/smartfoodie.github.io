@@ -1,0 +1,162 @@
+
+.app-banner {
+	min-height: 100vh;
+	padding: 48px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #ffffff;
+}
+
+.app-card {
+	max-width: 720px;
+	width: 100%;
+	background: #ffffff;
+	border-radius: 24px;
+	padding: 40px 32px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+	/* two-column grid: logo left, text right; center the whole group */
+	display: grid;
+	grid-template-columns: auto minmax(0, max-content);
+	column-gap: 16px;
+	row-gap: 8px;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	color: #1a1a1a;
+	margin: 0 auto;
+}
+
+.app-logo {
+	width: 96px;
+	height: 96px;
+	object-fit: contain;
+	border-radius: 22%;
+	margin-bottom: 0;
+	background: rgba(255,255,255,0.85);
+	padding: 8px;
+	/* place logo in left column, spanning title and subtitle rows */
+	grid-column: 1;
+	grid-row: 1 / span 2;
+}
+
+.app-title {
+	margin: 8px 0 4px;
+	font-size: 28px;
+	font-weight: 800;
+	/* title at top-right of logo */
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.app-subtitle {
+	margin: 0 0 24px;
+	font-size: 16px;
+	opacity: 0.85;
+	/* subtitle under title */
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.download-actions {
+	display: grid;
+	grid-template-columns: auto; /* always vertical */
+	gap: 12px;
+	/* buttons occupy full width below */
+	grid-column: 1 / span 2;
+	grid-row: 3;
+	justify-content: center;
+	justify-items: center;
+}
+
+/* keep single-column buttons on all screen sizes */
+
+.download-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 14px 18px;
+	border-radius: 12px;
+	text-decoration: none;
+	font-weight: 700;
+	color: #fff;
+	transition: transform .15s ease, box-shadow .15s ease, opacity .2s ease;
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.download-btn .icon {
+	font-size: 18px;
+}
+
+.download-btn.android {
+	background: #0f9d58;
+}
+
+.download-btn.ios {
+	background: #000;
+}
+
+.download-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+}
+
+.download-btn:active {
+	transform: translateY(0);
+	opacity: 0.9;
+}
+
+/* Store badge variant (no background, use official badges) */
+.download-btn.badge {
+	background: transparent;
+	padding: 0;
+	border-radius: 0;
+	box-shadow: none;
+	gap: 0;
+	display: inline-flex;
+	width: auto;
+	height: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.download-btn.badge:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+.store-badge {
+	height: 56px;
+	width: auto;
+	display: block;
+	object-fit: contain;
+}
+
+.lang-switch {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	display: inline-flex;
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 999px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	overflow: hidden;
+}
+
+.lang-btn {
+	border: none;
+	background: transparent;
+	padding: 8px 14px;
+	font-weight: 700;
+	color: #ff5a2b;
+	cursor: pointer;
+}
+
+.lang-btn.active {
+	background: #ffefe9;
+	color: #d9481c;
+}
+
+
